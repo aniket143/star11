@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.star11.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>star11</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon src="res/icon.png" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <splash density="land-hdpi" src="res/screen/android/cr320x200.jpg" />
+        <splash density="land-ldpi" src="res/screen/android/cr480x320.jpg" />
+        <splash density="land-mdpi" src="res/screen/android/cr800x480.jpg" />
+        <splash density="land-xhdpi" src="res/screen/android/cr1280x720.jpg" />
+        <splash density="port-hdpi" src="res/screen/android/cr200x320.jpg" />
+        <splash density="port-ldpi" src="res/screen/android/320x480.jpg" />
+        <splash density="port-mdpi" src="res/screen/android/720X1280.jpg" />
+        <splash density="port-xhdpi" src="res/screen/android/720X1280.jpg" />
+        <preference name="SplashScreenDelay" value="10000" />
+        <preference name="SplashMaintainAspectRatio" value="false" />
+        <preference name="SplashShowOnlyFirstTime" value="true" />
+        <preference name="SplashScreenSpinnerColor" value="white" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
+    <engine name="android" spec="^7.0.0" />
+    <engine name="browser" spec="^5.0.4" />
+</widget>

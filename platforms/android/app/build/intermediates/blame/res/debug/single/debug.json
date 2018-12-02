@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/var/www/html/start11app/star11/platforms/android/app/build/intermediates/res/merged/debug/xml_config.xml.flat",
+        "source": "/var/www/html/start11app/star11/platforms/android/app/src/main/res/xml/config.xml"
+    },
+    {
+        "merged": "/var/www/html/start11app/star11/platforms/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_icon.png.flat",
+        "source": "/var/www/html/start11app/star11/platforms/android/app/src/main/res/mipmap-mdpi/icon.png"
+    },
+    {
+        "merged": "/var/www/html/start11app/star11/platforms/android/app/build/intermediates/res/merged/debug/drawable-mdpi_screen.png.flat",
+        "source": "/var/www/html/start11app/star11/platforms/android/app/src/main/res/drawable-mdpi/screen.png"
+    }
+]

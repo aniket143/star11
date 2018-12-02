@@ -1,0 +1,51 @@
+<div class="page"  data-name="mykbdteam">
+<div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+      </div>
+      <div class="title ">MY TEAMS</div>
+     
+     </div>
+</div>
+
+
+<div class="page-content">
+
+<div><p class="text-align-center">You can create up to 6 teams for a single contest</p></div>
+
+<div class="block" id="mykbdteam">
+
+</div>
+	
+<script id="mykbdteamtemplate" type="text/template7">
+ {{#each player}}
+<div class="card">
+    <div class="card-header">Team:{{teamcount}}</div>
+    <div class="card-content card-content-padding">
+    <div class="row">
+       <div class="col-50 text-color-orange">captain</div>
+       <div class="col-50 text-color-blue">vicecaptain</div>
+    </div>
+       <div class="row">
+       <div class="col-50">{{captain}}</div>
+       <div class="col-50">{{vicecaptain}}</div>
+    </div>
+    </div>
+     <div class="card-footer">
+     <a href="/createteamkabaddi/" class="link">EDIT</a>
+     <a href="/myteampreview_kbd/?custteamid={{customerteamid}}" class="link">PRIVIEW</a>
+     <a href="#" class="link">CLONE</a>
+     </div>
+</div>
+ {{/each}}
+</script>
+
+
+</div>
+
+
+</div>

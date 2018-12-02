@@ -1,0 +1,575 @@
+<div class="page"  data-name="createteamkabaddi">
+<div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+      </div>
+      <div class="title ">CREATE TEAM</div>
+      <div class="subnavbar">
+	 <div class="subnavbar-inner">
+	 
+	 <div class="segmented segmented-raised">
+            
+	   <a href="#tab-1" class="button tab-link tab-link-active color-red">DEF<span class="badge color-red text-color-black" id="countDEF">0</span></a>
+      <a href="#tab-2" class="button tab-link color-red">ALL<span class="badge color-red text-color-black" id="countALL">0</span></a>
+      <a href="#tab-3" class="button tab-link color-red">RAI<span class="badge color-red text-color-black" id="countRAI">0</span></a>
+     
+</div>
+	 </div>
+</div>
+     </div>
+</div>
+
+<div class="toolbar toolbar-bottom-md bg-color-pink">
+<div class="item-inner">
+    <div class="toolbar-inner">
+
+	 <div class="col-15">         
+    <div class="item-title item-label text-align-center text-color-white" id="team1cnt" style="font-size:20px;">0</div>
+    <div class="item-title item-label" id="team1">
+    </div>
+	 </div>
+	 
+ 	<div class="col-15">         
+ 	<div class="item-title item-label text-align-center text-color-blue" id="team2cnt" style="font-size:20px;">0</div>
+   <div class="item-title item-label" id="team2"></div>
+	</div>
+	
+    <div class="col-15">
+    <div class="item-title item-label text-align-center" id="totalplayer" style="font-size:20px;">0</div>
+    <div class="item-title item-label">Player</div>
+    </div>
+    
+    <div class="col-15">
+    <div class="item-title item-label text-align-center" id="credit" style="font-size:20px;">0/100</div>
+    <div class="item-title item-label">credit left</div>
+    </div>
+    
+   <div class="col-40">
+   <button disabled class="col button button-fill color-white  button-round text-color-black popup-open teamselection_kbd" id="selec_cp" data-popup="#popup-selecpt">NEXT</button> 
+   <!-- <a class="col button button-fill color-white  button-round text-color-black popup-open teamselection" id="selec_cp" data-popup="#popup-selecpt">NEXT</a> -->
+   </div>
+<!--   </div> -->
+    	</div>
+    </div>
+</div>
+
+
+<div class="page-content">
+<div class="card ">
+  <div class="card-content card-content-padding"><span id="matchid"> </span></div>
+</div>
+
+
+	  
+<div class="tabs">
+
+<div id="tab-1" class="tab tab-active">
+   
+   <div class="data-table data-table-init card">
+  <!-- Card header -->
+  <div class="card-header">
+    <!-- Default table header -->
+    <div class="data-table-header">
+      <!-- Default table title -->
+      <div class="data-table-title">Pick 2-4 DEFENDERS</div>
+      <!-- Default table actions -->
+      <div class="data-table-actions">
+        <a class="link icon-only">
+          <i class="icon f7-icons ios-only">sort</i>
+          <i class="icon material-icons md-only">sort</i>
+        </a>
+        <a class="link icon-only">
+          <i class="icon f7-icons ios-only">more_vertical_round</i>
+          <i class="icon material-icons md-only">more_vert</i>
+        </a>
+      </div>
+    </div>
+    <!-- Selected table header -->
+    <div class="data-table-header-selected">
+      <!-- Selected table title -->
+      <div class="data-table-title-selected"><span class="data-table-selected-count"></span> items selected</div>
+      <!-- Selected table actions -->
+      <div class="data-table-actions">
+       <!--  <a class="link icon-only">
+          <i class="icon f7-icons ios-only">trash</i>
+          <i class="icon material-icons md-only">delete</i>
+        </a> -->
+        <a class="link icon-only">
+          <i class="icon f7-icons ios-only">more_vertical_round</i>
+          <i class="icon material-icons md-only">more_vert</i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="card-content">
+    <table>
+      <thead>
+        <tr>
+          <th class="checkbox-cell">
+            <!--<label class="checkbox">
+              <input type="checkbox">
+              <i class="icon-checkbox"></i>
+            </label>-->
+          </th>
+          <th class="label-cell">INFO PLAYER</th>
+          <th class="numeric-cell">PT</th>
+          <th class="numeric-cell">CR</th>
+          <th class="numeric-cell">PIC</th>
+         </tr>
+      </thead>
+      <tbody id="defender">
+       
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+	 
+<div id="tab-2" class="tab">
+    
+       <div class="data-table data-table-init card">
+  <!-- Card header -->
+  <div class="card-header">
+    <!-- Default table header -->
+    <div class="data-table-header">
+      <!-- Default table title -->
+      <div class="data-table-title">Pick 1-2 All-rounders</div>
+      <!-- Default table actions -->
+      <div class="data-table-actions">
+        <a class="link icon-only">
+          <i class="icon f7-icons ios-only">sort</i>
+          <i class="icon material-icons md-only">sort</i>
+        </a>
+        <a class="link icon-only">
+          <i class="icon f7-icons ios-only">more_vertical_round</i>
+          <i class="icon material-icons md-only">more_vert</i>
+        </a>
+      </div>
+    </div>
+    <!-- Selected table header -->
+    <div class="data-table-header-selected">
+      <!-- Selected table title -->
+      <div class="data-table-title-selected"><span class="data-table-selected-count"></span> items selected</div>
+      <!-- Selected table actions -->
+      <div class="data-table-actions">
+       <!--  <a class="link icon-only">
+          <i class="icon f7-icons ios-only">trash</i>
+          <i class="icon material-icons md-only">delete</i>
+        </a> -->
+        <a class="link icon-only">
+          <i class="icon f7-icons ios-only">more_vertical_round</i>
+          <i class="icon material-icons md-only">more_vert</i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="card-content">
+    <table>
+      <thead>
+        <tr>
+          <th class="checkbox-cell">
+            <!--<label class="checkbox">
+              <input type="checkbox">
+              <i class="icon-checkbox"></i>
+            </label>-->
+          </th>
+                 <th class="label-cell">INFO PLAYER</th>
+          <th class="numeric-cell">PT</th>
+          <th class="numeric-cell">CR</th>
+          <th class="numeric-cell">PIC</th>
+         </tr>
+      </thead>
+      <tbody id="allrounder">
+       
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+    
+<div id="tab-3" class="tab">
+           <div class="data-table data-table-init card">
+  <!-- Card header -->
+  <div class="card-header">
+    <!-- Default table header -->
+    <div class="data-table-header">
+      <!-- Default table title -->
+      <div class="data-table-title">Pick 1-3 Raiders</div>
+      <!-- Default table actions -->
+      <div class="data-table-actions">
+        <a class="link icon-only">
+          <i class="icon f7-icons ios-only">sort</i>
+          <i class="icon material-icons md-only">sort</i>
+        </a>
+        <a class="link icon-only">
+          <i class="icon f7-icons ios-only">more_vertical_round</i>
+          <i class="icon material-icons md-only">more_vert</i>
+        </a>
+      </div>
+    </div>
+    <!-- Selected table header -->
+    <div class="data-table-header-selected">
+      <!-- Selected table title -->
+      <div class="data-table-title-selected"><span class="data-table-selected-count"></span> items selected</div>
+      <!-- Selected table actions -->
+      <div class="data-table-actions">
+       <!--  <a class="link icon-only">
+          <i class="icon f7-icons ios-only">trash</i>
+          <i class="icon material-icons md-only">delete</i>
+        </a> -->
+        <a class="link icon-only">
+          <i class="icon f7-icons ios-only">more_vertical_round</i>
+          <i class="icon material-icons md-only">more_vert</i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="card-content">
+    <table>
+      <thead>
+        <tr>
+          <th class="checkbox-cell">
+            <!--<label class="checkbox">
+              <input type="checkbox">
+              <i class="icon-checkbox"></i>
+            </label>-->
+          </th>
+          <th class="label-cell">INFO PLAYER</th>
+          <th class="numeric-cell">PT</th>
+          <th class="numeric-cell">CR</th>
+          <th class="numeric-cell">PIC</th>
+         </tr>
+      </thead>
+      <tbody id="raiders">
+       
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+    
+
+</div>
+
+<script id="defendertemplate" type="text/template7">
+  {{#each kabaddidata[0].data1}}
+  		 <tr>
+          <td class="checkbox-cell">
+            <label class="checkbox">
+              <input type="checkbox" id="defender_chk{{defenderplayerid}}" name="defender_chk" data-plyid="defender_chk{{defenderplayerid}}" data-plyname="defender_chk" data-defenderplayerid="{{defenderplayerid}}" data-defenderplayername="{{defendername}}" data-defenderteamcode="{{defenderteamcode}}" data-defendercredit="{{pvalue}}" data-defenderplayerpic="{{defenderplayerpic}}">
+              <i class="icon-checkbox"></i>
+            </label>
+          </td>
+          <td class="label-cell dynamic-popup" id="{{defenderplayerid}}"><a href="">{{defendername}}</a><div class="">{{defenderteamcode}}</div></td>
+          <td class="numeric-cell">60.5</td>
+          <td class="numeric-cell">{{pvalue}}</td>
+          <td class="numeric-cell">
+          <a href=""><img src="{{defenderplayerpic}}" alt="player pic" width="80"></a>
+          </td>
+       </tr>
+       {{/each}}
+ </script>
+ 
+ <script id="allroundertemplate" type="text/template7">
+  {{#each kabaddidata[1].data2}}
+  		 <tr>
+          <td class="checkbox-cell">
+            <label class="checkbox">
+              <input type="checkbox" id="ar_chk{{ARplayerid}}" name="ar_chk" data-plyid="ar_chk{{ARplayerid}}" data-plyname="ar_chk" data-arplayerid="{{ARplayerid}}" data-arname="{{ARname}}" data-arteamcode="{{ARteamcode}}" data-arcredit="{{pvalue1}}" data-arplayerpic="{{ARplayerpic}}">
+              <i class="icon-checkbox"></i>
+            </label>
+          </td>
+          <td class="label-cell dynamic-popup" id={{ARplayerid}}><a href="">{{ARname}}</a><div class="">{{ARteamcode}}</div></td>
+          <td class="numeric-cell">60.5</td>
+          <td class="numeric-cell">{{pvalue1}}</td>
+          <td class="numeric-cell">
+          <a href=""><img src="{{ARplayerpic}}" alt="player pic" width="80"></a>
+          </td>
+       </tr>
+       {{/each}}
+ </script>
+ 
+  <script id="raidertemplate" type="text/template7">
+  {{#each kabaddidata[2].data3}}
+  		 <tr>
+          <td class="checkbox-cell">
+            <label class="checkbox">
+              <input type="checkbox" id="raider_chk{{raiderplayerid}}" name="raider_chk" data-plyid="raider_chk{{raiderplayerid}}" data-plyname="raider_chk" data-raiderplayerid="{{raiderplayerid}}" data-raidername="{{raidername}}" data-raiderteamcode="{{raiderteamcode}}" data-raidercredit="{{pvalue2}}" data-raiderplayerpic="{{raiderplayerpic}}">
+              <i class="icon-checkbox"></i>
+            </label>
+          </td>
+          <td class="label-cell dynamic-popup" id={{raiderplayerid}}><a href="">{{raidername}}</a><div class="">{{raiderteamcode}}</div></td>
+          <td class="numeric-cell">60.5</td>
+          <td class="numeric-cell">{{pvalue2}}</td>
+          <td class="numeric-cell">
+           <a href=""><img src="{{raiderplayerpic}}" alt="player pic" width="80"></a>
+          </td>
+       </tr>
+       {{/each}}
+ </script>
+ 
+ 
+ <script id="team_preview" type="text/template7">
+ 
+ <div class="col-12 text-align-center" ><h3 style="color:white">DEFENDER</h3></div>
+ <div class="row text-align-center">
+ {{#each defenderdata.data1[0]}}
+ <div class="col"> 
+  <figure>
+ <img src="{{defenderplayerpic}}" alt="defenderplayerpic" width="80">
+   <figcaption style="color:white">{{defendername}}</figcaption>
+  </figure>
+    </div>
+ {{/each}}
+  </div>
+ 
+ 
+<div class="col-12 text-align-center"><h3 style="color:white">ALL-ROUNDER</h3></div>
+<div class="row text-align-center">
+{{#each ardata.data2[0]}}
+<div class="col"> 
+      <figure>
+        <img src="{{arplayerpic}}" alt="arplayerpic" width="80">
+        <figcaption style="color:white">{{arname}}</figcaption>
+      </figure>
+    </div>
+{{/each}}
+</div>
+
+
+<div class="col-12 text-align-center"><h3 style="color:white">RAIDER</h3></div>
+<div class="row text-align-center">
+  {{#each raiderdata.data3[0]}}
+    <div class="col">
+      <figure>
+        <img src="{{raiderplayerpic}}" alt="raiderplayerpic" width="80">
+        <figcaption style="color:white">{{raidername}}</figcaption>
+      </figure>
+    </div>
+{{/each}}
+</div>
+ 
+
+</script>
+
+
+<script id="select_captain" type="text/template7" >
+
+
+<div class="card">
+<div class="card-header">DEFENDER</div>
+  <div class="card-content">
+   <div class="list media-list">
+     <ul>
+      {{#each defenderdata.data1[0]}}
+        <li class="item-content">         
+          <div class="item-media"><img src={{defenderplayerpic}} width="80"/></div>
+          <div class="item-inner">
+            <div class="item-title-row">
+              <div class="item-title" >{{defendername}}</div>
+            </div>
+            <div class="item-subtitle">{{defendercredit}}</div>
+          </div>
+          <div id={{defenderplyid}} style="display: none;"><img src="image/captain.png"  ></div>
+         <div id={{defendername}} style="display: none;"><img src="image/vicecaptain.png"  ></div>
+          
+
+      <label class="item-radio item-content">
+      <input type="radio"  name="demo-radio1" data-ply1={{defenderplyid}} class='list1' id="plyc{{defenderplyid}}" value="c" data-defenderplyid1={{defenderplyid}}>
+      <i class="icon icon-radio"></i>
+      </label>
+ 
+      <label class="item-radio item-content">
+      <input type="radio" name="demo-radio2" data-name={{defendername}} data-ply2={{defenderplyid}} value="vc" id="plyvc{{defenderplyid}}" data-defenderplyid2={{defenderplyid}}>
+      <i class="icon icon-radio"></i>
+      </label>
+       
+       </li>
+        {{/each}}
+        </ul>
+       </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="card">
+<div class="card-header">ALLROUNDER</div>
+  <div class="card-content">
+   <div class="list media-list">
+     <ul>
+      {{#each ardata.data2[0]}}
+        <li class="item-content">         
+          <div class="item-media"><img src={{arplayerpic}} width="80"/></div>
+          <div class="item-inner">
+            <div class="item-title-row">
+              <div class="item-title">{{arname}}</div>
+            </div>
+            <div class="item-subtitle">{{arcredit}}</div>
+          </div>
+          <div id="image1"><img src="image/captain.png"  style="display: none;" ></div>
+         <div id="image2"><img src="image/vicecaptain.png"  style="display: none;"></div>
+         
+        
+      <label class="item-radio item-content">
+      <input type="radio" name="demo-radio1" data-ply1={{arplyid}} class='list2' value="c" id="plyc{{arplyid}}" data-arplayerid1={{arplyid}}>
+      <i class="icon icon-radio"></i>
+      </label>
+ 
+      <label class="item-radio item-content">
+      <input type="radio" name="demo-radio2" data-ply2={{arplyid}} value="vc" id="plyvc{{arplyid}}" data-arplayerid2={{arplyid}}>
+      <i class="icon icon-radio"></i>
+      </label>
+    
+        </li>
+        {{/each}}
+        </ul>
+       </div>
+      </div>
+    </div>
+</div>
+
+<div class="card">
+<div class="card-header">BALLER</div>
+  <div class="card-content">
+   <div class="list media-list">
+     <ul>
+     {{#each raiderdata.data3[0]}}
+        <li class="item-content">         
+          <div class="item-media"><img src={{raiderplayerpic}} width="80"/></div>
+          <div class="item-inner">
+            <div class="item-title-row">
+              <div class="item-title">{{raidername}}</div>
+            </div>
+            <div class="item-subtitle">{{raidercredit}}</div>
+          </div>
+          <div id="image1"><img src="image/captain.png"  style="display: none;"></div>
+         <div id="image2"><img src="image/vicecaptain.png"  style="display: none;"></div>
+        
+
+      <label class="item-radio item-content">
+      <input type="radio" name="demo-radio1" data-ply1={{raiderplayerid}} class='list3' value="c" id="plyc{{raiderplayerid}}" data-raiderplayerid1={{raiderplayerid}}>
+      <i class="icon icon-radio"></i>
+      </label>
+ 
+      <label class="item-radio item-content">
+      <input type="radio" name="demo-radio2" data-ply2={{raiderplayerid}} value="vc" id="plyvc{{raiderplayerid}}" data-raiderplayerid2={{raiderplayerid}}>
+      <i class="icon icon-radio"></i>
+      </label>
+     
+        </li>
+        {{/each}}
+        </ul>
+       </div>
+      </div>
+    </div>
+</div>
+
+
+</script>
+ 
+</div>
+
+<div class="fab fab-center-bottom" style="padding-bottom:10px;">
+		  <a href="#" id="selec_team" class="popup-open teamselection_kbd" data-popup="#team-popup">Team</a>
+</div>
+
+
+
+<!-- Popup -->
+    <div class="popup" id="team-popup">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Team</div>
+              <div class="right">
+                <a href="#" class="link popup-close">Close</a>
+              </div>
+            </div>
+          </div>
+          <div class="page-content" style="background-image:url('image/grass.jpg'); opacity: 0.5;filter: alpha(opacity=50)"> 
+ 			 <div class="" id="select_team">
+ 			 
+          </div>
+          </div>
+      </div>
+    </div> 
+    
+
+
+
+</div> 
+	<!-- select captain and Vice captain Popup -->
+    <div class="popup" id="popup-selecpt">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Select CP and VC</div>
+              <div class="right">
+                <a href="#" class="link popup-close">Close</a>
+              </div>
+            </div>
+          </div>
+          <div class="page-content">
+           <div class="text-align-center"><strong>Choose Captain(C) &amp; Vice Captain(VC)</strong></div>
+           <div class="text-align-center">
+           <span><b>C</b></span>
+           <span> gets 2x Points</span>
+           </div>
+            <div class="text-align-center">
+            <span><b>VC</b></span>
+            <span> gets 1.5x Points</span>
+            </div>
+            <div class="" id="select_cp">
+           
+             
+            </div>
+          </div>
+          
+          <div class="toolbar toolbar-bottom-md bg-color-pink">
+			<div class="item-inner">
+    			<div class="toolbar-inner">
+    			
+    			<div class="col-40"> 
+    			<button class=" disabled col button button-fill color-white button-round text-color-black" id="savedata" >SAVE TEAM</button>
+    			<!-- <a class="col button button-fill color-white  button-round text-color-black" id="savedata">SAVE TEAM</a> -->
+    			</div>
+    			
+    </div>
+    </div>
+    </div>
+          
+          
+        </div>
+      </div>
+    </div>
+<style type="text/css">
+.data-table th {
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+   .md .data-table td.label-cell, .md .data-table th.label-cell {
+    padding-left: 17px;
+    padding-right: 17px;
+    }
+    
+    .md .data-table td, .md .data-table th {
+    padding-left: 17px;
+    padding-right: 17px;
+}
+
+.md .data-table td.checkbox-cell, .md .data-table th.checkbox-cell {
+    width: 12px;
+    padding-left: 16px;
+    padding-right: 12px;
+}
+</style>
+
+
+

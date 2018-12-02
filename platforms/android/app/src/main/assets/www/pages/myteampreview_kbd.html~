@@ -1,0 +1,63 @@
+ <div class="page" data-name="myteampreviewkbd">
+          <div class="navbar">
+            <div class="navbar-inner">
+             <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+           </div>
+              <div class="title">My Team</div>
+             </div>
+          </div>
+          <div class="page-content" style="background-image:url('image/grass.jpg'); opacity: 0.5;filter: alpha(opacity=50)">
+ 			 <div class="block" id="mykabadditeam">
+ 			 
+          </div>
+          
+          
+<script id="mykbdteampreview" type="text/template7">
+ 
+<div class="col-12 text-align-center" ><h3 style="color:white">DEFENDER</h3></div>
+ <div class="row text-align-center">
+ {{#each defenderdata.data1[0]}}
+ <div class="col"> 
+  <figure>
+ <img src="{{defenderplayerpic}}" alt="defenderplayerpic" width="20%">
+   <figcaption style="color:white">{{defendername}}</figcaption>
+  </figure>
+    </div>
+ {{/each}}
+  </div>
+ 
+ 
+<div class="col-12 text-align-center"><h3 style="color:white">ALL-ROUNDER</h3></div>
+<div class="row text-align-center">
+{{#each ARdata.data2[0]}}
+<div class="col"> 
+      <figure>
+        <img src="{{arplayerpic}}" alt="arplayerpic" width="20%">
+        <figcaption style="color:white">{{arname}}</figcaption>
+      </figure>
+    </div>
+{{/each}}
+</div>
+
+
+<div class="col-12 text-align-center"><h3 style="color:white">RAIDER</h3></div>
+<div class="row text-align-center">
+  {{#each raiderdata.data3[0]}}
+    <div class="col">
+      <figure>
+        <img src="{{raiderplayerpic}}" alt="raiderplayerpic" width="25%">
+        <figcaption style="color:white">{{raidername}}</figcaption>
+      </figure>
+    </div>
+{{/each}}
+</div>
+ 
+
+</script>       
+</div>
+         
+</div>

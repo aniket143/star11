@@ -1,0 +1,29 @@
+// Store
+localStorage.setItem("lastname", "Smith");
+
+// Retrieve
+
+localStorage.getItem("lastname");
+
+//Remove
+
+localStorage.removeItem("lastname");
+
+
+cordova-plugin-secure-storage
+
+https://www.npmjs.com/package/secure-web-storage
+
+//badges info
+
+$$.get('path-to-file-with-badge-number.php', function (newNumber){
+   $('.somebadge').text(newNumber);
+});
+And your path-to-file-with-badge-number.php should returns badge number:
+
+<?php
+...some logic here to get new number....
+echo $newNumber; // 25
+?>
+
+

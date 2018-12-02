@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#000000">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>My App</title>
+
+  <link rel="stylesheet" href="framework7/css/framework7.min.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="color-theme-blue">
+  <div id="app"> 
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar"></div>
+    <!-- Left panel with cover effect-->
+    <div class="panel panel-left panel-cover theme-dark">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Left Panel</div>
+            </div>
+          </div>
+          <div class="page-content">
+             
+<div class="list links-list">
+            <ul>
+              <li>
+                <a class="item-content" href="/helpdesk/">
+                 <div class="item-media"><i class="icon material-icons md-only">help</i> </div>
+                  <div class="item-inner">
+                    <div class="item-title">Helpdesk</div>
+                  </div>
+                </a>
+              </li>
+              
+              
+              <li>
+                <a class="item-content" href="/aboutus/">
+                 <div class="item-media"><i class="icon material-icons md-only">description</i> </div>
+                  <div class="item-inner">
+                    <div class="item-title">About Us</div>
+                  </div>
+                </a>
+              </li>
+             
+              <li>
+                <a class="item-content" href="/ckt_point_system/">
+                 <div class="item-media"><i class="icon material-icons md-only">assessment</i> </div>
+                  <div class="item-inner">
+                    <div class="item-title">Fantasy Cricket Point System</div>
+                  </div>
+                </a>
+              </li>
+              
+              
+              <li>
+                <a class="item-content" href="/footballpointsystem/">
+                 <div class="item-media"><i class="icon material-icons md-only">assessment</i> </div>
+                  <div class="item-inner">
+                    <div class="item-title">Fantasy Football Point System</div>
+                  </div>
+                </a>
+              </li>
+              
+               <li>
+                <a class="item-content" href="/Kabbadi_point/">
+                 <div class="item-media"><i class="icon material-icons md-only">assessment</i> </div>
+                  <div class="item-inner">
+                    <div class="item-title">Fantasy Kabbadi Point System</div>
+                  </div>
+                </a>
+              </li>
+              
+               <li>
+                <a class="item-content" href="/howtoply_ckt/">
+                 <div class="item-media"><i class="icon material-icons md-only">assessment</i> </div>
+                  <div class="item-inner">
+                    <div class="item-title">How To Play-Cricket</div>
+                  </div>
+                </a>
+              </li>
+              
+               <li>
+                <a class="item-content" href="/howtoply_ftbl/">
+                 <div class="item-media"><i class="icon material-icons md-only">assessment</i> </div>
+                  <div class="item-inner">
+                    <div class="item-title">How To Play-Football</div>
+                  </div>
+                </a>
+              </li>
+              
+              <li>
+                <a class="item-content" href="/howtoply_kabaddi/">
+                 <div class="item-media"><i class="icon material-icons md-only">assessment</i> </div>
+                  <div class="item-inner">
+                    <div class="item-title">How To Play-Kabbadi</div>
+                  </div>
+                </a>
+              </li>
+              
+               <li>
+                <a class="item-content" href="/faqs/">
+                 <div class="item-media"><i class="icon material-icons md-only">question_answer</i> </div>
+                  <div class="item-inner">
+                    <div class="item-title">FAQS</div>
+                  </div>
+                </a>
+              </li>
+              
+              <li>
+                <a class="item-content" href="/fairplay/">
+                 <div class="item-media"><i class="icon material-icons md-only">verified_user</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">FairPlay</div>
+                  </div>
+                </a>
+              </li>
+              
+              <li>
+                <a class="item-content" href="/legality/">
+                 <div class="item-media"><i class="icon material-icons md-only">flag</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Legality</div>
+                  </div>
+                </a>
+              </li>
+              
+               <li>
+                <a class="item-content" href="/privacy_pol/">
+                 <div class="item-media"><i class="icon material-icons md-only">lock</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Privacy Policy</div>
+                  </div>
+                </a>
+              </li>
+              
+             <!--  <li>
+                <a class="item-content" href="/testimonials/">
+                 <div class="item-media"><i class="icon material-icons md-only">announcement</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Testimonials</div>
+                  </div>
+                </a>
+              </li> -->
+              
+               <li>
+                <a class="item-content" href="/terms_con/">
+                 <div class="item-media"><i class="icon material-icons md-only">description</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Terms & Conditions</div>
+                  </div>
+                </a>
+              </li>
+              
+              <!--  <li>
+                <a class="item-content" href="/workwithus/">
+                 <div class="item-media"><i class="icon material-icons md-only">people</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Work with us</div>
+                  </div>
+                </a>
+              </li>
+              
+               <li>
+                <a class="item-content" href="/skillup/">
+                 <div class="item-media"><i class="icon material-icons md-only">trending_up</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">SkillUp</div>
+                  </div>
+                </a>
+              </li>
+              
+               <li>
+                <a class="item-content" href="/forum/">
+                 <div class="item-media"><i class="icon material-icons md-only">forum</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Forum</div>
+                  </div>
+                </a>
+              </li>
+              
+               <li>
+                <a class="item-content" href="/foundation/">
+                 <div class="item-media"><i class="icon material-icons md-only">tag_faces</i></div>
+                  <div class="item-inner">
+                    <div class="item-title">Foundation</div>
+                  </div>
+                </a>
+              </li> -->
+           </ul>
+</div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Right panel with reveal effect-->
+    <!-- <div class="panel panel-right panel-reveal theme-dark">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Right Panel</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block">Right panel content goes here</div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+    <!-- Views/Tabs container -->
+    <div class="views tabs ios-edges">
+      <!-- Tabbar for switching views-tabs -->
+      <!-- <div class="toolbar tabbar-labels toolbar-bottom-md">
+        <div class="toolbar-inner">
+          <a href="#view-home" class="tab-link tab-link-active">
+            <i class="icon f7-icons ios-only">home</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">home_fill</i>
+            <i class="icon material-icons md-only">home</i>
+            <span class="tabbar-label">HOME</span>
+          </a>
+          <a href="#view-catalog" class="tab-link">
+            <i class="icon f7-icons ios-only">list</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">list_fill</i>
+            <i class="icon material-icons md-only">view_list</i>
+            <span class="tabbar-label">Kabbadi</span>
+          </a>
+          <a href="#view-settings" class="tab-link">
+            <i class="icon f7-icons ios-only">settings</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">settings_fill</i>
+            <i class="icon material-icons md-only">settings</i>
+            <span class="tabbar-label">Football</span>
+          </a>
+         <a href="#view-settings" class="tab-link">
+            <i class="icon f7-icons ios-only">settings</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">settings_fill</i>
+            <i class="icon material-icons md-only">settings</i>
+            <span class="tabbar-label">Football</span>
+          </a>
+          </div>
+      </div> -->
+      <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
+      <div id="view-home" class="view view-main tab tab-active">
+        <!-- Page, data-name contains page name which can be used in page callbacks -->
+        <div class="page" data-name="home">
+          <!-- Top Navbar -->
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link icon-only panel-open" data-panel="left">
+                  <i class="icon f7-icons ios-only">menu</i>
+                  <i class="icon material-icons md-only">menu</i>
+                </a>
+              </div>
+              <div class="title sliding float-left"><img src="image/11starnew.png" alt="" width="105px"></div>
+              <div class="right block"> <p class="row">
+                <!-- <a href="#" class="link icon-only panel-open" data-panel="right">
+                  <i class="icon f7-icons ios-only">menu</i>
+                  <i class="icon material-icons md-only">menu</i> -->
+    <button class="col button button-fill color-red login-screen-open" data-login-screen="#my-login-screen" >Login</button>
+        
+    </p>
+
+
+                <!--</a>-->
+              </div> 	
+              <div class="subnavbar">
+        <div class="subnavbar-inner">
+          <div class="segmented segmented-raised">
+            <a class="button tab-link tab-link-active color-red" href="#tab1" id="critab">Criket</a>
+            <a class="button tab-link color-red" href="#tab2" id="foottab">Football</a>
+            <a class="button tab-link color-red" href="#tab3" id="kabtab" >Kabbadi</a>
+          </div>
+        </div>
+      </div>
+            </div>
+          </div>
+          
+          
+          <div class="page-content hide-navbar-on-scroll">
+    <div class="tabs">
+      <div class="tab tab-active" id="tab1">
+       <div class="display-flex justify-content-space-between align-items-flex-stretch">
+  <div class="flex-shrink-2">Select Any Upcoming Match</div>
+<!--   <div class="align-self-center">Item 2</div> -->
+  <div class="align-self-flex-7">
+
+  <!--<a class="link sheet-open" href="#" data-sheet=".my-sheet">Filter by series</a>-->
+    </div>
+</div>
+
+                 
+        <div class="block" id="load_cricket_match">
+                         
+        </div>
+      </div>
+      <div class="tab" id="tab2">
+        <div class="block" id="load_football_match">
+         
+          									<!--<div id="clocktm1"  class="align-content-center"></div>-->
+        </div>
+      </div>
+      <div class="tab" id="tab3">
+        <div class="block" id="load_kabaddi_match">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template7 Template -->
+       <script id="crickettemplate" type="text/template7">
+          {{#each maindata[0].data1}}
+					<a href="/createteam/?teamA={{team1}}&teamB={{team2}}&teamidA={{teamid1}}&teamidB={{teamid2}}&matchID={{matchid1}}&trnID={{trnid1}}&sportID={{sportsid1}}&dtetime={{start_time}}">
+						<div class="card margin padding" id="">
+					 		<div class="row">
+								<img src="{{logo1}}" width="55px">
+									<div id="clocktm{{counts}}"  class="align-content-center"></div>
+								<img src="{{logo2}}" width="55px">
+							</div>
+			
+							<div class="row text-color-red">
+								<div>{{team1}}</div>
+									<span class="align-content-center">Vs</span>
+								<div>{{team2}}</div>
+							</div>
+			
+						</div>
+					</a>          
+          {{/each}}
+          
+       </script>
+       
+        <script id="footballtemplate" type="text/template7">
+          {{#each maindata[1].data2}}
+					<a href="/createteam/?teamA={{team3}}&teamB={{team4}}&teamidA={{teamid3}}&teamidB={{teamid4}}&matchID={{matchid2}}&trnID={{trnid2}}&sportID={{sportsid2}}&dtetime={{start_time1}}">
+						<div class="card margin padding">
+					 		<div class="row">
+								<img src="{{logo3}}" width="55px">
+									<div id="clocktm1{{counts1}}"  class="align-content-center"></div>
+								<img src="{{logo4}}" width="55px">
+							</div>
+			
+							<div class="row text-color-red">
+								<div>{{team3}}</div>
+									<span class="align-content-center">Vs</span>
+								<div>{{team4}}</div>
+							</div>
+			
+						</div>
+					</a>          
+          {{/each}}
+          
+       </script>
+       
+         <script id="kabadditemplate" type="text/template7">
+          {{#each maindata[2].data3}}
+					<a href="/createteamkabaddi/?teamA={{team5}}&teamB={{team6}}&teamidA={{teamid5}}&teamidB={{teamid6}}&matchID={{matchid3}}&trnID={{trnid3}}&sportID={{sportsid3}}&dtetime={{start_time2}}">
+						<div class="card margin padding">
+					 		<div class="row">
+								<img src="{{logo5}}" width="55px">
+									<div id="clocktm2{{counts2}}"  class="align-content-center"></div>
+								<img src="{{logo6}}" width="55px">
+							</div>
+			
+							<div class="row text-color-red">
+								<div>{{team5}}</div>
+									<span class="align-content-center">Vs</span>
+								<div>{{team6}}</div>
+							</div>
+			
+						</div>
+					</a>          
+          {{/each}}
+          
+       </script>
+
+
+          <!-- Scrollable page content-->
+<!--           <div class="page-content">
+            <div class="block block-strong">
+              <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
+              <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
+            </div>
+
+            <div class="block-title">Navigation</div>
+            <div class="list">
+              <ul>
+                <li>
+                  <a href="/about/" class="item-content item-link">
+                    <div class="item-inner">
+                      <div class="item-title">About</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="block-title">Modals</div>
+            <div class="block block-strong">
+              <div class="row">
+                <div class="col-50">
+                  <a href="#" class="button button-raised button-fill popup-open" data-popup="#my-popup">Popup</a>
+                </div>
+                <div class="col-50">
+                  <a href="#" class="button button-raised button-fill login-screen-open" data-login-screen="#my-login-screen">Login Screen</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="block-title">Panels</div>
+            <div class="block block-strong">
+              <div class="row">
+                <div class="col-50">
+                  <a href="#" class="button button-raised button-fill panel-open" data-panel="left">Left Panel</a>
+                </div>
+                <div class="col-50">
+                  <a href="#" class="button button-raised button-fill panel-open" data-panel="right">Right Panel</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="block-title searchbar-hide-on-search">Page Loaders & Router</div>
+            <div class="list links-list searchbar-hide-on-search">
+              <ul>
+                <li>
+                  <a href="/page-loader-template7/vladimir/123/about-me/1/?start=0&end=30#top">Template7 Page</a>
+                </li>
+                <li>
+                  <a href="/page-loader-component/vladimir/123/about-me/1/?start=0&end=30#top">Component Page</a>
+                </li>
+                <li>
+                  <a href="/load-something-that-doesnt-exist/">Default Route (404)</a>
+                </li>
+                <li>
+                  <a href="/request-and-load/user/123456/">Request Data & Load</a>
+                </li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- Catalog View -->
+      <div id="view-catalog" class="view tab">
+        <!-- Catalog page will be loaded here dynamically from /catalog/ route -->
+      </div>
+
+      <!-- Settings View -->
+      <div id="view-settings" class="view tab">
+        <!-- Settings page will be loaded here dynamically from /settings/ route -->
+      </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="popup" id="">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Popup</div>
+              <div class="right">
+                <a href="#" class="link popup-close">Close</a>
+              </div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block">
+              <p>Popup content goes here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div class="login-screen" id="my-login-screen">
+      <div class="view">
+        <div class="page">
+         <div class="navbar">
+    			<div class="navbar-inner">
+       		<div class="title sliding padding"><img src="image/11starnew.png" alt="" width="105px"></div>
+            </div>
+          </div>
+          <div class="page-content login-screen-content">
+         
+           <div class="text-align-center"><h3>LOG IN &amp; PLAY</h3></div>
+           <div class="card padding-top">
+           <div class="block">
+          <div class="block row no-padding">
+          <a class="col button button-raised color-black">Facebook</a>
+           <a class="col button button-raised color-black">google</a>
+           </div>
+            <div class="text-align-center">OR</div>
+            <div class="list">
+              <ul>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                  <!--   <div class="item-title item-label">E-mail</div> -->
+                    <div class="item-input-wrap">
+                      <input type="email" name="email" id="email" placeholder="E-mail">
+                      
+                    </div>
+                    <div id="message1" class="text-color-red"></div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <!-- <div class="item-title item-label">Password</div> -->
+                    <div class="item-input-wrap">
+                      <input type="password" name="password" id="passwd" placeholder="Password">
+                    </div>
+                      <div id="message2" class="text-color-red"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <a href="#" class="login-button button button-fill color-green " data-ignore-cache="true">LOG IN</a>
+             &nbsp; &nbsp;
+             <div class="text-align-center padding-bottom">
+            <a href="#" class="open-prompt">Forgot Password?</a></div>
+             </div>
+            </div>
+            
+            <div class="row">
+            <div class="padding-left">Have a referral code?</div>
+				<div class="padding-right">New User?</div>
+            </div>
+
+            <div class="row">
+            <a href="#" class="padding-left" >Click here</a>
+            <a href="#" class="signup-button padding-right" >Sign Up</a>
+            </div>
+                   
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Cordova -->
+  
+<!--   <script src="cordova.js"></script> -->
+ 
+ 
+
+ 
+        <script type="text/javascript" src="cordova.js"></script>
+  <!-- Framework7 library -->
+  <script src="framework7/js/framework7.min.js"></script>
+
+  <!-- App routes -->
+  <script src="js/routes.js"></script>
+ <!--  <script src="js/jquery.countdown.min.js"></script> -->
+
+  <!-- Your custom app scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>

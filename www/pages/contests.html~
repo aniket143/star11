@@ -1,0 +1,161 @@
+<div id="view-home" class="view view-main tab tab-active">
+<div class="page" data-name="contest">
+<div class="views tabs ios-edges">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+      </div>
+      <a href="/about/" class="tab-link tab-link-active">
+            <i class="icon f7-icons ios-only">Home</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">home_fill</i>
+            <i class="icon material-icons md-only">home</i>
+           <!--  <span class="tabbar-label">Home</span> -->
+      </a>
+      <div class="title">CONTESTS</div>
+      
+    </div>
+    <div class="float-right">
+      <a href="">
+            <i class="icon material-icons md-only">account_balance_wallet</i>
+       </a>
+    </div>
+  </div>
+ 
+<div class="page-content">
+  
+<a href="/allcontest/" >
+<div class="card">
+<div class="card-header">ALL CONTESTS</div>
+<div class="card-content card-content-padding">Choose from a variety of contests
+<span class="float-right"><Button class="button button-fill">118</Button></span>
+</div>
+</div>
+</a>
+&nbsp;&nbsp;
+<div class="block" id="showcontest">
+
+</div>
+	
+<script id="contesttemplate" type="text/template7">	
+
+{{#each contestdata}}
+<div class="card">
+<a href="/contestdetails/?contestid={{contestid}}">  
+<div class="card-header"><div class="row"><img src="{{logo}}" alt="logo" width="55px"><div class="float-left padding-top">{{contestname}}</div></div></div>
+ </a>
+  <div class="card-content margin" >
+ 
+          <div class="row text-color-black">
+  				<div class="col"><h5>TOTAL WINNINGS</h5></div>
+  				<div class="col"><h5>WINNERS</h5></div>
+  				<div class="col"><h5>ENTRY FEE</h5></div>
+			 </div>
+			 
+			 <div class="row text-color-black">
+  				<div class="col"><span>&#8377;&nbsp;</span></i>{{winningamount}}</div>
+  				<div class="col">{{winners}}</div>
+  				<div class="col">{{entryfee}}</div>
+			 </div>&nbsp;
+			 
+  			<div class="row">
+   		<div class="col">
+   		<span data-progress="8" class="progressbar" id="demo-inline-progressbar"></span>
+   		<span>1012Team Left </span><span class="float-right">11Team</span>
+   		<div></div>
+   		</div>
+   		
+         <div class="col">
+         <div class="row float-right padding-right">
+         <button class="col button button-fill joincontest open-confirm margin" id="contest{{contestid}}" data-contestid="{{contestid}}" data-entryfee="{{entryfee}}" data-popup="#popup-joincontest">JOIN</button>
+         </div>
+         </div>
+         
+      </div>
+     
+    </div>
+</div>&nbsp;
+ {{/each}}
+</script>
+
+
+	</div>
+	
+	 <div class="popup" id="popup-joincontest">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">JOIN CONTEST</div>
+              <div class="right">
+                <a href="#" class="link popup-close">Close</a>
+              </div>
+            </div>
+          </div>
+          <div class="page-content">
+          
+ 			 <div class="block-title">LOW BALANCE</div>
+ 			 
+ 			 <div class="block">
+ 			  <div class="row">
+ 			  <div class="text-color-red"> Current Balance:
+ 			  <span>&#8377;0</span></div>
+ 			  </div>
+ 			  <hr>
+ 			  <div><span>Usable Cash Bonus:</span><span>&#8377;</span><span>0</span>
+			  <span> OR 10%  of the Total Entry Fee* per match(whichever is higher)</span> 			  
+ 			  </div>
+ 			  
+ 			  <div>*Not valid for Private contests /and Public contests less than 10 members </div>
+ 			  </div>
+ 			  
+ 			  <div class="block">
+ 			  <div class="row">
+ 			  <div> Joining Amount:<span>&#8377;50</span></div>
+ 			  </div>
+ 			  </div>
+ 			   
+ 	   <div class="block">	
+      <div class="item-inner">
+        <div class="item-title item-label">Amount To Add</div>
+        <div class="item-input">
+        <input type="number" placeholder="Joining Amount">
+        <span class="input-clear-button" ></span>
+        </div>
+      </div>
+      </div>
+ 			     
+<div class="block">
+  <div class="row">
+    <button class="button col button-fill color-pink text-color-black"><span>+&#8377;</span>100</button>
+    <button class="button col button-fill color-pink text-color-black"><span>+&#8377;</span>200</button>
+    <button class="button col button-fill color-pink text-color-black"><span>+&#8377;</span>500</button>
+  </div>
+</div>
+	
+<div class="block">
+  <div class="row float-right">
+   <button class="button col button-fill">ADD CASH</button>
+   </div>
+</div>
+ 			  
+ 		
+ 			</div>
+      </div>
+    </div> 
+         
+
+</div> 
+<div class="toolbar toolbar-bottom-md">
+    <div class="row">
+     <a href="/createteam/" class="col button button-raised color-white">CREATE TEAM<span class="badge color-pink">2</span></a>
+     <a href="/myteam/" class="col button button-raised color-white" id="myteam">MY TEAM<span class="badge color-pink">2</span></a>
+     <a href="/joinedcontests/" class="col button button-fill button-raised color-white text-color-blue">JOINED CONTESTS</a>
+    </div>
+ </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,4 @@
+#Tue Oct 16 18:20:33 IST 2018
+base.0=/var/www/html/start11app/star11/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+file.0=/var/www/html/start11app/star11/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex

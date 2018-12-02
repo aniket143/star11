@@ -1,0 +1,103 @@
+
+<div class="page" data-name="allcontest">
+<div class="views tabs ios-edges">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+      </div>
+     
+      <div class="title">CONTESTS</div>
+      
+    </div>
+  </div>
+  
+<div class="page-content">
+<div class="card ">
+  <div class="card-content card-content-padding"><span id="matchid"> </span></div>
+</div>
+
+<div class="toolbar tabbar">
+	 <div class="toolbar-inner">
+	    
+	   <a href="#tab-1" class="tab-link tab-link-active">WINNINGS</a>
+      <a href="#tab-2" class="tab-link">TEAMS</a>
+      <a href="#tab-3" class="tab-link">WINNERS</a>
+      <a href="#tab-4" class="tab-link">ENTRY</a>
+
+	 </div>
+</div> 
+
+<div class="tabs">
+<div id="tab-1" class="page-content tab tab-active"> 
+<div class="block" id="showallcontest">
+
+</div>
+</div>
+
+</div>
+
+<div id="tab-2" class="page-content tab"> 
+
+
+</div>
+
+<div id="tab-3" class="page-content tab"> 
+
+
+</div>
+
+<div id="tab-4" class="page-content tab"> 
+
+
+</div>
+
+
+<script id="allcontesttemplate" type="text/template7">	
+
+{{#each contestdata}}
+<div class="card">
+
+  <div class="card-content">
+  <!--  <div class="list simple-list"> -->
+          
+          <div class="row">
+  				<div class="col"><h5>TOTAL WINNINGS</h5></div>
+  				<div class="col"><h5>WINNERS</h5></div>
+  				<div class="col"><h5>ENTRY FEE</h5></div>
+			 </div>
+			 
+			 <div class="row">
+  				<div class="col"><span>&#8377;&nbsp;</span></i>{{winningamount}}</div>
+  				<div class="col">{{winners}}</div>
+  				<div class="col">{{entryfee}}</div>
+			 </div>&nbsp;
+			 
+  			<div class="row">
+   		<div class="col">
+   		<span data-progress="8" class="progressbar" id="demo-inline-progressbar"></span>
+   		<span>1012Team Left </span><span class="float-right">11Team</span>
+   		<div></div>
+   		</div>
+   		
+         <div class="col">
+         <div class="row float-right padding-right"><a href="" class="button button-fill">JOIN</a></div>
+         </div>
+       
+     <!--   </div> -->
+      </div>
+    </div>
+</div>&nbsp;
+ {{/each}}
+</script>
+
+
+</div>
+  
+  </div>
+  </div>
+ 
+ 

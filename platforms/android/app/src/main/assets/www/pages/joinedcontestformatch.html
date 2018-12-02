@@ -1,0 +1,44 @@
+<div class="page"  data-name="joinedcontestformatch">
+<div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+      </div>
+      <div class="title ">JOINED CONTESTS</div>
+     </div>
+</div>
+
+<div class="page-content">
+<div class="block" id="joinedcontestformatch">
+
+
+</div>
+
+</div>
+
+<script id="joinedcontestformatchtemplate" type="text/template7">
+{{#each joinedcontestformatchdata}}
+
+<div class="card" >
+  <div class="card-content card-content-padding">
+  <div class="row">
+  <div class="col">{{contestname}}</div>
+  <div class="col"><span data-progress="8" class="progressbar" id="demo-inline-progressbar"></span></div>
+  <div class="col"><div class="col button button-fill ">INVITE</div></div>
+  <div class="col">
+  <a href="/viewusers/"><div class="col button button-fill viewusers" data-contestid="{{contestid}}" id="contest{{contestid}}">VIEW</div></a>
+  </div>
+  </div>
+  
+  </div>
+</div>
+
+{{/each}}
+
+</script>
+
+
+</div>
