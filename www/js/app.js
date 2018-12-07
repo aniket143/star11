@@ -96,8 +96,8 @@ var dynamicPopup = app.popup.create({
  // Select Template
 var cricketTemplate = $$('#crickettemplate').html();
 var footballTemplate = $$('#footballtemplate').html();
-
 var kabaddiTemplate = $$('#kabadditemplate').html();
+
 // Compile and render
 var compiledcricketTemplate = Template7.compile(cricketTemplate);
 var compiledfootballTemplate = Template7.compile(footballTemplate);
@@ -105,6 +105,8 @@ var compiledkabaddiTemplate=Template7.compile(kabaddiTemplate);
 
 
 app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
+	
+	console.log("hiiiii arch");
 	
 	
 	if(typeof localStorage.userid === 'undefined' || localStorage.userid == ''){
@@ -465,6 +467,14 @@ $$(document).on('page:init', '.page[data-name="createteam"]', function (e) {
 		
 		console.log(userid);
 		
+		var cktcustteamid=e.detail.route.query.custteamid;
+		console.log(cktcustteamid);
+		
+		var action=e.detail.route.query.action;
+		console.log("action="+action);
+		
+		
+		
 		if(typeof userid !== 'undefined' && userid !== ' '){
 			console.log('logon');
 			
@@ -473,7 +483,7 @@ $$(document).on('page:init', '.page[data-name="createteam"]', function (e) {
 		var teamname2=localStorage.teamname2afterlogin;
 		var teamid1=localStorage.teamid1afterlogin;
 		var teamid2=localStorage.teamid2afterlogin;
-			
+		
 	   $$('#matchid').text(teamname1+' Vs '+teamname2);
 }
 
@@ -487,6 +497,8 @@ $$(document).on('page:init', '.page[data-name="createteam"]', function (e) {
 	var trnid1 = e.detail.route.query.trnID;
 	var sportID1 = e.detail.route.query.sportID;
    	console.log("before login"+sportID1);
+   	console.log("team1:"+teamid1);
+   	console.log("team2:"+teamid2);
    localStorage.MATCHID = matchid1;
    localStorage.TOURNAMENTID = trnid1;
    //localStorage.SPORTSID = sportID1;
@@ -518,12 +530,611 @@ $$(document).on('page:init', '.page[data-name="createteam"]', function (e) {
 	
 	app.request.postJSON('http://139.59.36.238/star11APP/load_cricketplayers.php', { teamid1:teamid1,teamid2:teamid2 }, function (data) {
  	
+ 	
  	$$('#wicketkp').html(compiledwkTemplate(data)); 
  	$$('#batsman').html(compiledbtTemplate(data));
  	$$('#allrounder').html(compiledarTemplate(data));  
- 	$$('#baller').html(compiledballerTemplate(data));  
+ 	$$('#baller').html(compiledballerTemplate(data));
+ 			 	
+ 	if(action=='Edit'){
+ 		
+ 	var batplylen=data.cricketdata["1"].data2.length;
+  	
+  	var arplylen=data.cricketdata["2"].data3.length;
+  	
+   var ballerplylen=data.cricketdata["3"].data4.length;
+			
+		app.request.postJSON('http://139.59.36.238/star11APP/editcktteam.php', {cktcustteamid:cktcustteamid}, function (data1) {
+	
+	//console.log(data1);
+	
+	   var wkpid=data1.cricketdata["0"].data1["0"].wkplayerid;
+	   
+	   var WK="#WK_chk"+wkpid;
+	   
+	   $$(WK).prop('checked',true);
+	   
+	  var credit=0;
+	  
+	  var credit=parseInt(data1.cricketdata["0"].data1["0"].pvalue);
+	    
+	  var team1counter=team2counter=0;
+	  
+	   var wkteamcode=data1.cricketdata["0"].data1["0"].wkteamcode;
+	   
+	   if (wkteamcode==teamname1) {
+	   	team1counter++;
+	   	}
+	   	else
+	   	{team2counter++;}
+	   
+	   
+   var batlen=data1.cricketdata["1"].data2.length;
+     
+	   for (var i = 0; i < batlen; i++) {
+ 
+         for (var k = 0; k < batplylen; k++) {
+    	
+    	if ( (data.cricketdata["1"].data2[k].batsmanplayerid) == (data1.cricketdata["1"].data2[i].batsmanplayerid) ) {
+    	
+      var batpid=data1.cricketdata["1"].data2[i].batsmanplayerid;
+
+     credit += parseInt(data1.cricketdata["1"].data2[i].pvalue1);
+      
+      
+      var batteamcode=data1.cricketdata["1"].data2[i].batteamcode;
+      
+       if (batteamcode==teamname1) {
+	   	team1counter++;
+	   	}
+	   	else
+	   	{team2counter++;}
+	   
+	   var BAT="#batsman_chk"+batpid;
+	   
+	   $$(BAT).prop('checked',true);
+      break;
+    }
+  }
+}
+
+var arlen=data1.cricketdata["2"].data3.length;
+
+
+ for (var i = 0; i < arlen; i++) {
+ 
+         for (var k = 0; k < arplylen; k++) {
+    	
+    	if ( (data.cricketdata["2"].data3[k].ARplayerid) == (data1.cricketdata["2"].data3[i].ARplayerid) ) {
+    	
+      var arpid=data1.cricketdata["2"].data3[i].ARplayerid;
+      
+      credit += parseInt(data1.cricketdata["2"].data3[i].pvalue2);
+      
+      var arteamcode=data1.cricketdata["1"].data2[i].arteamcode;
+      
+       if (arteamcode==teamname1) {
+	   	team1counter++;
+	   	}
+	   	else
+	   	{team2counter++;}
+	   
+	   var AR="#ar_chk"+arpid;
+	   
+	   $$(AR).prop('checked',true);
+      break;
+    }
+  }
+}
+
+
+var ballerlen=data1.cricketdata["3"].data4.length;
+
+
+ for (var i = 0; i < ballerlen; i++) {
+ 
+         for (var k = 0; k < ballerplylen; k++) {
+    	
+    	if ( (data.cricketdata["3"].data4[k].ballerplayerid) == (data1.cricketdata["3"].data4[i].ballerplayerid) ) {
+    	
+      var ballerpid=data1.cricketdata["3"].data4[i].ballerplayerid;
+      
+      credit += parseInt(data1.cricketdata["3"].data4[i].pvalue3);
+      
+      var ballteamcode=data1.cricketdata["1"].data2[i].ballteamcode;
+      
+       if (ballteamcode==teamname1) {
+	   	team1counter++;
+	   	}
+	   	else
+	   	{team2counter++;}
+	   
+	   var BALLER="#baller_chk"+ballerpid;
+	   
+	   $$(BALLER).prop('checked',true);
+      break;
+    }
+  }
+}
+
+var totalcount=totalcount1=11;
+$$('#totalplayer').html(totalcount);
+
+var wkcounter = 1;
+$$('#countWK').html(wkcounter);
+$$('#countWK').addClass('badge color-green');
+
+$$('#team1cnt').html(team1counter);
+$$('#team2cnt').html(team2counter);
+	
+	
+$$('#countBAT').html(batlen);
+$$('#countAR').html(arlen);    
+$$('#countBOWL').html(ballerlen);
+	
+credit=credit+"/100";	
+$$('#credit').html(credit);
+
+//var team11counter=team22counter=0;
+//var credit=0;
+
+	/*$$('.checkbox').on('change', function (e) {
+		
+      	var chkbid = e.target.dataset.plyid;
+      	chkbid="#"+chkbid;
+      	var chkname = e.target.dataset.plyname;
+      	
+      	console.log(chkbid);
+      	console.log(chkname);
+      	
+      	var wkteamcode = $$(chkbid).data("wkteamcode");
+      	console.log(wkteamcode);
+      	var batteamcode = $$(chkbid).data("batteamcode");
+      	var arteamcode = $$(chkbid).data("arteamcode");
+      	var ballerteamcode = $$(chkbid).data("ballerteamcode");
+      	
+      	var wkcredit = parseInt($$(chkbid).data("wkcredit"));
+      	var batcredit = parseInt($$(chkbid).data("batcredit"));
+      	var arcredit = parseInt($$(chkbid).data("arcredit"));
+      	var ballercredit = parseInt($$(chkbid).data("ballercredit"));
+   	   var isChecked = $$(chkbid).prop('checked'); 
+   	   console.log(isChecked);
+   	    
+
+if (chkname == "WK_chk") {	
+		  if(isChecked ==true){
+		  
+		   team1counter=parseInt($$('#team1cnt').html());
+		   team2counter=parseInt($$('#team2cnt').html());
+		   var counter = parseInt($$('#countWK').html());
+		   console.log(counter);
+			totalcount = parseInt($$('#totalplayer').html());
+			credit = parseInt($$('#credit').html());
+			    
+		if (totalcount<11) {
+		  	
+		     if(counter >= 1){
+		    		 app.dialog.alert("Only 1 Wicket Keeper Allowed ");
+		    		 $$(chkbid).prop('checked',false);
+		    		 }
+		     else{
+				     	 credit=credit+wkcredit;
+				     	 if (credit<=100) {
+			    		 credit=credit+"/100";
+		   	 		 $$('#credit').html(credit);
+		   	 		 
+		    		 if (wkteamcode==teamname1) {
+		    		 	console.log("team1");
+		    		 	if (team1counter<7) {
+		    		 		counter++;
+		    		 		console.log(counter);
+		    		 		totalcount++;
+		    		 		team1counter++;
+		    		 		$$('#team1cnt').html(team1counter);
+		    		  		$$('#countWK').html(counter);
+		    		  		$$('#countWK').addClass('badge color-green');	
+		    		 		$$('#totalplayer').html(totalcount);
+		    		 		
+		    		 		}
+		    		   else {
+							app.dialog.alert("Max 7 players allowed from one team");
+							$$(chkbid).prop('checked',false);
+							}
+							}
+		    		 
+		    		 if(wkteamcode==teamname2){
+		    		 		console.log("team2");
+		    		 	if (team2counter<7) {
+		    		 		counter++;
+		    		 		console.log(counter);
+		    		 		totalcount++;
+		    		 		team2counter++;
+		    		 		$$('#team2cnt').html(team2counter);
+		    		  		$$('#countWK').html(counter);
+		    		  		$$('#countWK').addClass('badge color-green');
+		    		 		$$('#totalplayer').html(totalcount);
+		    		 		}
+		    		  else {
+							app.dialog.alert("Max 7 players allowed from one team");
+		    		 		$$(chkbid).prop('checked',false);	    		 
+		    		 		}
+		    		 		}	 
+		    		 		}
+		    		 		 else {
+								app.dialog.alert("You don't have enough credits to select this player");	
+								$$(chkbid).prop('checked',false);   	 		 
+		   	 		 }
+		    		 
+		    		 }
+		    	
+		    	}
+		    	 else {
+		    		 app.dialog.alert("Only 11 Players are Allowed ");
+		    		  $$(chkbid).prop('checked',false);
+		    		}
+	       }
+	       
+	     else if (isChecked ==false){
+	     	var couter1 = parseInt($$('#countWK').html());
+	      totalcount1 = parseInt($$('#totalplayer').html());
+	      team11counter=parseInt($$('#team1cnt').html());
+	      team22counter=parseInt($$('#team2cnt').html());
+	      credit1 = parseInt($$('#credit').html());
+	      
+				counter1 = couter1-1;
+				totalcount1--;
+				credit1=credit1-wkcredit;
+				credit1=credit1+"/100";
+				$$('#credit').html(credit1);
+				
+				if (counter1 >= 0) {
+				$$('#countWK').html(counter1);
+				$$('#countWK').removeClass('badge color-green');
+				$$('#countWK').addClass('badge color-red');
+				$$('#totalplayer').html(totalcount1);
+				
+		    	}
+		    	
+		    	 if (wkteamcode==teamname1) {
+		    		 team11counter--;
+		    		 $$('#team1cnt').html(team11counter);
+		    		 }
+		    		 if(wkteamcode==teamname2){
+		    		 team22counter--;
+		    		 $$('#team2cnt').html(team22counter);
+		    		 }
+	     	}
+}
+
+
+else if (chkname=="batsman_chk") {	
+		  if(isChecked ==true){
+		  	
+		  		team1counter=parseInt($$('#team1cnt').html());
+		   	team2counter=parseInt($$('#team2cnt').html());
+				var counter = parseInt($$('#countBAT').html());
+				totalcount = parseInt($$('#totalplayer').html());
+				credit = parseInt($$('#credit').html());
+				
+				 if (totalcount<11) {
+				    
+		       if(counter >= 5){
+		    		 app.dialog.alert("Only 5 Batsman Allowed ");
+		    		 $$(chkbid).prop('checked',false)
+		    		 }
+		    		 
+		     else{
+		     	
+		     	
+		     	credit=credit+batcredit;
+		     	
+		     	 if (credit<=100) {
+		    		  credit=credit+"/100";
+		    		 $$('#credit').html(credit);
+		    		 
+		    		 if (batteamcode==teamname1 ) {
+		    		 	if (team1counter<7) {
+		    		 		counter++;
+		    		 		totalcount++;
+		    		 		team1counter++;
+		    		 		$$('#countBAT').html(counter);
+		    		 		if (counter==5) {
+		    		 	   $$('#countBAT').addClass('badge color-green');
+		    		 		}
+		    		 		$$('#totalplayer').html(totalcount);
+		    		 		$$('#team1cnt').html(team1counter);
+		    		 }else {
+							app.dialog.alert("Max 7 players allowed from one team");
+							$$(chkbid).prop('checked',false);
+						}
+		    		 }
+		    		
+		    		 if(batteamcode==teamname2){
+		    		 		if (team2counter<7) {
+		    		 counter++;
+		    		 totalcount++;
+		    		 team2counter++;
+		    		 $$('#countBAT').html(counter);
+		    		 if (counter==5) {
+		    		 	   $$('#countBAT').addClass('badge color-green');
+		    		 		}
+		    		 $$('#totalplayer').html(totalcount);
+		    		 $$('#team2cnt').html(team2counter);
+		    		 }else {
+							app.dialog.alert("Max 7 players allowed from one team");
+							$$(chkbid).prop('checked',false);
+						}
+						}
+		    		 }
+		    		 else {
+								app.dialog.alert("You don't have enough credits to select this player");	
+								$$(chkbid).prop('checked',false);   	 		 
+		   	 		 }
+		    	}
+		    	}
+		    	 else {
+		    		 app.dialog.alert("Only 11 Players are Allowed ");
+		    		  $$(chkbid).prop('checked',false);
+		    		}
+	       }
+	       
+	     else if (isChecked ==false){
+	     	var couter1 = parseInt($$('#countBAT').html());
+	     	totalcount1 = parseInt($$('#totalplayer').html());
+	     	team11counter=parseInt($$('#team1cnt').html());
+	      team22counter=parseInt($$('#team2cnt').html());
+	      credit1 = parseInt($$('#credit').html());
+	      
+				counter1 = couter1-1;
+				totalcount1--;
+				credit1=credit1-batcredit;
+				credit1=credit1+"/100";
+				$$('#credit').html(credit1);
+				
+				if (counter1 >= 0) {
+					
+				$$('#countBAT').html(counter1);
+				if (counter1<5) {
+				$$('#countBAT').removeClass('badge color-green');
+				$$('#countBAT').addClass('badge color-red');
+				}
+				
+				$$('#totalplayer').html(totalcount1);
+		    	}
+		    	
+		    	
+		    	 if (batteamcode==teamname1) {
+		    		 team11counter--;
+		    		 $$('#team1cnt').html(team11counter);
+		    		 }
+		    		 if(batteamcode==teamname2){
+		    		 team22counter--;
+		    		 $$('#team2cnt').html(team22counter);
+		    		 }
+	     	}
+}
+
+
+else if (chkname=="ar_chk") {	
+		  if(isChecked ==true){
+		  	
+		  		team1counter=parseInt($$('#team1cnt').html());
+		   	team2counter=parseInt($$('#team2cnt').html());
+				var counter = parseInt($$('#countAR').html());
+				totalcount = parseInt($$('#totalplayer').html());
+				console.log(parseInt($$('#countAR').html()));
+				credit = parseInt($$('#credit').html());
+				
+		  if (totalcount<11) {
+				    
+		  if(counter >= 3){
+		    		 app.dialog.alert("Only 3 All-Rounders Allowed ");
+		    		 $$(chkbid).prop('checked',false)
+		    		 }
+		    		 
+		  else{
+		  	
+		  	 credit=credit+arcredit;
+		  	  if (credit<=100) {
+		    		  credit=credit+"/100";
+		    		 $$('#credit').html(credit);
+		    	 if (arteamcode==teamname1) {
+		    		 	if (team1counter<7) {
+		    		 	counter++;
+		    		 	if (counter==3) {
+		    		 	   $$('#countAR').addClass('badge color-green');
+		    		 		}
+		    		 totalcount++;
+		    		 team1counter++;
+		    		 $$('#team1cnt').html(team1counter);
+		    		  $$('#countAR').html(counter);
+		    		 $$('#totalplayer').html(totalcount);
+		    		 }else {
+							app.dialog.alert("Max 7 players allowed from one team");
+							$$(chkbid).prop('checked',false);
+						}
+		    		 }
+		    		 if(arteamcode==teamname2){
+		    		 	if (team2counter<7) {
+		    		 	counter++;
+		    		 	if (counter==3) {
+		    		 	   $$('#countAR').addClass('badge color-green');
+		    		 		}
+		    		 totalcount++;
+		    		 team2counter++;
+		    		 $$('#team2cnt').html(team2counter);
+		    		  $$('#countAR').html(counter);
+		    		 $$('#totalplayer').html(totalcount);
+		    		 }else {
+							app.dialog.alert("Max 7 players allowed from one team");
+							$$(chkbid).prop('checked',false);
+						}
+		    		 }
+		    		 }
+		    		  else {
+								app.dialog.alert("You don't have enough credits to select this player");	
+								$$(chkbid).prop('checked',false);   	 		 
+		   	 		 }
+		    		
+		    	}
+		    	}
+		    else {
+		    		 app.dialog.alert("Only 11 Players are Allowed ");
+		    		  $$(chkbid).prop('checked',false);
+		    		}
+	       }
+	       
+	     else if (isChecked ==false){
+	     	var couter1 = parseInt($$('#countAR').html());
+	     	totalcount1 = parseInt($$('#totalplayer').html());
+	     	team11counter=parseInt($$('#team1cnt').html());
+	      team22counter=parseInt($$('#team2cnt').html());
+	      credit1 = parseInt($$('#credit').html());
+	      
+				counter1 = couter1-1;
+				totalcount1--;
+				credit1=credit1-arcredit;
+				credit1=credit1+"/100";
+				$$('#credit').html(credit1);
+				
+				if (counter1 >= 0) {
+				$$('#countAR').html(counter1);
+				if (counter1<3) {
+				$$('#countAR').removeClass('badge color-green');
+				$$('#countAR').addClass('badge color-red');
+				}
+				$$('#totalplayer').html(totalcount1);
+		    	}
+		    	
+		    	if (arteamcode==teamname1) {
+		    		 team11counter--;
+		    		 $$('#team1cnt').html(team11counter);
+		    		 }
+		    		 if(arteamcode==teamname2){
+		    		 team22counter--;
+		    		 $$('#team2cnt').html(team22counter);
+		    		 }
+		    		
+	     	}
+	     	}
+	     	
+	     	
+	     	
+else if (chkname=="baller_chk") {	
+		  if(isChecked ==true){
+		  	
+			  	team1counter=parseInt($$('#team1cnt').html());
+		   	team2counter=parseInt($$('#team2cnt').html());
+				var counter = parseInt($$('#countBOWL').html());
+				totalcount = parseInt($$('#totalplayer').html());
+				console.log(parseInt($$('#countBOWL').html()));
+				credit = parseInt($$('#credit').html());
+				
+		if (totalcount<11) {
+				    
+		  if(counter >= 5){
+		    		 app.dialog.alert("Only 5 Ballers are Allowed ");
+		    		 $$(chkbid).prop('checked',false)
+		    		 }
+		    		 
+		    		 
+		  else{
+		  	credit=credit+ballercredit;
+		  	 if (credit<=100) {
+		    		  credit=credit+"/100";
+		    		 $$('#credit').html(credit);
+		   		 
+		    		 if (ballerteamcode==teamname1) {
+		    		 	if (team1counter<7) {
+		    		 	 counter++;
+		    		 	 if (counter==5) {
+		    		 	   $$('#countBOWL').addClass('badge color-green');
+		    		 		}
+		    		 totalcount++;
+		    		 team1counter++;
+		    		 $$('#countBOWL').html(counter);
+		    		 $$('#totalplayer').html(totalcount);
+		    		 $$('#team1cnt').html(team1counter);
+		    		 }else {
+							app.dialog.alert("Max 7 players allowed from one team");
+							$$(chkbid).prop('checked',false);
+						}
+		    		 }
+		    		 if(ballerteamcode==teamname2){
+		    		 		if (team2counter<7) {
+		    		 	 counter++;
+		    		 	 if (counter==5) {
+		    		 	   $$('#countBOWL').addClass('badge color-green');
+		    		 		}
+		    		 totalcount++;
+		    		 team2counter++;
+		    		 $$('#countBOWL').html(counter);
+		    		 $$('#totalplayer').html(totalcount);
+		    		 $$('#team2cnt').html(team2counter);
+		    		 }else {
+							app.dialog.alert("Max 7 players allowed from one team");
+							$$(chkbid).prop('checked',false);
+						}
+		    		 }
+		    		 }
+		    		  else {
+								app.dialog.alert("You don't have enough credits to select this player");	
+								$$(chkbid).prop('checked',false);   	 		 
+		   	 		 }
+		    		 
+		    		 
+		    	}
+		    	}
+		    	
+		    	else {
+		    		 app.dialog.alert("Only 11 Players are Allowed ");
+		    		 $$(chkbid).prop('checked',false);
+		    		}
+		    	
+	       }
+	       
+	     else if (isChecked ==false){
+	     	var couter1 = parseInt($$('#countBOWL').html());
+	     	totalcount1 = parseInt($$('#totalplayer').html());
+	     	team11counter=parseInt($$('#team1cnt').html());
+	      team22counter=parseInt($$('#team2cnt').html());
+	      credit1 = parseInt($$('#credit').html());
+	      
+				counter1 = couter1-1;
+				totalcount1--;
+				credit1=credit1-ballercredit;
+				credit1=credit1+"/100";
+				$$('#credit').html(credit1);
+				
+				if (counter1 >= 0) {
+				$$('#countBOWL').html(counter1);
+				if (counter1<5) {
+				$$('#countBOWL').removeClass('badge color-green');
+				$$('#countBOWL').addClass('badge color-red');
+				}
+				$$('#totalplayer').html(totalcount1);
+		    	}
+		    	
+		    	if (ballerteamcode==teamname1) {
+		    		 team11counter--;
+		    		 $$('#team1cnt').html(team11counter);
+		    		 }
+		    		 if(ballerteamcode==teamname2){
+		    		 team22counter--;
+		    		 $$('#team2cnt').html(team22counter);
+		    		 }
+		     	}
+	     }
+	     	
+
+});*/
+	
+	//$$('#mycricketteam').html(compiledmycktteampreviewTemplate(data));  
+	 
+	});
+	}
  	
-	var totalcount=totalcount1=0;    		
+var totalcount=totalcount1=0;    		
 var team1counter=team2counter=0;
 var team11counter=team22counter=0;
 var credit=0;
@@ -1178,9 +1789,12 @@ $$('#savedata').on('click', function () 	{
      var allplydata = allbatsman.concat(allar, allballer);
     
      //console.log(allplydata);
-     
+    console.log("action123"+action);
+     console.log("id"+cktcustteamid);
   		
-app.request.postJSON('http://139.59.36.238/star11APP/saveteam.php', { allwk:allwk,allplydata:allplydata,MATCHID:MATCHID,TRNID:TRNID,userid:userid,captain:captain,vice_captain:vice_captain}, function (data) {
+app.request.postJSON('http://139.59.36.238/star11APP/saveteam.php', {allwk:allwk,allplydata:allplydata,MATCHID:MATCHID,TRNID:TRNID,userid:userid,captain:captain,vice_captain:vice_captain,action:action,cktcustteamid:cktcustteamid}, function(data){
+  			
+  			console.log(data);
   			
   			 if (data == "Success") {
   			 	
@@ -1206,6 +1820,14 @@ app.request.postJSON('http://139.59.36.238/star11APP/saveteam.php', { allwk:allw
 
 $$(document).on('page:init', '.page[data-name="contest"]', function (e) {
 	
+	var userid = localStorage.userid;
+	
+	if(typeof userid == 'undefined'){
+		$$("#myteam").hide();
+		$$("#createteam").hide();
+		$$("#joinedcon").hide();
+}
+	
 	var contestTemplate=$$("#contesttemplate").html();
 	var compiledcontestTemplate=Template7.compile(contestTemplate);
 	
@@ -1223,14 +1845,15 @@ $$(document).on('page:init', '.page[data-name="contest"]', function (e) {
 	localStorage.matchid1afterlogin=matchid1;
 	localStorage.trnid1afterlogin=trnid1;
 	
-	console.log(teamid1);
-	console.log(teamid2);
 	
 	app.request.postJSON('http://139.59.36.238/star11APP/load_contest.php',{testdata:"testdata",}, function (data) {
 	
 	console.log(data);
 	
+	
 	$$("#showcontest").html(compiledcontestTemplate(data));
+	
+	
 	
 	$$('.joincontest').on('click', function (e){
 		
@@ -1356,6 +1979,8 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
     var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
 	
     app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
+    	
+    	console.log("hiarnvi");
       
     console.log(data);
     
@@ -2016,7 +2641,36 @@ else if (chkname=="raider_chk") {
 
 });
 
+$$('.dynamic-popup').on('click', function (e) {
 
+ var pid = $$(this).attr('id');
+
+	app.request.postJSON('http://139.59.36.238/star11APP/getplayerdata_kbd.php', {pid:pid}, function (data) {
+		
+		console.log(data);
+		
+		var credit=data.playerdata["0"].credits;
+		var pic=data.playerdata["0"].pic;
+		var team=data.playerdata["0"].team;
+		var player_desc=data.playerdata["0"].player_desc;
+		var playername=data.playerdata["0"].playername;
+		
+		dynamicPopup.open();
+		 
+		dynamicPopup.on('opened', function (popup) {
+		 	
+ $$('#credits').text(credit);
+ $$('#playerpic').attr("src",pic);
+ $$('#team').text(team);
+$$('#role').text(player_desc);
+$$('#playername').text(playername);
+ 
+});
+		
+	});
+	
+});
+      
 
 $$('.teamselection_kbd').on('click', function (e) {
 	
@@ -2405,7 +3059,7 @@ $$(document).on('page:init', '.page[data-name="myteampreviewkbd"]', function (e)
 	app.request.postJSON('http://139.59.36.238/star11APP/teampreviewkbd.php', { kbdcustteamid:kbdcustteamid}, function (data) {
 	
 	
-	//console.log("teampreview"+data);
+	console.log("teampreview"+data);
 	
 	$$('#mykabadditeam').html(compiledmykbdteampreviewTemplate(data));  
 	 
@@ -2466,6 +3120,51 @@ $$(document).on('page:init', '.page[data-name="myteampreviewkbd"]', function (e)
 	
 	});
 	
+
+$$(document).on('page:init', '.page[data-name="mycktteam"]', function (e) {
+	
+	var userid = localStorage.userid;
+	var matchid=localStorage.matchid1afterlogin;
+   var trnid=localStorage.trnid1afterlogin;
+   
+   console.log("myteam"+userid);
+   console.log("myteam"+matchid);
+   console.log("myteam"+trnid);
+   
+   var mycktteamTemplate = $$('#mycktteamtemplate').html();
+   var compiledmycktteamTemplate = Template7.compile(mycktteamTemplate); 	
+   
+   app.request.postJSON('http://139.59.36.238/star11APP/load_cktteam.php', { userid:userid,matchid:matchid,trnid:trnid}, function (data) {
+ 	
+   console.log(data);
+ 
+ 
+  $$('#mycktteam').html(compiledmycktteamTemplate(data)); 
+ 	
+
+});
+
+});
+
+$$(document).on('page:init', '.page[data-name="myteampreviewckt"]', function (e) {
+	
+	var cktcustteamid = e.detail.route.query.custteamid;
+	
+	console.log("my"+cktcustteamid);
+	
+	var mycktteampreviewTemplate = $$('#mycktteampreview').html();
+   var compiledmycktteampreviewTemplate = Template7.compile(mycktteampreviewTemplate); 
+   
+	app.request.postJSON('http://139.59.36.238/star11APP/teampreviewckt.php', { cktcustteamid:cktcustteamid}, function (data) {
+	
+	
+	console.log("teampreview"+data);
+	
+	$$('#mycricketteam').html(compiledmycktteampreviewTemplate(data));  
+	 
+	});
+	});
+
 
 
 

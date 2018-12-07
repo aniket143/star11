@@ -6,7 +6,7 @@ function get_my_db()
 {
     static $db;
     if (!$db) {
-					$db = new mysqli("localhost", "root", "samarth@123", "star11");
+					$db = new mysqli("localhost", "root", "", "star");
     }
     return $db;
 }
@@ -366,6 +366,70 @@ function get_kbdteampre($custteamid){
 	where ply.status='Y' and pcl.status='Y' and ply.sports_id=3 and ct.cust_team_id='$custteamid'";
 
 	$sql=$db->query($query) or die("error in query get_kbdteampre --> ".$db->error);
+	
+	$data=fetchmysqlDB($sql);
+	return $data;
+}
+
+function get_tournament($trnid){
+	
+	$db = get_my_db();
+	$data = array();
+	
+	$query="SELECT * FROM `inet_master_tournament` t inner join inet_master_tournamenttype ttype ON t.trn_trtype_id=ttype.trtype_id 
+	WHERE trn_id='$trnid'";
+
+	$sql=$db->query($query) or die("error in query get_tournament --> ".$db->error);
+	
+	$data=fetchmysqlDB($sql);
+	return $data;
+}
+
+
+function get_cktteampre($custteamid){
+	
+	$db = get_my_db();
+	$data = array();
+	
+	$query="SELECT * FROM `inet_customer_team_cricket` ct inner join inet_master_player ply 
+	on (ct.player1=ply.player_id or ct.player2=ply.player_id or ct.player3=ply.player_id or ct.player4=ply.player_id or ct.player5=ply.player_id or ct.player6=ply.player_id or ct.player7=ply.player_id or ct.player8=ply.player_id or ct.player9=ply.player_id or ct.player10=ply.player_id or ct.player11=ply.player_id) 
+	inner join inet_master_playerclassification pcl on ply.pcat_id=pcl.pcl_id 
+	where ply.status='Y' and pcl.status='Y' and ply.sports_id=1 and ct.cust_team_id='$custteamid'";
+
+	$sql=$db->query($query) or die("error in query get_cktteampre --> ".$db->error);
+	
+	$data=fetchmysqlDB($sql);
+	return $data;
+}
+
+
+function get_playerkbd($pid){
+	
+	$db=get_my_db();
+	
+	$data=array();
+	
+	$query="select * from inet_master_player pl inner join inet_master_playerclassification pcl 
+	on pl.pcat_id=pcl.pcl_id inner join inet_master_team t on t.team_id=pl.team_id where player_id='$pid' and pl.status='Y'";
+	
+   $sql=$db->query($query) or die("error in query inet_master_player---->".$db->error);
+   
+   $data=fetchmysqlDB($sql);
+	return $data;
+
+}	
+
+function get_cktteamedit($custteamid){
+	
+	$db = get_my_db();
+	$data = array();
+	
+	$query="SELECT * FROM `inet_customer_team_cricket` ct inner join inet_master_player ply 
+	on (ct.player1=ply.player_id or ct.player2=ply.player_id or ct.player3=ply.player_id or ct.player4=ply.player_id or ct.player5=ply.player_id or ct.player6=ply.player_id or ct.player7=ply.player_id or ct.player8=ply.player_id or ct.player9=ply.player_id or ct.player10=ply.player_id or ct.player11=ply.player_id) 
+	inner join inet_master_playerclassification pcl on ply.pcat_id=pcl.pcl_id left join inet_master_team t on t.team_id=ply.team_id
+	where ply.status='Y' and pcl.status='Y' and ply.sports_id=1 and ct.cust_team_id='$custteamid'";
+
+	$sql=$db->query($query) or die("error in query get_cktteampre --> ".$db->error);
 	
 	$data=fetchmysqlDB($sql);
 	return $data;

@@ -10,7 +10,12 @@ $contactno = $data_back->{"contactno"};
 $birthdate = $data_back->{"birthdate"};
 $state = $data_back->{"state"};
 $gender = $data_back->{"gender"};
+if(!empty($data_back->{"referral"})){
 $referral = $data_back->{"referral"};
+}
+else {
+	$referral=0;
+	}
 $teamnm = $data_back->{"teamnm"};
 
 $db = get_my_db();

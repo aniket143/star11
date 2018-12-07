@@ -4,20 +4,17 @@ include("functions.php");
 
 $data_back = json_decode(file_get_contents('php://input'));
 
-$teamid1 = $data_back->{"teamid1"};
-$teamid2 = $data_back->{"teamid2"};
-//echo json_encode($teamid2);
+$cktcustteamid = $data_back->{"cktcustteamid"};
 
+//echo json_encode($cktcustteamid);  
 
-$result=get_pcl_cricket($teamid1,$teamid2);
-
-$i=$j=$k=$l=0;
+$result=get_cktteamedit($cktcustteamid);
 
 $posts = array();
 $posts1 = array();
 $posts2 = array();
 $posts3 = array();
-//$alldata=array();
+
 
 foreach($result as $val){
 	
@@ -31,10 +28,10 @@ foreach($result as $val){
 	$wkid=$val['player_id'];
 	$wkplayerpic=$val['player_pic'];
 	
-	$posts[] = array('wicketkeepername'=>$wkname,'pvalue'=>$pval,'wkteamcode'=>$wk_teamcode,'counts'=>$i,'wkplayerid'=>$wkid,'wkplayerpic'=>$wkplayerpic); 
+	$posts[] = array('wicketkeepername'=>$wkname,'wkteamcode'=>$wk_teamcode,'pvalue'=>$pval,'wkplayerid'=>$wkid,'wkplayerpic'=>$wkplayerpic); 
 }
-$i++;
 }
+
 
 else if($val['pcl_id']==2) {
 	
@@ -46,10 +43,9 @@ else if($val['pcl_id']==2) {
 	$batid=$val['player_id'];
 	$batplayerpic=$val['player_pic'];
 
-	$posts1[] = array('batsname'=>$batsmanname,'pvalue1'=>$pval1,'batteamcode'=>$batsman_teamcode,'counts1'=>$j,'batsmanplayerid'=>$batid,'batplayerpic'=>$batplayerpic); 
+	$posts1[] = array('batsname'=>$batsmanname,'batteamcode'=>$batsman_teamcode,'pvalue1'=>$pval1,'batsmanplayerid'=>$batid,'batplayerpic'=>$batplayerpic); 
 
 }
-$j++;
 }
 
 
@@ -63,13 +59,11 @@ else if($val['pcl_id']==4) {
 	$ARid=$val['player_id'];
 	$ARplayerpic=$val['player_pic'];
 	
-	$posts2[] = array('allroundername'=>$arname,'pvalue2'=>$pval2,'arteamcode'=>$ar_teamcode,'counts2'=>$k,'ARplayerid'=>$ARid,'ARplayerpic'=>$ARplayerpic); 
+	$posts2[] = array('allroundername'=>$arname,'arteamcode'=>$ar_teamcode,'pvalue2'=>$pval2,'ARplayerid'=>$ARid,'ARplayerpic'=>$ARplayerpic); 
  
 
 }
-$k++;
 }
-
 else if($val['pcl_id']==3) {
 	
 	if(!empty($val['player_id'])) {
@@ -80,11 +74,10 @@ else if($val['pcl_id']==3) {
 	$ballerid=$val['player_id'];
 	$ballerplayerpic=$val['player_pic'];
 	
-	$posts3[] = array('ballername'=>$ballername,'pvalue3'=>$pval3,'ballerteamcode'=>$baller_teamcode,'counts3'=>$l,'ballerplayerid'=>$ballerid,'ballerplayerpic'=>$ballerplayerpic); 
+	$posts3[] = array('ballername'=>$ballername,'ballteamcode'=>$baller_teamcode,'pvalue3'=>$pval3,'ballerplayerid'=>$ballerid,'ballerplayerpic'=>$ballerplayerpic); 
  
 
 }
-$l++;
 }
 }
 
@@ -94,8 +87,8 @@ $alldata2['data3']=$posts2;
 $alldata3['data4']=$posts3;
 
 
-$mainarray['cricketdata']=array($alldata, $alldata1,$alldata2,$alldata3);
+$mainarray['cricketdata']=array($alldata,$alldata1,$alldata2,$alldata3);
 
 echo json_encode($mainarray);
-
+	
 ?>

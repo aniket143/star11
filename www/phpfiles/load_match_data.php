@@ -1,6 +1,6 @@
 <?php
 
-//header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: *");
 
 include("functions.php");
 
@@ -19,6 +19,13 @@ foreach($result as $val){
 		
 	if(!empty($val['match_id'])) {
 		
+	$trnid=$val['trn_id'];
+	
+	$res=get_tournament($trnid);
+	
+	$trnname=$res[0]['trn_name'];
+	$trtypenname=$res[0]['trtype_name'];
+		
 	$sportsid=$val['sports_id'];
 	$matchid=$val['match_id'];
 	$trnid=$val['trn_id'];
@@ -32,7 +39,7 @@ foreach($result as $val){
 	$logo=explode(',',$logo);
 	$teamid=explode(',',$teamid);
 
-			$posts[] = array('sportsid1'=>$sportsid,'matchid1'=>$matchid,'trnid1'=>$trnid,'teamid1'=>$teamid[0],'teamid2'=>$teamid[1],'start_time'=> $start_time, 'team1'=> $team[0],'team2'=> $team[1],'logo1'=> $logo[0],'logo2'=> $logo[1],'counts'=>$i); 
+			$posts[] = array('trtypenname'=>$trtypenname,'trnname'=>$trnname,'sportsid1'=>$sportsid,'matchid1'=>$matchid,'trnid1'=>$trnid,'teamid1'=>$teamid[0],'teamid2'=>$teamid[1],'start_time'=> $start_time, 'team1'=> $team[0],'team2'=> $team[1],'logo1'=> $logo[0],'logo2'=> $logo[1],'counts'=>$i); 
 			//$posts1[] = array('start_time'=> $start_time, 'team1'=> $team[0],'team2'=> $team[1],'logo1'=> $logo[0],'logo2'=> $logo[1],'counts'=>$i); 
 
 }
@@ -67,8 +74,15 @@ $j++;
 else if($val['sports_id']==3) {
 	if(!empty($val['match_id'])) {
 		
-		$sportsid=$val['sports_id'];		
-		$matchid=$val['match_id'];
+	$trnidkbd=$val['trn_id'];
+	
+	$reskbd=get_tournament($trnidkbd);
+	
+	$trnnamekbd=$reskbd[0]['trn_name'];
+	$trtypennamekbd=$reskbd[0]['trtype_name'];
+		
+	$sportsid=$val['sports_id'];		
+	$matchid=$val['match_id'];
 	$trnid=$val['trn_id'];
 	$teamid=$val['teamid'];
 	$teamname=$val['teamname'];
@@ -80,7 +94,7 @@ else if($val['sports_id']==3) {
 	$logo=explode(',',$logo);
 	$teamid=explode(',',$teamid);
 
-			$posts2[] = array('sportsid3'=>$sportsid,'matchid3'=>$matchid,'trnid3'=>$trnid,'teamid5'=>$teamid[0],'teamid6'=>$teamid[1],'start_time2'=> $start_time,'team5'=> $team[0],'team6'=> $team[1],'logo5'=> $logo[0],'logo6'=> $logo[1],'counts2'=>$k); 
+			$posts2[] = array('trtypennamekbd'=>$trtypennamekbd,'trnnamekbd'=>$trnnamekbd,'sportsid3'=>$sportsid,'matchid3'=>$matchid,'trnid3'=>$trnid,'teamid5'=>$teamid[0],'teamid6'=>$teamid[1],'start_time2'=> $start_time,'team5'=> $team[0],'team6'=> $team[1],'logo5'=> $logo[0],'logo6'=> $logo[1],'counts2'=>$k); 
 			//$posts1[] = array('start_time'=> $start_time, 'team1'=> $team[0],'team2'=> $team[1],'logo1'=> $logo[0],'logo2'=> $logo[1],'counts'=>$i); 
 
 }

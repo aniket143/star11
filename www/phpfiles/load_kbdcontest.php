@@ -2,7 +2,7 @@
 
 include("functions.php");
 
-$result=get_contest();
+$result=get_kbdcontest();
 
 $contestdata=array();
 
@@ -13,7 +13,7 @@ foreach($result as $value){
 	$contestname=$value['contest_name'];
 	$entryfee=$value['entry_fee'];
 	$logo=$value['logo'];
-	$winningamt=$value['winning_amount'];
+	$winningamt=$value['total_winning_amount'];
 	$winners=$value['total_winner'];
 	$contestid=$value['contest_id'];
 	

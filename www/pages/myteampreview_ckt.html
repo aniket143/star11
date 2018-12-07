@@ -1,0 +1,77 @@
+ <div class="page" data-name="myteampreviewckt">
+          <div class="navbar">
+            <div class="navbar-inner">
+             <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+           </div>
+              <div class="title">My Team</div>
+             </div>
+          </div>
+          <div class="page-content" style="background-image:url('image/grass.jpg');">
+ 			 <div class="block" id="mycricketteam">
+ 			 
+          </div>
+          
+          
+<script id="mycktteampreview" type="text/template7">
+ 
+<div class="col-12 text-align-center" ><h3 style="color:white">WICKETKEEPER</h3></div>
+ <div class="row text-align-center">
+ {{#each cricketdata[0].data1}}
+ <div class="col"> 
+  <figure>
+ <img src="{{wkplayerpic}}" alt="wkplayerpic" width="20%">
+   <figcaption style="color:white">{{wicketkeepername}}</figcaption>
+  </figure>
+    </div>
+ {{/each}}
+  </div>
+ 
+ 
+<div class="col-12 text-align-center"><h3 style="color:white">BATSMAN</h3></div>
+<div class="row text-align-center">
+{{#each cricketdata[1].data2}}
+<div class="col"> 
+      <figure>
+        <img src="{{batplayerpic}}" alt="batsmanplayerpic" width="20%">
+        <figcaption style="color:white">{{batsname}}</figcaption>
+      </figure>
+    </div>
+{{/each}}
+</div>
+
+
+<div class="col-12 text-align-center"><h3 style="color:white">ALLROUNDER</h3></div>
+<div class="row text-align-center">
+  {{#each cricketdata[2].data3}}
+    <div class="col">
+      <figure>
+        <img src="{{ARplayerpic}}" alt="arplayerpic" width="25%">
+        <figcaption style="color:white">{{allroundername}}</figcaption>
+      </figure>
+    </div>
+{{/each}}
+</div>
+
+
+<div class="col-12 text-align-center"><h3 style="color:white">BALLER</h3></div>
+<div class="row text-align-center">
+  {{#each cricketdata[3].data4}}
+    <div class="col">
+      <figure>
+        <img src="{{ballerplayerpic}}" alt="Ballerplayerpic" width="25%">
+        <figcaption style="color:white">{{ballername}}</figcaption>
+      </figure>
+    </div>
+{{/each}}
+</div>
+
+ 
+
+</script>       
+</div>
+         
+</div>

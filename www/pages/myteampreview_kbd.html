@@ -20,10 +20,10 @@
  
 <div class="col-12 text-align-center" ><h3 style="color:white">DEFENDER</h3></div>
  <div class="row text-align-center">
- {{#each defenderdata.data1[0]}}
+ {{#each kabaddidata[0].defdata}}
  <div class="col"> 
   <figure>
- <img src="{{defenderplayerpic}}" alt="defenderplayerpic" width="20%">
+ <img src="{{defpic}}" alt="defenderplayerpic" width="20%">
    <figcaption style="color:white">{{defendername}}</figcaption>
   </figure>
     </div>
@@ -33,7 +33,7 @@
  
 <div class="col-12 text-align-center"><h3 style="color:white">ALL-ROUNDER</h3></div>
 <div class="row text-align-center">
-{{#each ARdata.data2[0]}}
+{{#each kabaddidata[1].ardata}}
 <div class="col"> 
       <figure>
         <img src="{{arplayerpic}}" alt="arplayerpic" width="20%">
@@ -46,7 +46,7 @@
 
 <div class="col-12 text-align-center"><h3 style="color:white">RAIDER</h3></div>
 <div class="row text-align-center">
-  {{#each raiderdata.data3[0]}}
+  {{#each kabaddidata[2].raiderdata}}
     <div class="col">
       <figure>
         <img src="{{raiderplayerpic}}" alt="raiderplayerpic" width="25%">

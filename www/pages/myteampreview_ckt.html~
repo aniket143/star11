@@ -1,4 +1,4 @@
- <div class="page" data-name="myteampreviewkbd">
+ <div class="page" data-name="myteampreviewckt">
           <div class="navbar">
             <div class="navbar-inner">
              <div class="left">
@@ -11,16 +11,16 @@
              </div>
           </div>
           <div class="page-content" style="background-image:url('image/grass.jpg');">
- 			 <div class="block" id="mykabadditeam">
+ 			 <div class="block" id="mycricketteam">
  			 
           </div>
           
           
-<script id="mykbdteampreview" type="text/template7">
+<script id="mycktteampreview" type="text/template7">
  
-<div class="col-12 text-align-center" ><h3 style="color:white">DEFENDER</h3></div>
+<div class="col-12 text-align-center" ><h3 style="color:white">WICKETKEEPER</h3></div>
  <div class="row text-align-center">
- {{#each kabaddidata[0].defdata}}
+ {{#each cricketdata[0].data1}}
  <div class="col"> 
   <figure>
  <img src="{{defpic}}" alt="defenderplayerpic" width="20%">
@@ -33,7 +33,7 @@
  
 <div class="col-12 text-align-center"><h3 style="color:white">ALL-ROUNDER</h3></div>
 <div class="row text-align-center">
-{{#each kabaddidata[0].ardata}}
+{{#each cricketdata[1].data2}}
 <div class="col"> 
       <figure>
         <img src="{{arplayerpic}}" alt="arplayerpic" width="20%">
@@ -46,7 +46,7 @@
 
 <div class="col-12 text-align-center"><h3 style="color:white">RAIDER</h3></div>
 <div class="row text-align-center">
-  {{#each kabaddidata[0].raiderdata}}
+  {{#each cricketdata[2].data3}}
     <div class="col">
       <figure>
         <img src="{{raiderplayerpic}}" alt="raiderplayerpic" width="25%">
@@ -55,6 +55,20 @@
     </div>
 {{/each}}
 </div>
+
+
+<div class="col-12 text-align-center"><h3 style="color:white">RAIDER</h3></div>
+<div class="row text-align-center">
+  {{#each cricketdata[3].data4}}
+    <div class="col">
+      <figure>
+        <img src="{{raiderplayerpic}}" alt="raiderplayerpic" width="25%">
+        <figcaption style="color:white">{{raidername}}</figcaption>
+      </figure>
+    </div>
+{{/each}}
+</div>
+
  
 
 </script>       

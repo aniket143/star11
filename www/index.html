@@ -327,13 +327,13 @@
 						<div class="card margin padding" id="">
 					 		<div class="row">
 								<img src="{{logo1}}" width="55px">
-									<div id="clocktm{{counts}}"  class="align-content-center"></div>
+									<div>{{trnname}}&nbsp;&nbsp{{trtypenname}}</div>
 								<img src="{{logo2}}" width="55px">
 							</div>
 			
 							<div class="row text-color-red">
 								<div>{{team1}}</div>
-									<span class="align-content-center">Vs</span>
+									<div id="clocktm{{counts}}"  class="align-content-center text-color-blue"></div>
 								<div>{{team2}}</div>
 							</div>
 			
@@ -370,14 +370,14 @@
 					<a href="/createteamkabaddi/?teamA={{team5}}&teamB={{team6}}&teamidA={{teamid5}}&teamidB={{teamid6}}&matchID={{matchid3}}&trnID={{trnid3}}&sportID={{sportsid3}}&dtetime={{start_time2}}">
 						<div class="card margin padding">
 					 		<div class="row">
-								<img src="{{logo5}}" width="55px">
-									<div id="clocktm2{{counts2}}"  class="align-content-center"></div>
-								<img src="{{logo6}}" width="55px">
+								<img src="{{logo5}}" width="55px" alt="team1">
+									<div>{{trnnamekbd}}&nbsp;&nbsp{{trtypennamekbd}}</div>
+								<img src="{{logo6}}" width="55px" alt="team2">
 							</div>
 			
 							<div class="row text-color-red">
 								<div>{{team5}}</div>
-									<span class="align-content-center">Vs</span>
+									<div id="clocktm2{{counts2}}"  class="align-content-center text-color-blue"></div>
 								<div>{{team6}}</div>
 							</div>
 			
@@ -557,7 +557,7 @@
  
 
  
-        <script type="text/javascript" src="cordova.js"></script>
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
   <!-- Framework7 library -->
   <script src="framework7/js/framework7.min.js"></script>
 

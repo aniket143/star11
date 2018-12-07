@@ -141,12 +141,6 @@ routes = [
   },
   
   
-  {
-    path: '/myteampreview_ckt/',
-    url: './pages/myteampreview_ckt.html',
-  },
-  
-  
    {
     path: '/aboutus/',
     url: './pages/aboutus.html',
