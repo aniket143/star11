@@ -3150,7 +3150,7 @@ $$(document).on('page:init', '.page[data-name="myteampreviewckt"]', function (e)
 	
 	var cktcustteamid = e.detail.route.query.custteamid;
 	
-	console.log("my"+cktcustteamid);
+	//console.log("my"+cktcustteamid);
 	
 	var mycktteampreviewTemplate = $$('#mycktteampreview').html();
    var compiledmycktteampreviewTemplate = Template7.compile(mycktteampreviewTemplate); 
@@ -3158,7 +3158,7 @@ $$(document).on('page:init', '.page[data-name="myteampreviewckt"]', function (e)
 	app.request.postJSON('http://139.59.36.238/star11APP/teampreviewckt.php', { cktcustteamid:cktcustteamid}, function (data) {
 	
 	
-	console.log("teampreview"+data);
+	//console.log("teampreview"+data);
 	
 	$$('#mycricketteam').html(compiledmycktteampreviewTemplate(data));  
 	 

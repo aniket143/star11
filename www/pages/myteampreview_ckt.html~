@@ -23,47 +23,47 @@
  {{#each cricketdata[0].data1}}
  <div class="col"> 
   <figure>
- <img src="{{defpic}}" alt="defenderplayerpic" width="20%">
-   <figcaption style="color:white">{{defendername}}</figcaption>
+ <img src="{{wkplayerpic}}" alt="wkplayerpic" width="20%">
+   <figcaption style="color:white">{{wicketkeepername}}</figcaption>
   </figure>
     </div>
  {{/each}}
   </div>
  
  
-<div class="col-12 text-align-center"><h3 style="color:white">ALL-ROUNDER</h3></div>
+<div class="col-12 text-align-center"><h3 style="color:white">BATSMAN</h3></div>
 <div class="row text-align-center">
 {{#each cricketdata[1].data2}}
 <div class="col"> 
       <figure>
-        <img src="{{arplayerpic}}" alt="arplayerpic" width="20%">
-        <figcaption style="color:white">{{arname}}</figcaption>
+        <img src="{{batplayerpic}}" alt="batsmanplayerpic" width="20%">
+        <figcaption style="color:white">{{batsname}}</figcaption>
       </figure>
     </div>
 {{/each}}
 </div>
 
 
-<div class="col-12 text-align-center"><h3 style="color:white">RAIDER</h3></div>
+<div class="col-12 text-align-center"><h3 style="color:white">ALLROUNDER</h3></div>
 <div class="row text-align-center">
   {{#each cricketdata[2].data3}}
     <div class="col">
       <figure>
-        <img src="{{raiderplayerpic}}" alt="raiderplayerpic" width="25%">
-        <figcaption style="color:white">{{raidername}}</figcaption>
+        <img src="{{ARplayerpic}}" alt="arplayerpic" width="25%">
+        <figcaption style="color:white">{{allroundername}}</figcaption>
       </figure>
     </div>
 {{/each}}
 </div>
 
 
-<div class="col-12 text-align-center"><h3 style="color:white">RAIDER</h3></div>
+<div class="col-12 text-align-center"><h3 style="color:white">BALLER</h3></div>
 <div class="row text-align-center">
   {{#each cricketdata[3].data4}}
     <div class="col">
       <figure>
-        <img src="{{raiderplayerpic}}" alt="raiderplayerpic" width="25%">
-        <figcaption style="color:white">{{raidername}}</figcaption>
+        <img src="{{ballerplayerpic}}" alt="Ballerplayerpic" width="25%">
+        <figcaption style="color:white">{{ballername}}</figcaption>
       </figure>
     </div>
 {{/each}}

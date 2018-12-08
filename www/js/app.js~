@@ -461,25 +461,25 @@ $$(document).on('page:init', '.page[data-name="createteam"]', function (e) {
 	
 		console.log(e);
 		
-		console.log('inside');
+		//console.log('inside');
 		
 		var userid = localStorage.userid;
 		
-		console.log(userid);
+		//console.log(userid);
 		
 		var cktcustteamid=e.detail.route.query.custteamid;
-		console.log(cktcustteamid);
+		//console.log(cktcustteamid);
 		
 		var action=e.detail.route.query.action;
-		console.log("action="+action);
+		//console.log("action="+action);
 		
 		
 		
 		if(typeof userid !== 'undefined' && userid !== ' '){
-			console.log('logon');
+			//console.log('logon');
 			
 		var teamname1=localStorage.teamname1afterlogin;
-		console.log(teamname1);
+		//console.log(teamname1);
 		var teamname2=localStorage.teamname2afterlogin;
 		var teamid1=localStorage.teamid1afterlogin;
 		var teamid2=localStorage.teamid2afterlogin;
