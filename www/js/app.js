@@ -106,7 +106,7 @@ var compiledkabaddiTemplate=Template7.compile(kabaddiTemplate);
 
 app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
 	
-	console.log("hiiiii arch");
+	//console.log("hiiiii arch");
 	
 	
 	if(typeof localStorage.userid === 'undefined' || localStorage.userid == ''){
@@ -1980,7 +1980,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
 	
     app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
     	
-    	console.log("hiarnvi");
+    //	console.log("hiarnvi");
       
     console.log(data);
     

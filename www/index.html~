@@ -324,7 +324,7 @@
        <script id="crickettemplate" type="text/template7">
           {{#each maindata[0].data1}}
 					<a href="/createteam/?teamA={{team1}}&teamB={{team2}}&teamidA={{teamid1}}&teamidB={{teamid2}}&matchID={{matchid1}}&trnID={{trnid1}}&sportID={{sportsid1}}&dtetime={{start_time}}">
-						<div class="card margin padding" id="">
+						<div class="card margin padding card-outline" id="">
 					 		<div class="row">
 								<img src="{{logo1}}" width="45px">
 									<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnname}}<br>

@@ -104,7 +104,7 @@ var compiledfootballTemplate = Template7.compile(footballTemplate);
 var compiledkabaddiTemplate=Template7.compile(kabaddiTemplate);
 
 
-app.request.postJSON('http://localhost:8080/archana/www/load_match_data.php', function (data) {
+app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
 	
 	console.log("hiiiii arch");
 	
@@ -231,7 +231,7 @@ $$('#my-login-screen .login-button').on('click', function () 	{
   }
   
   if (email !== '' && fpass !== '') {
- app.request.postJSON('http://localhost:8080/archana/www/chklogin.php', { email:email, pass:fpass }, function (data) {
+ app.request.postJSON('http://139.59.36.238/star11APP/chklogin.php', { email:email, pass:fpass }, function (data) {
       //$$('.articles').html(data);
       
       //app.dialog.alert(data[1]);
@@ -330,7 +330,7 @@ if (result==true) {
 		 
 else {
   	
-app.request.postJSON('http://localhost:8080/archana/www/user_registration.php', {mailid:mailid,password:password,contactno:contactno,birthdate:birthdate,gender:gender,state:state,referral:referral,teamnm:teamnm}, function (data) {
+app.request.postJSON('http://139.59.36.238/star11APP/user_registration.php', {mailid:mailid,password:password,contactno:contactno,birthdate:birthdate,gender:gender,state:state,referral:referral,teamnm:teamnm}, function (data) {
 	
 	
 	//console.log(data);
@@ -528,7 +528,7 @@ $$(document).on('page:init', '.page[data-name="createteam"]', function (e) {
 	var ballerTemplate=$$('#ballertemplate').html();
 	var compiledballerTemplate=Template7.compile(ballerTemplate);
 	
-	app.request.postJSON('http://localhost:8080/archana/www/load_cricketplayers.php', { teamid1:teamid1,teamid2:teamid2 }, function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/load_cricketplayers.php', { teamid1:teamid1,teamid2:teamid2 }, function (data) {
  	
  	
  	$$('#wicketkp').html(compiledwkTemplate(data)); 
@@ -544,7 +544,7 @@ $$(document).on('page:init', '.page[data-name="createteam"]', function (e) {
   	
    var ballerplylen=data.cricketdata["3"].data4.length;
 			
-		app.request.postJSON('http://localhost:8080/archana/www/editcktteam.php', {cktcustteamid:cktcustteamid}, function (data1) {
+		app.request.postJSON('http://139.59.36.238/star11APP/editcktteam.php', {cktcustteamid:cktcustteamid}, function (data1) {
 	
 	//console.log(data1);
 	
@@ -1599,7 +1599,7 @@ $$('.dynamic-popup').on('click', function (e) {
 
  var pid = $$(this).attr('id');
 
-	app.request.postJSON('http://localhost:8080/archana/www/getplayerdata.php', {pid:pid}, function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/getplayerdata.php', {pid:pid}, function (data) {
 		
 		console.log(data);
 		
@@ -1792,7 +1792,7 @@ $$('#savedata').on('click', function () 	{
     console.log("action123"+action);
      console.log("id"+cktcustteamid);
   		
-app.request.postJSON('http://localhost:8080/archana/www/saveteam.php', {allwk:allwk,allplydata:allplydata,MATCHID:MATCHID,TRNID:TRNID,userid:userid,captain:captain,vice_captain:vice_captain,action:action,cktcustteamid:cktcustteamid}, function(data){
+app.request.postJSON('http://139.59.36.238/star11APP/saveteam.php', {allwk:allwk,allplydata:allplydata,MATCHID:MATCHID,TRNID:TRNID,userid:userid,captain:captain,vice_captain:vice_captain,action:action,cktcustteamid:cktcustteamid}, function(data){
   			
   			console.log(data);
   			
@@ -1846,7 +1846,7 @@ $$(document).on('page:init', '.page[data-name="contest"]', function (e) {
 	localStorage.trnid1afterlogin=trnid1;
 	
 	
-	app.request.postJSON('http://localhost:8080/archana/www/load_contest.php',{testdata:"testdata",}, function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/load_contest.php',{testdata:"testdata",}, function (data) {
 	
 	console.log(data);
 	
@@ -1871,7 +1871,7 @@ $$(document).on('page:init', '.page[data-name="contest"]', function (e) {
 	var matchid=localStorage.matchid1afterlogin;
 	var trnid=localStorage.trnid1afterlogin;
 	
-	app.request.postJSON('http://localhost:8080/archana/www/checkteam.php',{userid:userid,matchid:matchid,trnid:trnid},function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/checkteam.php',{userid:userid,matchid:matchid,trnid:trnid},function (data) {
 	
 	
 	 localStorage.userteamid=data[1];
@@ -1882,7 +1882,7 @@ $$(document).on('page:init', '.page[data-name="contest"]', function (e) {
 	 
 	 var userteamid=localStorage.userteamid;
 	 console.log("userteamid"+userteamid)
-	 app.request.postJSON('http://localhost:8080/archana/www/savecontest.php',{userid:userid,userteamid:userteamid,contestid:contestid},function (data) {
+	 app.request.postJSON('http://139.59.36.238/star11APP/savecontest.php',{userid:userid,userteamid:userteamid,contestid:contestid},function (data) {
 	 	console.log("output"+data)
 	 if (data == "success") {
      app.dialog.alert('You Joined the contest....Now try one of our cash contest to win real money');
@@ -1897,7 +1897,7 @@ $$(document).on('page:init', '.page[data-name="contest"]', function (e) {
    
    if(entryfee > 0){
    	
-   app.request.postJSON('http://localhost:8080/archana/www/checkamount.php',{userid:userid},function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/checkamount.php',{userid:userid},function (data) {
    	
    	console.log("balance"+data);
    	console.log("entryfee"+entryfee);
@@ -1907,7 +1907,7 @@ $$(document).on('page:init', '.page[data-name="contest"]', function (e) {
    	var userteamid=localStorage.userteamid;
    	console.log(userteamid);
    	
-   app.request.postJSON('http://localhost:8080/archana/www/savecontest.php',{userid:userid,userteamid:userteamid,contestid:contestid},function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/savecontest.php',{userid:userid,userteamid:userteamid,contestid:contestid},function (data) {
 	 	
 	 if (data == "success") {
      app.dialog.alert('You have Joined the contest successfully......');
@@ -1957,7 +1957,7 @@ $$(document).on('page:init', '.page[data-name="allcontest"]', function (e) {
 	var compiledallcontestTemplate=Template7.compile(allcontestTemplate);
 	
 	
-	app.request.postJSON('http://localhost:8080/archana/www/load_contest.php',{testdata:"testdata"}, function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/load_contest.php',{testdata:"testdata"}, function (data) {
 	
 	console.log(data);
 	$$("#showallcontest1").html(compiledallcontestTemplate(data));
@@ -1978,9 +1978,9 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
     //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
     var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
 	
-    app.request.postJSON('http://localhost:8080/archana/www/load_match_data.php', function (data) {
+    app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
     	
-    	console.log("hiarnvi");
+    //	console.log("hiarnvi");
       
     console.log(data);
     
@@ -1997,7 +1997,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    var cktfixturesTemplate = $$('#cktfixturestemplate').html();
    var compiledcktfixturesTemplate = Template7.compile(cktfixturesTemplate);
    
-   app.request.postJSON('http://localhost:8080/archana/www/load_ckt_fixtures_data.php',{userid:userid},function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/load_ckt_fixtures_data.php',{userid:userid},function (data) {
    	
    console.log(data);
    	
@@ -2008,7 +2008,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    var cktliveTemplate = $$('#cktlivetemplate').html();
    var compiledcktliveTemplate = Template7.compile(cktliveTemplate);
    
-   app.request.postJSON('http://localhost:8080/archana/www/load_ckt_live_data.php',{userid:userid}, function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/load_ckt_live_data.php',{userid:userid}, function (data) {
    	
    	 console.log(data);
    	
@@ -2019,7 +2019,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    	  var cktresultTemplate = $$('#cktresulttemplate').html();
    var compiledcktresultTemplate = Template7.compile(cktresultTemplate);
    
-   app.request.postJSON('http://localhost:8080/archana/www/load_ckt_result_data.php',{userid:userid}, function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/load_ckt_result_data.php',{userid:userid}, function (data) {
    	
    	 console.log(data);
    	
@@ -2032,7 +2032,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    var kbdfixturesTemplate = $$('#kbdfixturestemplate').html();
    var compiledkbdfixturesTemplate = Template7.compile(kbdfixturesTemplate);
    
-   app.request.postJSON('http://localhost:8080/archana/www/load_kbd_fixtures_data.php',{userid:userid},function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/load_kbd_fixtures_data.php',{userid:userid},function (data) {
    	
    	
    	console.log("kbdfix"+data);
@@ -2044,7 +2044,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    	 var kbdliveTemplate = $$('#kbdlivetemplate').html();
    var compiledkbdliveTemplate = Template7.compile(kbdliveTemplate);
    
-   app.request.postJSON('http://localhost:8080/archana/www/load_kbd_live_data.php',{userid:userid}, function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/load_kbd_live_data.php',{userid:userid}, function (data) {
    	
    	console.log("kbdlive"+data);
    	
@@ -2055,7 +2055,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    	 var kbdresultTemplate = $$('#kbdresulttemplate').html();
    var compiledkbdresultTemplate = Template7.compile(kbdresultTemplate);
    
-   app.request.postJSON('http://localhost:8080/archana/www/load_kbd_result_data.php',{userid:userid}, function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/load_kbd_result_data.php',{userid:userid}, function (data) {
    	
    	 console.log("kbdresult"+data);
    	 
@@ -2086,7 +2086,7 @@ $$(document).on('page:init', '.page[data-name="joinedcontests"]', function (e) {
 	 
 	 var userid = localStorage.userid;
 	 
-	 app.request.postJSON('http://localhost:8080/archana/www/load_joinedcontest.php',{userid:userid},function (data) {
+	 app.request.postJSON('http://139.59.36.238/star11APP/load_joinedcontest.php',{userid:userid},function (data) {
 
       console.log(data);
       
@@ -2103,7 +2103,7 @@ $$(document).on('page:init', '.page[data-name="joinedcontestformatch"]', functio
 	 var userid = localStorage.userid;
 	 var matchid = e.detail.route.query.matchid;
 	 
-	 app.request.postJSON('http://localhost:8080/archana/www/load_joinedcontestformatch.php',{userid:userid,matchid:matchid},function (data) {
+	 app.request.postJSON('http://139.59.36.238/star11APP/load_joinedcontestformatch.php',{userid:userid,matchid:matchid},function (data) {
 
       //console.log(data);
       
@@ -2116,7 +2116,7 @@ $$('.viewusers').on('click', function (e){
 	
 	var contestid = $$(chkid).data("contestid");
 	
- app.request.postJSON('http://localhost:8080/archana/www/load_allcontestusers.php',{contestid:contestid,matchid:matchid},function (data) {
+ app.request.postJSON('http://139.59.36.238/star11APP/load_allcontestusers.php',{contestid:contestid,matchid:matchid},function (data) {
  
     
       var contestname=data.contestuserdata["0"].contestname;
@@ -2144,7 +2144,7 @@ $$(document).on('page:init', '.page[data-name="contestdetails"]', function (e) {
 	 
 	 var matchid=localStorage.matchid1afterlogin;
 	 
-	 app.request.postJSON('http://localhost:8080/archana/www/load_allcontestusers.php',{contestid:contestid,matchid:matchid},function (data) {
+	 app.request.postJSON('http://139.59.36.238/star11APP/load_allcontestusers.php',{contestid:contestid,matchid:matchid},function (data) {
  
       console.log(data);
       
@@ -2164,7 +2164,7 @@ $$(document).on('page:init','.page[data-name="personaldetails"]', function (e) {
 	
 	console.log(userid);
 	 
-	 app.request.postJSON('http://localhost:8080/archana/www/load_personaldetails.php',{userid:userid},function (data) {
+	 app.request.postJSON('http://139.59.36.238/star11APP/load_personaldetails.php',{userid:userid},function (data) {
  
       console.log(data);
       
@@ -2196,7 +2196,7 @@ $$('.savedetails').on('click', function (){
 	 
 	 console.log(teamname);
 	 
-	 app.request.postJSON('http://localhost:8080/archana/www/save_personaldetails.php',{userid:userid,teamname:teamname,fullname:fullname,dob:dob,state:state},function (data) {
+	 app.request.postJSON('http://139.59.36.238/star11APP/save_personaldetails.php',{userid:userid,teamname:teamname,fullname:fullname,dob:dob,state:state},function (data) {
 	 	
 	 	console.log(data);
 	 	
@@ -2267,7 +2267,7 @@ $$(document).on('page:init', '.page[data-name="createteamkabaddi"]', function (e
 	var raiderTemplate=$$('#raidertemplate').html();
 	var compiledraiderTemplate=Template7.compile(raiderTemplate);
 	
-	app.request.postJSON('http://localhost:8080/archana/www/load_kabbaddiplayers.php', { teamid1:teamid1,teamid2:teamid2 }, function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/load_kabbaddiplayers.php', { teamid1:teamid1,teamid2:teamid2 }, function (data) {
  	
  	console.log(data);
  	
@@ -2645,7 +2645,7 @@ $$('.dynamic-popup').on('click', function (e) {
 
  var pid = $$(this).attr('id');
 
-	app.request.postJSON('http://localhost:8080/archana/www/getplayerdata_kbd.php', {pid:pid}, function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/getplayerdata_kbd.php', {pid:pid}, function (data) {
 		
 		console.log(data);
 		
@@ -2822,7 +2822,7 @@ $$('#savedata').on('click', function () 	{
      //console.log(allplydata);
      
   		
-app.request.postJSON('http://localhost:8080/archana/www/saveteam_kbd.php', {allplykbddata:allplykbddata,MATCHID_KBD:MATCHID_KBD,TRNID_KBD:TRNID_KBD,userid:userid,captain:captain,vice_captain:vice_captain}, function (data) {
+app.request.postJSON('http://139.59.36.238/star11APP/saveteam_kbd.php', {allplykbddata:allplykbddata,MATCHID_KBD:MATCHID_KBD,TRNID_KBD:TRNID_KBD,userid:userid,captain:captain,vice_captain:vice_captain}, function (data) {
   			
   			 if (data == "Success") {
   			 	
@@ -2876,7 +2876,7 @@ $$(document).on('page:init', '.page[data-name="contestkbd"]', function (e) {
 	//console.log(teamid1);
 	//console.log(teamid2);
 	
-	app.request.postJSON('http://localhost:8080/archana/www/load_kbdcontest.php',{testdata:"testdata"}, function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/load_kbdcontest.php',{testdata:"testdata"}, function (data) {
 	
 	console.log(data);
 	
@@ -2898,7 +2898,7 @@ $$(document).on('page:init', '.page[data-name="contestkbd"]', function (e) {
 	var matchid=localStorage.matchid1afterlogin;
 	var trnid=localStorage.trnid1afterlogin;
 	
-	app.request.postJSON('http://localhost:8080/archana/www/checkteamforkabaddi.php',{userid:userid,matchid:matchid,trnid:trnid},function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/checkteamforkabaddi.php',{userid:userid,matchid:matchid,trnid:trnid},function (data) {
 	
 	
 	 localStorage.userteamid=data[1];
@@ -2909,7 +2909,7 @@ $$(document).on('page:init', '.page[data-name="contestkbd"]', function (e) {
 	 
 	 var userteamid=localStorage.userteamid;
 	 console.log("userteamid"+userteamid)
-	 app.request.postJSON('http://localhost:8080/archana/www/savecontest.php',{userid:userid,userteamid:userteamid,contestid:contestid},function (data) {
+	 app.request.postJSON('http://139.59.36.238/star11APP/savecontest.php',{userid:userid,userteamid:userteamid,contestid:contestid},function (data) {
 	 	console.log("output"+data)
 	 if (data == "success") {
      app.dialog.alert('You Joined the contest....Now try one of our cash contest to win real money');
@@ -2924,7 +2924,7 @@ $$(document).on('page:init', '.page[data-name="contestkbd"]', function (e) {
    
    if(entryfee > 0){
    	
-   app.request.postJSON('http://localhost:8080/archana/www/checkamount.php',{userid:userid},function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/checkamount.php',{userid:userid},function (data) {
    	
    	console.log("balance"+data);
    	console.log("entryfee"+entryfee);
@@ -2934,7 +2934,7 @@ $$(document).on('page:init', '.page[data-name="contestkbd"]', function (e) {
    	var userteamid=localStorage.userteamid;
    	console.log(userteamid);
    	
-   app.request.postJSON('http://localhost:8080/archana/www/savecontest.php',{userid:userid,userteamid:userteamid,contestid:contestid},function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/savecontest.php',{userid:userid,userteamid:userteamid,contestid:contestid},function (data) {
 	 	
 	 if (data == "success") {
      app.dialog.alert('You have Joined the contest successfully......');
@@ -2983,7 +2983,7 @@ $$(document).on('page:init', '.page[data-name="joinedcontestskbd"]', function (e
 	 
 	 var userid = localStorage.userid;
 	 
-	 app.request.postJSON('http://localhost:8080/archana/www/load_kbdjoinedcontest.php',{userid:userid},function (data) {
+	 app.request.postJSON('http://139.59.36.238/star11APP/load_kbdjoinedcontest.php',{userid:userid},function (data) {
 
       console.log(data);
       
@@ -3035,7 +3035,7 @@ $$(document).on('page:init', '.page[data-name="mykbdteam"]', function (e) {
    var mykbdteamTemplate = $$('#mykbdteamtemplate').html();
    var compiledmykbdteamTemplate = Template7.compile(mykbdteamTemplate); 	
    
-   app.request.postJSON('http://localhost:8080/archana/www/load_team.php', { userid:userid,matchid:matchid,trnid:trnid}, function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/load_team.php', { userid:userid,matchid:matchid,trnid:trnid}, function (data) {
  	
    console.log(data);
  
@@ -3056,7 +3056,7 @@ $$(document).on('page:init', '.page[data-name="myteampreviewkbd"]', function (e)
 	var mykbdteampreviewTemplate = $$('#mykbdteampreview').html();
    var compiledmykbdteampreviewTemplate = Template7.compile(mykbdteampreviewTemplate); 
    
-	app.request.postJSON('http://localhost:8080/archana/www/teampreviewkbd.php', { kbdcustteamid:kbdcustteamid}, function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/teampreviewkbd.php', { kbdcustteamid:kbdcustteamid}, function (data) {
 	
 	
 	console.log("teampreview"+data);
@@ -3082,7 +3082,7 @@ $$(document).on('page:init', '.page[data-name="myteampreviewkbd"]', function (e)
        //console.log("email"+email);
         // console.log("mobileno"+mobileno);
 	
-	app.request.postJSON('http://localhost:8080/archana/www/mobile_verify.php', { userid:userid,email:email,mobileno:mobileno}, function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/mobile_verify.php', { userid:userid,email:email,mobileno:mobileno}, function (data) {
 	
 	console.log(data);
 	
@@ -3111,7 +3111,7 @@ $$(document).on('page:init', '.page[data-name="myteampreviewkbd"]', function (e)
       var panimage = $$('#panimage').val();
 		console.log(panimage);
 		
-		app.request.postJSON('http://localhost:8080/archana/www/pan_verify.php', {userid:userid,username:username,panno:panno,birthdate:birthdate,state:state}, function (data) {
+		app.request.postJSON('http://139.59.36.238/star11APP/pan_verify.php', {userid:userid,username:username,panno:panno,birthdate:birthdate,state:state}, function (data) {
 		
 		console.log(data);
 		
@@ -3134,7 +3134,7 @@ $$(document).on('page:init', '.page[data-name="mycktteam"]', function (e) {
    var mycktteamTemplate = $$('#mycktteamtemplate').html();
    var compiledmycktteamTemplate = Template7.compile(mycktteamTemplate); 	
    
-   app.request.postJSON('http://localhost:8080/archana/www/load_cktteam.php', { userid:userid,matchid:matchid,trnid:trnid}, function (data) {
+   app.request.postJSON('http://139.59.36.238/star11APP/load_cktteam.php', { userid:userid,matchid:matchid,trnid:trnid}, function (data) {
  	
    console.log(data);
  
@@ -3155,7 +3155,7 @@ $$(document).on('page:init', '.page[data-name="myteampreviewckt"]', function (e)
 	var mycktteampreviewTemplate = $$('#mycktteampreview').html();
    var compiledmycktteampreviewTemplate = Template7.compile(mycktteampreviewTemplate); 
    
-	app.request.postJSON('http://localhost:8080/archana/www/teampreviewckt.php', { cktcustteamid:cktcustteamid}, function (data) {
+	app.request.postJSON('http://139.59.36.238/star11APP/teampreviewckt.php', { cktcustteamid:cktcustteamid}, function (data) {
 	
 	
 	console.log("teampreview"+data);

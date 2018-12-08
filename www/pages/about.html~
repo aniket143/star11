@@ -51,12 +51,12 @@
       </div>
       <div class="tab" id="tab2">
         <div class="block" id="load_football_match">
-          <p>Donec iaculis posuere massa sed dignissim...</p>
+          <p>Comming Soon</p>
         </div>
       </div>
       <div class="tab" id="tab3">
         <div class="block" id="load_kabaddi_match">
-          <p> </p>
+          <p>Error On Loading data..Please refresh</p>
         </div>
       </div>
     </div>
@@ -440,7 +440,8 @@
                     <div class="item-title">Foundation</div>
                   </div>
                 </a>
-              </li> -->
+              </li> 
+              <!-- 																	<span class="align-content-center">{{trtypennamekbd}}</span> -->-->
            </ul>
 </div>
 
@@ -453,10 +454,12 @@
           {{#each maindata[0].data1}}
 					<a href="/contests/?teamA={{team1}}&teamB={{team2}}&teamidA={{teamid1}}&teamidB={{teamid2}}&matchID={{matchid1}}&trnID={{trnid1}}&dtetime={{start_time}}">
 						<div class="card margin padding" id="">
+						
 					 		<div class="row">
-								<img src="{{logo1}}" width="55px">
-									<div>{{trnname}}&nbsp;&nbsp{{trtypenname}}</div>
-								<img src="{{logo2}}" width="55px">
+								<img src="{{logo1}}" width="45px">
+																				<span class="align-content-center">{{trnname}}</span>
+
+								<img src="{{logo2}}" width="45px">
 							</div>
 			
 							<div class="row text-color-red">
@@ -476,9 +479,9 @@
 					<a href="/contests/">
 						<div class="card margin padding">
 					 		<div class="row">
-								<img src="{{logo3}}" width="55px">
+								<img src="{{logo3}}" width="45px">
 									<div id="clocktm1{{counts1}}"  class="align-content-center"></div>
-								<img src="{{logo4}}" width="55px">
+								<img src="{{logo4}}" width="45px">
 							</div>
 			
 							<div class="row text-color-red">
@@ -498,9 +501,10 @@
 					<a href="/contestskabaddi/?teamA={{team5}}&teamB={{team6}}&teamidA={{teamid5}}&teamidB={{teamid6}}&matchID={{matchid3}}&trnID={{trnid3}}&sportID={{sportsid3}}&dtetime={{start_time2}}">
 						<div class="card margin padding">
 					 		<div class="row">
-								<img src="{{logo5}}" width="55px">
-									<div>{{trnnamekbd}}&nbsp;&nbsp{{trtypennamekbd}}</div>
-								<img src="{{logo6}}" width="55px">
+								<img src="{{logo5}}" width="45px">
+																	<span class="align-content-center">{{trnnamekbd}}</span>
+
+								<img src="{{logo6}}" width="45px">
 							</div>
 			
 							<div class="row text-color-red">
@@ -520,14 +524,15 @@
 					<a href="/joinedcontestformatch/?matchid={{matchid1}}">
 						<div class="card margin padding" id="">
 					 		<div class="row">
-								<img src="{{logo1}}" width="55px">
-									<div id="clocktm{{counts}}"  class="align-content-center"></div>
-								<img src="{{logo2}}" width="55px">
+								<img src="{{logo1}}" width="45px">
+																				<span class="align-content-center">{{trnname}}</span>
+
+								<img src="{{logo2}}" width="45px">
 							</div>
 			
 							<div class="row text-color-red">
 								<div>{{team1}}</div>
-									<span class="align-content-center">Vs</span>
+									<div id="clocktm{{counts}}"  class="align-content-center text-color-blue"></div>
 								<div>{{team2}}</div>
 							</div>
 			
@@ -541,14 +546,15 @@
 					<a href="">
 						<div class="card margin padding" id="">
 					 		<div class="row">
-								<img src="{{logo1}}" width="55px">
-									<div id="clocktm{{counts}}"  class="align-content-center"></div>
-								<img src="{{logo2}}" width="55px">
+								<img src="{{logo1}}" width="45px">
+								<span class="align-content-center">{{trnname}}</span>
+
+    							<img src="{{logo2}}" width="45px">
 							</div>
 			
 							<div class="row text-color-red">
 								<div>{{team1}}</div>
-									<span class="align-content-center">Vs</span>
+									<div id="clocktm{{counts}}"  class="align-content-center text-color-blue"></div>
 								<div>{{team2}}</div>
 							</div>
 			
@@ -564,13 +570,13 @@
 						<div class="card margin padding" id="">
 					 		<div class="row">
 								<img src="{{logo1}}" width="55px">
-									<div id="clocktm{{counts}}"  class="align-content-center"></div>
+								<span class="align-content-center">{{trnname}}</span>
 								<img src="{{logo2}}" width="55px">
 							</div>
 			
 							<div class="row text-color-red">
 								<div>{{team1}}</div>
-									<span class="align-content-center">Vs</span>
+									<div id="clocktm{{counts}}"  class="align-content-center text-color-blue"></div>
 								<div>{{team2}}</div>
 							</div>
 			
@@ -653,6 +659,6 @@
     <style>
     
 .card-content .card-content-padding {
-  padding: 15px 10px;
+  padding: 10px 10px;
 }    
     </style>
