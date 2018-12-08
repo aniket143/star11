@@ -429,7 +429,7 @@
    {{#each ballerdata.data4[0]}}
     <div class="col">
       <figure>
-        <img src="{{ballerplayerpic}}" alt="ballerplayerpic" width="Auto">
+        <img src="{{ballerplayerpic}}" alt="ballerplayerpic" width="40px">
         <figcaption style="color:white">{{ballername}}</figcaption>
       </figure>
     </div>
