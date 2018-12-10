@@ -392,7 +392,7 @@
  <div class="col-12 text-align-center" ><h3 style="color:white">WICKET-KEEPER</h3></div>
  <div class="container col-12 text-align-center">
  {{#each wkdata.data1[0]}}
- <img src="{{wkplayerpic}}" alt="wkplayerpic" width="40px">
+ <img src="{{wkplayerpic}}" alt="wkplayerpic" width="30px">
  <div style="font-size:20px;color:white"><strong>{{wkname}}</strong></div>
  {{/each}}
   </div>
@@ -403,7 +403,7 @@
 {{#each batsmandata.data2[0]}}
 <div class="col"> 
       <figure>
-        <img src="{{batplayerpic}}" alt="batsmanplayerpic" width="40px">
+        <img src="{{batplayerpic}}" alt="batsmanplayerpic" width="30px">
         <figcaption style="color:white">{{batsmanname}}</figcaption>
       </figure>
     </div>
@@ -416,7 +416,7 @@
   {{#each ardata.data3[0]}}
     <div class="col">
       <figure>
-        <img src="{{arplayerpic}}" alt="ARplayerpic" width="40px">
+        <img src="{{arplayerpic}}" alt="ARplayerpic" width="30px">
         <figcaption style="color:white">{{arname}}</figcaption>
       </figure>
     </div>
@@ -429,7 +429,7 @@
    {{#each ballerdata.data4[0]}}
     <div class="col">
       <figure>
-        <img src="{{ballerplayerpic}}" alt="ballerplayerpic" width="40px">
+        <img src="{{ballerplayerpic}}" alt="ballerplayerpic" width="30px">
         <figcaption style="color:white">{{ballername}}</figcaption>
       </figure>
     </div>
