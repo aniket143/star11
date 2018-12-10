@@ -457,15 +457,9 @@
 						
 					 		<div class="row">
 								<img src="{{logo1}}" width="45px">
-																				<span class="align-content-center">{{trnname}}</span>
-
+								<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnname}}<br>
+									<span id="clocktm{{counts}}"></span></div>												
 								<img src="{{logo2}}" width="45px">
-							</div>
-			
-							<div class="row text-color-red">
-								<div>{{team1}}</div>
-									<div id="clocktm{{counts}}"  class="align-content-center text-color-blue"></div>
-								<div>{{team2}}</div>
 							</div>
 			
 						</div>
@@ -480,16 +474,10 @@
 						<div class="card margin padding">
 					 		<div class="row">
 								<img src="{{logo3}}" width="45px">
-									<div id="clocktm1{{counts1}}"  class="align-content-center"></div>
+								<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnname}}<br>
+									<span id="clocktm1{{counts}}"></span></div>
 								<img src="{{logo4}}" width="45px">
-							</div>
-			
-							<div class="row text-color-red">
-								<div>{{team3}}</div>
-									<span class="align-content-center">Vs</span>
-								<div>{{team4}}</div>
-							</div>
-			
+							</div>		
 						</div>
 					</a>          
           {{/each}}
@@ -502,17 +490,10 @@
 						<div class="card margin padding">
 					 		<div class="row">
 								<img src="{{logo5}}" width="45px">
-																	<span class="align-content-center">{{trnnamekbd}}</span>
-
+										<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnnamekbd}}<br>
+									<span id="clocktm2{{counts}}"></span></div>
 								<img src="{{logo6}}" width="45px">
-							</div>
-			
-							<div class="row text-color-red">
-								<div>{{team5}}</div>
-									<div id="clocktm2{{counts2}}"  class="align-content-center text-color-blue"></div>
-								<div>{{team6}}</div>
-							</div>
-			
+							</div>			
 						</div>
 					</a>          
           {{/each}}
@@ -525,17 +506,10 @@
 						<div class="card margin padding" id="">
 					 		<div class="row">
 								<img src="{{logo1}}" width="45px">
-																				<span class="align-content-center">{{trnname}}</span>
-
+								<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnname}}<br>
+									<span id="clocktm{{counts}}"></span></div>
 								<img src="{{logo2}}" width="45px">
-							</div>
-			
-							<div class="row text-color-red">
-								<div>{{team1}}</div>
-									<div id="clocktm{{counts}}"  class="align-content-center text-color-blue"></div>
-								<div>{{team2}}</div>
-							</div>
-			
+							</div>			
 						</div>
 					</a>          
           {{/each}}
@@ -547,17 +521,11 @@
 						<div class="card margin padding" id="">
 					 		<div class="row">
 								<img src="{{logo1}}" width="45px">
-								<span class="align-content-center">{{trnname}}</span>
+										<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnname}}<br>
+									<span id="clocktm{{counts}}"></span></div>
 
     							<img src="{{logo2}}" width="45px">
-							</div>
-			
-							<div class="row text-color-red">
-								<div>{{team1}}</div>
-									<div id="clocktm{{counts}}"  class="align-content-center text-color-blue"></div>
-								<div>{{team2}}</div>
-							</div>
-			
+							</div>			
 						</div>
 					</a>          
           {{/each}}
@@ -570,14 +538,9 @@
 						<div class="card margin padding" id="">
 					 		<div class="row">
 								<img src="{{logo1}}" width="55px">
-								<span class="align-content-center">{{trnname}}</span>
+									<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnname}}<br>
+									<span id="clocktm{{counts}}"></span></div>
 								<img src="{{logo2}}" width="55px">
-							</div>
-			
-							<div class="row text-color-red">
-								<div>{{team1}}</div>
-									<div id="clocktm{{counts}}"  class="align-content-center text-color-blue"></div>
-								<div>{{team2}}</div>
 							</div>
 			
 						</div>
@@ -655,10 +618,3 @@
    
     </div>
           
-        
-    <style>
-    
-.card-content .card-content-padding {
-  padding: 10px 10px;
-}    
-    </style>
