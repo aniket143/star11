@@ -61,7 +61,7 @@ Instantly withdraw your winnings from your Star11 account (One Time Verification
   <table style="border: 1px solid;">
    
     <thead>
-      <tr style="background: #bbb;">
+      <tr style="background: #bbb; border: 1px solid;">
    <th class="label-cell"><strong>Player Type</th>
         <th class="numeric-cell"><strong>C1</th>
         <th class="numeric-cell"><strong>C2</th>
@@ -71,8 +71,8 @@ Instantly withdraw your winnings from your Star11 account (One Time Verification
      
       </tr>
     </thead>
-   <tbody>
-         <tr style="border: 1px solid;">
+  
+         <tr">
         <td class="label-cell">Raiders</td>
         <td class="numeric-cell">1</td>
         <td class="numeric-cell">2</td>
@@ -80,7 +80,7 @@ Instantly withdraw your winnings from your Star11 account (One Time Verification
         <td class="numeric-cell">3</td>
         <td class="numeric-cell">3</td>
         </tr>
-        <tr style="border: 1px solid;">
+        <tr>
         <td class="label-cell">All Rounders</td>
         <td class="numeric-cell">2</td>
         <td class="numeric-cell">1</td>
@@ -89,7 +89,7 @@ Instantly withdraw your winnings from your Star11 account (One Time Verification
         <td class="numeric-cell">2</td>
         
         </tr>
-        <tr style="border: 1px solid;">
+        <tr>
         <td class="label-cell">Defenders</td>
         <td class="numeric-cell">4</td>
         <td class="numeric-cell">4</td>
@@ -99,7 +99,7 @@ Instantly withdraw your winnings from your Star11 account (One Time Verification
         
         </tr>
         
-        <tr style="border: 1px solid;">
+        <tr>
         <td class="label-cell">Totle</td>
         <td class="numeric-cell">7</td>
         <td class="numeric-cell">7</td>
@@ -172,21 +172,104 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
     </li>
 
 
-    <li class="accordion-item"><a href="#" class="item-content item-link">
+    <li class="accordion-item">
+      <a href="#" class="item-content item-link">
         <div class="item-inner">
           <div class="item-title">Fantasy Cricket Points System</div>
-
-        </div></a>
-      <div class="accordion-item-content">
+        </div>
+      </a>
+       <div class="accordion-item-content">
         <div class="card" style="background-color: #e8e8e8;">
   <div class="card-content card-content-padding">
-    <p><strong><u>T20</u>:</strong></p><br>      <!-- ---------[T20]--------- -->
-    <p><b>BATTING </b></p>
+      <div class="card data-table">
+<table style=  "border: 1px solid;">
+    <thead>
+      <tr style="background: #bbb; border: 1px solid;">
+        <th class="label-cell"><strong>Action</strong></th>
+        <th class="numeric-cell"><strong>Points</strong> </th>
+         </tr>
+    </thead>
+<tbody>
+      <tr>
+        <td class="label-cell">Being part of the Starting 7</td>
+        <td class="numeric-cell">1</td>
+        
+      </tr>
+      <tr>
+        <td class="label-cell">Making a substitute appearance</td>
+        <td class="numeric-cell">5</td>
+      </tr>
+      <tr>
+        <td class="label-cell">Each successful raid touch point</td>
+        <td class="numeric-cell">2</td>
+      </tr>
+      <tr>
+        <td class="label-cell">Raid Bonus</td>
+        <td class="numeric-cell">3</td>
+      </tr>
+      <tr>
+        <td class="label-cell">Each successful tackle</td>
+        <td class="numeric-cell">11</td>
+        </tr>
+      <tr>
+        <td class="label-cell">Pushing all out (starting 7)</td>
+        <td class="numeric-cell">11</td>
+        
+      </tr>
+      <tr>
+        <td class="label-cell">Getting all out (starting 7)</td>
+        <td class="numeric-cell">11</td>
+        
+      </tr>
+      <tr>
+        <td class="label-cell">Green Card</td>
+        <td class="numeric-cell">11</td>
+        
+      </tr>
+      <tr>
+        <td class="label-cell">Yellow Card Red Card</td>
+        <td class="numeric-cell">11</td>
+        
+      </tr>
+      <tr>
+        <td class="label-cell">Red Card</td>
+        <td class="numeric-cell">11</td>
+       
+      </tr>
+      </tbody>
+  </table>
+</div>
+<body>
+<ul>
+  <li>
+    The player you choose to be your team’s Captain will receive 2 times the points
+  </li>
+  <li>The Vice-Captain will receive 1.5 times the points for his performance</li>
+  <li>Points for substitutes will be considered only  for the first time he enters the field of play</li>
+  <li>Points for super tackle will be added to the points of a successful tackle (5 pts for successful +4 pts for super tackle)</li>
+  <li>Points for raid touch will be given to the raider for every opponent he gets out or puts out</li>
+  <li>Points for pushing all out will only be considered for players who are part of the starting</li>
+  <li>Points for getting all out will only be considered for players who are part of the starting 7</li>
+</ul>
+</body>
+
+</div>
+
+
+</div>
+</div>
+</li>
+
+      <!-- <div class="accordion-item-content">
+        <div class="card" style="background-color: #e8e8e8;">
+  <div class="card-content card-content-padding">
+    <p><strong><u>Here’s how your Star11fantasy team earns Fantasy points</u>:</strong></p><br>      <!-- ---------[T20]--------- -->
+    <!-- <p><b>BATTING </b></p>
     <div class="data-table">
 <div class="data-table data-table-init card">
   <table>
       <tr>
-        <td class="label-cell">Run</td>
+        <td class="label-cell">Action</td>
         <td class="numeric-cell">+ 0.5</td>
         </tr>
         <tr>
@@ -208,8 +291,10 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="label-cell">Dismissal for a duck(Batsmen, Wicket-Keeper & All-Rounder)</td>
         <td class="numeric-cell">-3</td>
         </tr>
-    </tbody>
+    
   </table>
+
+</div>
 </div>
  <p><strong>BOWLING </strong></p>
 <div class="data-table">
@@ -233,10 +318,11 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="label-cell">Maiden Over</td>
         <td class="numeric-cell">+4</td>
         </tr>
-         
-        </tbody>
-  </table>
+         </table> 
 </div>
+</div>
+
+
 <p><strong>FIEDLING </strong></p>
 <div class="data-table">
 <div class="data-table data-table-init card">
@@ -255,8 +341,9 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="numeric-cell">+4 thrower &nbsp; +2 catcher</td>
         </tr>
         
-        </tbody>
+       
   </table>
+</div>
 </div>
     <p><strong>OTHERS </strong></p>
     <div class="data-table">
@@ -275,6 +362,7 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="numeric-cell">+ 3</td>
         </tr>
   </table>
+</div>
 </div>
 
 
@@ -308,6 +396,7 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         </tr>
   </table>
 </div>
+</div>
 <p><strong>STRIKR RATE (Except Bowler) </strong></p>
     <div class="data-table">
 <div class="data-table data-table-init card">
@@ -325,10 +414,12 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="numeric-cell">-3</td>
         </tr>
   </table>
-</div><br>
-                          <!----------[OID]-------------->
+</div>
+</div>
+</<br> -->
+                          <!----------[ODI]-------------->
 
-<p><strong><u>ODI</u> :</strong></p><br>
+<!-- <p><strong><u>ODI</u> :</strong></p><br>
 <p><b>BATTING </b></p>
     <div class="data-table">
 <div class="data-table data-table-init card">
@@ -356,9 +447,10 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="label-cell">Dismissal for a duck(Batsmen, Wicket-Keeper & All-Rounder)</td>
         <td class="numeric-cell">-4</td>
         </tr>
-    </tbody>
-  </table>
-</div>
+      </table>
+    </div>
+  </div>
+
 <p><strong>BOWLING </strong></p>
 <div class="data-table">
 <div class="data-table data-table-init card">
@@ -381,10 +473,12 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="label-cell">Maiden Over</td>
         <td class="numeric-cell">+2</td>
         </tr>
-         
-        </tbody>
-  </table>
-</div>
+      </table>
+    </div>
+  </div>
+        
+ 
+
 <p><strong>FIEDLING </strong></p>
 <div class="data-table">
 <div class="data-table data-table-init card">
@@ -402,10 +496,10 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="label-cell">Run Out</td>
         <td class="numeric-cell">+4 thrower &nbsp; +2 catcher</td>
         </tr>
-        
-        </tbody>
-  </table>
+        </table>
 </div>
+</div>
+
     <p><strong>OTHERS </strong></p>
     <div class="data-table">
 <div class="data-table data-table-init card">
@@ -423,6 +517,7 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="numeric-cell">+ 3</td>
         </tr>
   </table>
+</div>
 </div>
 
 
@@ -456,6 +551,7 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         </tr>
   </table>
 </div>
+</div>
 <p><strong>STRIKR RATE (Except Bowler) </strong></p>
     <div class="data-table">
 <div class="data-table data-table-init card">
@@ -472,11 +568,15 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="label-cell">Below 40 runs per 100 balls</td>
         <td class="numeric-cell">-3</td>
         </tr>
+
   </table>
-</div><br>
+</div>
+</div>
+
+<br> -->
                                     <!------------[TEST]------------>
 
-          <p><strong><u>TEST</u> :</strong></p><br>
+          <!-- <p><strong><u>TEST</u> :</strong></p><br>
 <p><b>BATTING </b></p>
     <div class="data-table">
 <div class="data-table data-table-init card">
@@ -504,9 +604,11 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="label-cell">Dismissal for a duck(Batsmen, Wicket-Keeper & All-Rounder)</td>
         <td class="numeric-cell">-5</td>
         </tr>
-    </tbody>
+    
   </table>
 </div>
+</div>
+
 <p><strong>BOWLING </strong></p>
 <div class="data-table">
 <div class="data-table data-table-init card">
@@ -525,12 +627,10 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="label-cell">5 Wicket haul bonus</td>
         <td class="numeric-cell">+6</td>
         </tr>
-         <tr>
-        
-         
-        </tbody>
-  </table>
+        </table>
 </div>
+</div>
+
 <p><strong>FIEDLING </strong></p>
 <div class="data-table">
 <div class="data-table data-table-init card">
@@ -548,9 +648,8 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         <td class="label-cell">Run Out</td>
         <td class="numeric-cell">+4 thrower &nbsp; +2 catcher</td>
         </tr>
-        
-        </tbody>
   </table>
+</div>
 </div>
     <p><strong>OTHERS </strong></p>
     <div class="data-table">
@@ -570,11 +669,9 @@ Make sure you keep a tab on who is playing and who isn’t to ensure scoring max
         </tr>
   </table>
 </div>
+</div> -->
 
 
-</div>
-      </div>
-    </li>
     <li class="accordion-item"><a href="#" class="item-content item-link">
         <div class="item-inner">
           <div class="item-title">Account Balance  </div>
