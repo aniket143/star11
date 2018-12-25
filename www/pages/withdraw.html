@@ -1,4 +1,4 @@
-<div class="page"  data-name="createteam">
+<div class="page"  data-name="withdraw">
 <div class="navbar">
     <div class="navbar-inner sliding">
       <div class="left">
@@ -26,6 +26,36 @@
       <div class="tab tab-active" id="tab-1">
       <div class="block">
         <div class="text-align-center"><h2>Mobile Verification</h2></div>
+        
+                <div class="card padding">
+        
+          <div class="list">
+              <ul>
+              
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Email</div>
+                    <div class="item-input-wrap">
+                      <input id="email" type="text" name="email" placeholder="Enter Email" required validate>
+                     
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="item-content item-input ">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Mobile Number</div>
+                    <div class="item-input-wrap">
+                      <input id="mobileno" type="text" name="mobileno" placeholder="Mobile Number" required validate>
+                    </div>
+                  </div>
+                </li>
+                </ul>
+                </div>
+                &nbsp;
+          <a class="mobileverify button button-fill color-green" style="width: 25%; margin: auto;">Submit for Verification</a>       
+                
+                </div>
       </div>
       </div>
       
@@ -33,12 +63,8 @@
       
         <div class="block">
          <div class="text-align-center"><h2>Verify Your PAN</h2></div>
-          <div class="card padding-top">
+          <div class="card padding">
         
-         
-         <a class="button button-fill color-green">UPLOAD PAN CARD IMAGE</a>
-         
-         
           <div class="list">
               <ul>
               
@@ -118,14 +144,26 @@
                 </div>
                 </li>
                 
+           
+            <li class="item-content item-input">
+                  <div class="item-inner">
+                    <!-- <div class="item-title item-label">Email</div> -->
+                    <div class="item-input-wrap">
+                      <input id="panimage" type="file" name="panimage" placeholder="Upload Image" required validate>
+       
+                    </div>
+                  </div>
+                </li>
                 
+                     
                 </ul>
                 </div>
                 
-                 <div class="text-align-center"><h3> * All fields are Mandatory</h3></div>
-                 <a href="">Why should I submit my PAN Card</a>
-                 
-                  <a class="button button-fill color-green">Submit for Verification</a>
+                 <div class="text-align-center"><h3> * All fields are Mandatory</h3>
+                 </div>
+               <!--   <a href="">Why should I submit my PAN Card</a> -->
+                 &nbsp;
+                  <a class="panverify button button-fill color-green" style="width: 25%; margin: auto;">Submit for Verification</a>
           </div>
       </div>
       </div>
@@ -133,13 +171,53 @@
       <div class="tab" id="tab-3">
         <div class="block">
           <div class="text-align-center"><h2>Verify Bank Account</h2></div>
+          <div class="card padding">
+          	 <div class="list">
+              <ul>
+              	<li class="item-content item-input item-input-with-info">
+                  <div class="item-inner">
+                   <!--  <div class="item-title item-label">Password</div> -->
+                    <div class="item-input-wrap">
+                      <input id="acc" type="text" name="acc" placeholder="Account Number *" required validate>
+                        <div class="item-input-info">As ON Passbook</div>
+                    </div>
+                  </div>
+                </li>
+              	<li class="item-content item-input item-input-with-info">
+                  <div class="item-inner">
+                    <!-- <div class="item-title item-label">Email</div> -->
+                    <div class="item-input-wrap">
+                      <select id="name" type="text" name="name" placeholder="Bank Name *" required validate>
+                       <div class="item-input-info"></div>
+                        
+<option value="">------Select Bank------*</option>
+<option value="State Bank Of India">State Bank Of India</option>
+<option value="HDFC Bank">HDFC Bank</option>
+<option value="Axis Bank">Axis Bank</option>
+<option value="TDC Bank">TDC Bank</option>
+<option value="Canara Bank">Canara Bank</option>
+<option value="Panjab National Bank">Panjab Bank</option>
+<option value="ICICI Bank">ICICI Bank</option>
+
+</select>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input item-input-with-info">
+                  <div class="item-inner">
+                    <!-- <div class="item-title item-label">Email</div> -->
+                    <div class="item-input-wrap">
+                      <input id="name" type="text" name="name" placeholder="IFSC Code *" required validate>
+                       <div class="item-input-info"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+          </div>
+          <a class="panverify button button-fill color-green" style="width: 25%; margin: auto;">Submit for Verification</a>
+          </div>
         </div>
       </div>
     </div>
-
-
 </div>
-
-
 </div>
-
