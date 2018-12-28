@@ -1,4 +1,8 @@
+
 <div class="page" data-name="about">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
   <div class="navbar">
     <div class="navbar-inner sliding">
       <div class="title"><img src="image/11starnew.png" alt="" width="105px"></div>
@@ -8,7 +12,7 @@
 <div class="toolbar tabbar  toolbar-bottom-md ">
     <div class="toolbar-inner ">
               
-      <a href="#tab-1" class=" tab-link tab-link-active color-red">	
+      <a href="#tab-1" class=" tab-link tab-link-active color-red"> 
       <i class="icon f7-icons ios-only icon-ios-fill">home_fill</i>
       <i class="icon material-icons md-only">home</i>
       <span class="tabbar-label" style="font-size: 12px;">Home</span></a>
@@ -29,60 +33,199 @@
       
     </div>
 </div>
+<div class="tabs">
 
-   <div class="tabs">
+
     <div id="tab-1" class="page-content tab tab-active"> 
-    
     <div class="subnavbar">
         <div class="subnavbar-inner">
           <div class="segmented segmented-raised">
-            <a class="button tab-link tab-link-active color-red" href="#tab1">Criket</a>
-            <a class="button tab-link color-red" href="#tab2">Football</a>
-            <a class="button tab-link color-red" href="#tab3">Kabbadi</a>
+            <a class="button tab-link tab-link-active color-red" href="#tab1"><img src="https://img.icons8.com/android/18/000000/cricket.png" align="center"> Cricket</a>
+            <a class="button tab-link color-red" href="#tab2"><img src="https://img.icons8.com/material-outlined/16/000000/football2.png" align="center"> Football</a>
+            <a class="button tab-link color-red" href="#tab3"><img src="https://img.icons8.com/material/24/000000/wrestling.png" align="center"> Kabbadi</a>
           </div>
         </div>
         </div>
+        
+<!-- //////////////////////////////// Home /////////////////////////// -->
+
         <div class="page-content" style="padding-top: 0px";>
     <div class="tabs">
-      <div class="tab tab-active" id="tab1">
-        <div class="block" id="load_cricket_match">
+      <div class="tab tab-active" id="tab1"> <!-- [3tab1-cricket] -->
+<!--         <div class="page-content">
+ -->
+<div class="swiper-container swiper-init demo-swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img class="responsive" src="http://139.59.36.238/star11/upload/BANNER FINAL app1.png" width="100%"height="90%" ></div>
+    <div class="swiper-slide"><img class="responsive" src="http://139.59.36.238/star11/upload/rsz_fb2.png" width="100%" height="90%"></div>
+     <div class="swiper-slide"><img class="responsive" src="http://139.59.36.238/star11/upload/rsz_fb3.png" width="100%" height="90%"></div>
+</div>  
+</div>
+    
+ <div class="tabs">
+      <div class="tab tab-active" id="mycric">
+        <div class="block">
+          
+          
+          <div class="toolbar tabbar color-green">
+    <div class="toolbar-inner">
+
+
+      <a href="#fix-cr" class="tab-link tab-link-active">Fixtures</a>
+      <a href="#liv-cr" class="tab-link">Live</a>
+      <a href="#result-cr" class="tab-link">Results</a>
+
+    </div>
+  </div>
+  <div class="tabs">
+    <div id="fix-cr" class="page-content tab tab-active" style="padding-top: 0px;">
+      <div class="block" id="load_cricket_match">
          <p>Error On Loading data..Please refresh</p>
        </div>
+      <div class="block" id="fix-cricket">
+
+        
       </div>
-      <div class="tab" id="tab2">
-        <div class="block" id="load_football_match">
-          <p>Comming Soon</p>
+    </div>
+    <div id="liv-cr" class="page-content tab">
+      <p>Tab 2 content</p>
+      <div class="block" id="live-cricket">
+        
+       
+      </div>
+    </div>
+    <div id="result-cr" class="page-content tab">
+       <p>Tab 3 content</p>
+      <div class="block" id="result-cricket">
+       
+        
+      </div>
+    </div>
+    
+    </div>
         </div>
       </div>
-      <div class="tab" id="tab3">
+      <div class="tab" id="myfootball">
+        <div class="block">
+          <p>Donec iaculis posuere massa sed dignissim...</p>
+        <div class="toolbar tabbar color-green">
+        <div class="toolbar-inner">
+
+
+      <a href="#fix-foot" class="tab-link tab-link-active">Fixtures</a>
+      <a href="#liv-foot" class="tab-link">Live</a>
+      <a href="#result-foot" class="tab-link">Results</a>
+
+    </div>
+  </div>
+  <div class="tabs">
+    <div id="fix-foot" class="page-content tab tab-active">
+      <div class="block">
+        <p>Tab 1 content</p>
+      </div>
+    </div>
+    <div id="liv-foot" class="page-content tab">
+      <div class="block">
+        <p>Tab 2 content</p>
+        ...
+      </div>
+    </div>
+    <div id="result-foot" class="page-content tab">
+      <div class="block">
+        <p>Tab 3 content</p>
+        ...
+      </div>
+    </div>
+    
+    </div>
+        </div>
+      </div>
+      <div class="tab" id="mykabbadi">
+        <div class="block">
+          <p></p>
+                              <div class="toolbar tabbar color-green">
+    <div class="toolbar-inner">
+
+
+      <a href="#fix-kab" class="tab-link tab-link-active">Fixtures</a>
+      <a href="#liv-kab" class="tab-link">Live</a>
+      <a href="#result-kab" class="tab-link">Results</a>
+
+    </div>
+  </div>
+  <div class="tabs">
+    <div id="fix-kab" class="page-content tab tab-active">
+      <div class="block" id="fix-kabaddi">
+        <p>Tab 1 content</p>
+
+        ...
+      </div>
+    </div>
+    <div id="liv-kab" class="page-content tab">
+      <div class="block" id="live-kabaddi">
+        <p>Tab 2 content</p>
+        ...
+      </div>
+    </div>
+    <div id="result-kab" class="page-content tab">
+      <div class="block" id="result-kabaddi">
+        <p>Tab 3 content</p>
+        ...
+      </div>
+    </div>
+    
+    </div>
+        </div>
+      </div>
+    </div>
+<!--   </div>
+ -->
+      </div>
+
+      <div class="tab" id="tab2">       <!-- [#tab2-Football] -->
+        <div class="block" id="load_football_match">
+
+        </div>
+      </div>
+
+      <div class="tab" id="tab3">           <!-- [#tab3-kabaddi] -->
         <div class="block" id="load_kabaddi_match">
-          <p>Error On Loading data..Please refresh</p>
+          
         </div>
       </div>
     </div>
   </div>
       </div>
-      
-    
+
+<!-- //////////////////////////////my contests///////////////////////////// -->
 
     <div id="tab-2" class="page-content tab"> 
-    
+ 
     <div class="subnavbar">
         <div class="subnavbar-inner">
           <div class="segmented segmented-raised">
-            <a class="button tab-link tab-link-active color-red" href="#mycrick">Criket</a>
-            <a class="button tab-link color-red" href="#myfootball">Football</a>
-            <a class="button tab-link color-red" href="#mykabbadi">Kabbadi</a>
+            <a class="button tab-link tab-link-active color-red" href="#tab11"> <img src="https://img.icons8.com/android/18/000000/cricket.png" align="center"> Cricket</a>
+            <a class="button tab-link color-red" href="#tab22"> <img src="https://img.icons8.com/material-outlined/16/000000/football2.png" align="center"> Football</a>
+            <a class="button tab-link color-red" href="#tab33"> <img src="https://img.icons8.com/material/24/000000/wrestling.png" align="center"> Kabbadi</a>
           </div>
         </div>
         </div>
-        <div class="page-content">
+        <div class="page-content" style="padding-top: 0px";>
     <div class="tabs">
-      <div class="tab tab-active" id="mycrick">
+      <div class="tab tab-active" id="tab11">        <!-- [#tab11-Cricket] -->
+        <!-- <div class="page-content"> -->
+<div class="swiper-container swiper-init demo-swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img class="responsive" src="http://139.59.36.238/star11/upload/BANNER FINAL app1.png" width="100%"height="90%" ></div>
+    <div class="swiper-slide"><img class="responsive" src="http://139.59.36.238/star11/upload/rsz_fb2.png" width="100%" height="90%"></div>
+     <div class="swiper-slide"><img class="responsive" src="http://139.59.36.238/star11/upload/rsz_fb3.png" width="100%" height="90%"></div>
+</div>  
+</div>
+    
+ <div class="tabs">
+      <div class="tab tab-active" id="mycric">
         <div class="block">
-          <p>
-          
-          </p>
+          <p></p>
           
           <div class="toolbar tabbar color-green">
     <div class="toolbar-inner">
@@ -96,9 +239,15 @@
   </div>
   <div class="tabs">
     <div id="fix-cri" class="page-content tab tab-active">
+      <p>Tab 1 content</p>
+
+      <!-- <div class="block" id="load_cricket_match">
+         <p>Error On Loading data..Please refresh</p>
+       </div> -->
+
       <div class="block" id="fix-cricket">
-        <p>Tab 1 content</p>
-        ...
+
+        
       </div>
     </div>
     <div id="liv-cri" class="page-content tab">
@@ -120,8 +269,8 @@
       <div class="tab" id="myfootball">
         <div class="block">
           <p>Donec iaculis posuere massa sed dignissim...</p>
-                    <div class="toolbar tabbar color-green">
-    <div class="toolbar-inner">
+        <div class="toolbar tabbar color-green">
+        <div class="toolbar-inner">
 
 
       <a href="#fix-foot" class="tab-link tab-link-active ">Fixtures</a>
@@ -160,26 +309,27 @@
     <div class="toolbar-inner">
 
 
-      <a href="#fix-kabb" class="tab-link tab-link-active ">Fixtures</a>
-      <a href="#liv-kabb" class="tab-link">Live</a>
-      <a href="#result-kabb" class="tab-link">Results</a>
+      <a href="#fix-kab" class="tab-link tab-link-active ">Fixtures</a>
+      <a href="#liv-kab" class="tab-link">Live</a>
+      <a href="#result-kab" class="tab-link">Results</a>
 
     </div>
   </div>
   <div class="tabs">
-    <div id="fix-kabb" class="page-content tab tab-active">
+    <div id="fix-kab" class="page-content tab tab-active">
       <div class="block" id="fix-kabaddi">
         <p>Tab 1 content</p>
+
         ...
       </div>
     </div>
-    <div id="liv-kabb" class="page-content tab">
+    <div id="liv-kab" class="page-content tab">
       <div class="block" id="live-kabaddi">
         <p>Tab 2 content</p>
         ...
       </div>
     </div>
-    <div id="result-kabb" class="page-content tab">
+    <div id="result-kab" class="page-content tab">
       <div class="block" id="result-kabaddi">
         <p>Tab 3 content</p>
         ...
@@ -190,10 +340,24 @@
         </div>
       </div>
     </div>
+  <!-- </div> -->
+
+      </div>
+
+      <div class="tab" id="tab22">                <!-- [#tab22-football] -->
+        <div class="block" id="load_football_match">
+          <p>Comming Soon</p>
+        </div>
+      </div>
+      <div class="tab" id="tab33">                <!-- [#tab33-kabaddi] -->
+        <div class="block" id="load_kabaddi_match">
+          <p>Error On Loading data..Please refresh</p>
+        </div>
+      </div>
+    </div>
   </div>
     
-    
-</div> 	
+</div>  
 
 <div id="tab-3" class="page-content tab">
 
@@ -265,7 +429,7 @@
               
   
               </ul>
-	</div> 
+  </div> 
 </div>
 
 <div id="tab-4" class="page-content tab">
@@ -441,7 +605,7 @@
                   </div>
                 </a>
               </li> 
-              <!-- 																	<span class="align-content-center">{{trtypennamekbd}}</span> -->-->
+              <!--                                  <span class="align-content-center">{{trtypennamekbd}}</span> -->
            </ul>
 </div>
 
@@ -452,142 +616,143 @@
    
    <script id="logincrickettemplate" type="text/template7">
           {{#each maindata[0].data1}}
-					<a href="/contests/?teamA={{team1}}&teamB={{team2}}&teamidA={{teamid1}}&teamidB={{teamid2}}&matchID={{matchid1}}&trnID={{trnid1}}&dtetime={{start_time}}">
-						<div class="card margin padding" id="">
-						
-					 		<div class="row">
-								<img src="{{logo1}}" width="45px">
-								<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnname}}<br>
-									<span id="clocktm{{counts}}"></span></div>												
-								<img src="{{logo2}}" width="45px">
-							</div>
-			
-						</div>
-					</a>          
+          <a href="/contests/?teamA={{team1}}&teamB={{team2}}&teamidA={{teamid1}}&teamidB={{teamid2}}&matchID={{matchid1}}&trnID={{trnid1}}&dtetime={{start_time}}">
+            <div class="card margin padding" id="">
+            
+              <div class="row">
+                <img src="{{logo1}}" width="45px">
+                <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnname}}<br><br>
+                <span class="text-color-black" id="clocktm{{counts}}"></span></div>
+                <img src="{{logo2}}" width="45px">
+              </div>
+      
+            </div>
+          </a>          
           {{/each}}
           
        </script>
        
+       
         <script id="loginfootballtemplate" type="text/template7">
           {{#each maindata[1].data2}}
-					<a href="/contests/">
-						<div class="card margin padding">
-					 		<div class="row">
-								<img src="{{logo3}}" width="45px">
-								<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnname}}<br>
-									<span id="clocktm1{{counts}}"></span></div>
-								<img src="{{logo4}}" width="45px">
-							</div>		
-						</div>
-					</a>          
+          <a href="/contests/">
+            <div class="card margin padding">
+              <div class="row">
+                <img src="{{logo3}}" width="45px">
+                <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnname}}<br>
+                  <span id="clocktm1{{counts}}"></span></div>
+                <img src="{{logo4}}" width="45px">
+              </div>    
+            </div>
+          </a>          
           {{/each}}
           
        </script>
        
          <script id="loginkabadditemplate" type="text/template7">
           {{#each maindata[2].data3}}
-					<a href="/contestskabaddi/?teamA={{team5}}&teamB={{team6}}&teamidA={{teamid5}}&teamidB={{teamid6}}&matchID={{matchid3}}&trnID={{trnid3}}&sportID={{sportsid3}}&dtetime={{start_time2}}">
-						<div class="card margin padding">
-					 		<div class="row">
-								<img src="{{logo5}}" width="45px">
-										<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnnamekbd}}<br>
-									<span id="clocktm2{{counts}}"></span></div>
-								<img src="{{logo6}}" width="45px">
-							</div>			
-						</div>
-					</a>          
+          <a href="/contestskabaddi/?teamA={{team5}}&teamB={{team6}}&teamidA={{teamid5}}&teamidB={{teamid6}}&matchID={{matchid3}}&trnID={{trnid3}}&sportID={{sportsid3}}&dtetime={{start_time2}}">
+            <div class="card margin padding">
+              <div class="row">
+                <img src="{{logo5}}" width="45px">
+                    <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnnamekbd}}<br>
+                  <span id="clocktm2{{counts}}"></span></div>
+                <img src="{{logo6}}" width="45px">
+              </div>      
+            </div>
+          </a>          
           {{/each}}
           
        </script>
        
        <script id="cktfixturestemplate" type="text/template7">
           {{#each data1}}
-					<a href="/joinedcontestformatch/?matchid={{matchid1}}">
-						<div class="card margin padding" id="">
-					 		<div class="row">
-								<img src="{{logo1}}" width="45px">
-								<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnname}}<br>
-									<span id="clocktm{{counts}}"></span></div>
-								<img src="{{logo2}}" width="45px">
-							</div>			
-						</div>
-					</a>          
+          <a href="/joinedcontestformatch/?matchid={{matchid1}}">
+            <div class="card margin padding" id="">
+              <div class="row">
+                <img src="{{logo1}}" width="45px">
+                <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnname}}<br>
+                  <span id="clocktm{{counts}}"></span></div>
+                <img src="{{logo2}}" width="45px">
+              </div>      
+            </div>
+          </a>          
           {{/each}}
           </script> 
        
        <script id="cktlivetemplate" type="text/template7">
           {{#each data1}}
-					<a href="">
-						<div class="card margin padding" id="">
-					 		<div class="row">
-								<img src="{{logo1}}" width="45px">
-										<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnname}}<br>
-									<span id="clocktm{{counts}}"></span></div>
+          <a href="">
+            <div class="card margin padding" id="">
+              <div class="row">
+                <img src="{{logo1}}" width="45px">
+                    <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnname}}<br>
+                  <span id="clocktm{{counts}}"></span></div>
 
-    							<img src="{{logo2}}" width="45px">
-							</div>			
-						</div>
-					</a>          
+                  <img src="{{logo2}}" width="45px">
+              </div>      
+            </div>
+          </a>          
           {{/each}}
           
        </script> 
        
       <script id="cktresulttemplate" type="text/template7">
           {{#each data1}}
-					<a href="">
-						<div class="card margin padding" id="">
-					 		<div class="row">
-								<img src="{{logo1}}" width="55px">
-									<div class="text-align-center	text-color-blue" style="font-size: smaller;">{{trnname}}<br>
-									<span id="clocktm{{counts}}"></span></div>
-								<img src="{{logo2}}" width="55px">
-							</div>
-			
-						</div>
-					</a>          
+          <a href="">
+            <div class="card margin padding" id="">
+              <div class="row">
+                <img src="{{logo1}}" width="55px">
+                  <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnname}}<br>
+                  <span id="clocktm{{counts}}"></span></div>
+                <img src="{{logo2}}" width="55px">
+              </div>
+      
+            </div>
+          </a>          
           {{/each}}
           
        </script> 
        
        <script id="kbdfixturestemplate" type="text/template7">
           {{#each data1}}
-					<a href="/joinedcontestformatch/?matchid={{matchid1}}">
-						<div class="card margin padding" id="">
-					 		<div class="row">
-								<img src="{{logo1}}" width="55px">
-									<div id="clocktm2{{counts2}}"  class="align-content-center"></div>
-								<img src="{{logo2}}" width="55px">
-							</div>
-			
-							<div class="row text-color-red">
-								<div>{{team1}}</div>
-									<span class="align-content-center">Vs</span>
-								<div>{{team2}}</div>
-							</div>
-			
-						</div>
-					</a>          
+          <a href="/joinedcontestformatch/?matchid={{matchid1}}">
+            <div class="card margin padding" id="">
+              <div class="row">
+                <img src="{{logo1}}" width="55px">
+                  <div id="clocktm2{{counts2}}"  class="align-content-center"></div>
+                <img src="{{logo2}}" width="55px">
+              </div>
+      
+              <div class="row text-color-red">
+                <div>{{team1}}</div>
+                  <span class="align-content-center">Vs</span>
+                <div>{{team2}}</div>
+              </div>
+      
+            </div>
+          </a>          
           {{/each}}
           </script>
           
           <script id="kbdlivetemplate" type="text/template7">
           {{#each data1}}
-					<a href="">
-						<div class="card margin padding" id="">
-					 		<div class="row">
-								<img src="{{logo1}}" width="55px">
-									<div id="clocktm2{{counts2}}"  class="align-content-center"></div>
-								<img src="{{logo2}}" width="55px">
-							</div>
-			
-							<div class="row text-color-red">
-								<div>{{team1}}</div>
-									<span class="align-content-center">Vs</span>
-								<div>{{team2}}</div>
-							</div>
-			
-						</div>
-					</a>          
+          <a href="">
+            <div class="card margin padding" id="">
+              <div class="row">
+                <img src="{{logo1}}" width="55px">
+                  <div id="clocktm2{{counts2}}"  class="align-content-center"></div>
+                <img src="{{logo2}}" width="55px">
+              </div>
+      
+              <div class="row text-color-red">
+                <div>{{team1}}</div>
+                  <span class="align-content-center">Vs</span>
+                <div>{{team2}}</div>
+              </div>
+      
+            </div>
+          </a>          
           {{/each}}
           
        </script>
@@ -595,22 +760,22 @@
        
        <script id="kbdresulttemplate" type="text/template7">
           {{#each data1}}
-					<a href="">
-						<div class="card margin padding" id="">
-					 		<div class="row">
-								<img src="{{logo1}}" width="55px">
-									<div id="clocktm2{{counts2}}"  class="align-content-center"></div>
-								<img src="{{logo2}}" width="55px">
-							</div>
-			
-							<div class="row text-color-red">
-								<div>{{team1}}</div>
-									<span class="align-content-center">Vs</span>
-								<div>{{team2}}</div>
-							</div>
-			
-						</div>
-					</a>          
+          <a href="">
+            <div class="card margin padding" id="">
+              <div class="row">
+                <img src="{{logo1}}" width="55px">
+                  <div id="clocktm2{{counts2}}"  class="align-content-center"></div>
+                <img src="{{logo2}}" width="55px">
+              </div>
+      
+              <div class="row text-color-red">
+                <div>{{team1}}</div>
+                  <span class="align-content-center">Vs</span>
+                <div>{{team2}}</div>
+              </div>
+      
+            </div>
+          </a>          
           {{/each}}
           
        </script>   
@@ -618,3 +783,13 @@
    
     </div>
           
+        
+    <style>
+    
+.card-content .card-content-padding {
+  padding: 10px 10px;
+}    
+    </style>
+
+
+    
