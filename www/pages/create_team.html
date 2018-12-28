@@ -13,10 +13,13 @@
 	 
 	 <div class="segmented segmented-raised">
             
-	   <a href="#tab-1" class="button tab-link tab-link-active color-red">WK<span class="badge color-red text-color-black" id="countWK">0</span></a>
-      <a href="#tab-2" class="button tab-link color-red">BAT<span class="badge color-red text-color-black" id="countBAT">0</span></a>
-      <a href="#tab-3" class="button tab-link color-red">AR<span class="badge color-red text-color-black" id="countAR">0</span></a>
-      <a href="#tab-4" class="button tab-link color-red">BOWL<span class="badge color-red text-color-black" id="countBOWL">0</span></a>
+	   <a href="#tab-1" class="button tab-link tab-link-active color-red"><img src="https://img.icons8.com/ios-glyphs/16/000000/american-football-helmet.png" align="center"> WK<span class="badge color-red text-color-black" id="countWK">0</span></a>
+      
+      <a href="#tab-2" class="button tab-link color-red"><img src="https://img.icons8.com/ios/16/000000/baseball-player-filled.png" align="center"> BAT<span class="badge color-red text-color-black" id="countBAT">0</span></a>
+
+      <a href="#tab-3" class="button tab-link color-red"><img src="https://img.icons8.com/ios/16/000000/global-citizen-filled.png" align="center"> AR<span class="badge color-red text-color-black" id="countAR">0</span></a>
+
+      <a href="#tab-4" class="button tab-link color-red"><img src="https://img.icons8.com/ios/18/000000/volleyball-2-filled.png" align="center"> BOWL<span class="badge color-red text-color-black" id="countBOWL">0</span></a>
 </div>
 	 </div>
 </div>
@@ -389,48 +392,48 @@
  
  <script id="team_preview" type="text/template7">
  
- <div class="col-12 text-align-center" ><h6 style="color:white">WICKET-KEEPER</h6></div>
+ <div class="col-12 text-align-center" ><h3 style="color:white">WICKET-KEEPER</h3></div>
  <div class="container col-12 text-align-center">
  {{#each wkdata.data1[0]}}
  <img src="{{wkplayerpic}}" alt="wkplayerpic" width="30px">
- <figcaption style="color:blue">{{wkname}}</strong></figcaption>
+ <div style="font-size:20px;color:white"><strong>{{wkname}}</strong></div>
  {{/each}}
   </div>
  
  
-<div class="col-12 text-align-center"><h6 style="color:white">BATSMAN</h6></div>
+<div class="col-12 text-align-center"><h3 style="color:white">BATSMAN</h3></div>
 <div class="row text-align-center">
 {{#each batsmandata.data2[0]}}
 <div class="col"> 
       <figure>
         <img src="{{batplayerpic}}" alt="batsmanplayerpic" width="30px">
-        <figcaption style="color:blue">{{batsmanname}}</figcaption>
+        <figcaption style="color:white">{{batsmanname}}</figcaption>
       </figure>
     </div>
 {{/each}}
 </div>
 
 
-<div class="col-12 text-align-center"><h6 style="color:white">ALLROUNDER</h6></div>
+<div class="col-12 text-align-center"><h3 style="color:white">ALLROUNDER</h3></div>
 <div class="row text-align-center">
   {{#each ardata.data3[0]}}
     <div class="col">
       <figure>
         <img src="{{arplayerpic}}" alt="ARplayerpic" width="30px">
-        <figcaption style="color:blue">{{arname}}</figcaption>
+        <figcaption style="color:white">{{arname}}</figcaption>
       </figure>
     </div>
 {{/each}}
 </div>
  
  
-<div class="col-12 text-align-center"><h6 style="color:white">BALLER</h6></div>
+<div class="col-12 text-align-center"><h3 style="color:white">BALLER</h3></div>
  <div class="row text-align-center">
    {{#each ballerdata.data4[0]}}
     <div class="col">
       <figure>
         <img src="{{ballerplayerpic}}" alt="ballerplayerpic" width="30px">
-        <figcaption style="color:blue">{{ballername}}</figcaption>
+        <figcaption style="color:white">{{ballername}}</figcaption>
       </figure>
     </div>
 {{/each}}
@@ -609,7 +612,7 @@
               </div>
             </div>
           </div>
-          <div class="page-content" style="background-image:url('image/grass.jpg') ; background-size: cover;">
+          <div class="page-content" style="background-image:url('image/grass.jpg')" width='100%';>
  			 <div class="" id="select_team">
  			 
           </div>
