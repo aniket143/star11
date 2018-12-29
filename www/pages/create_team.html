@@ -396,7 +396,7 @@
  <div class="container col-12 text-align-center">
  {{#each wkdata.data1[0]}}
  <div class=" chip color-blue"><div class="chip-media"><img src="{{wkplayerpic}}"/></div>
- <div class="chip-label">{{wkname}}</div></div>
+ <div class="chip-label flex-shrink-0">{{wkname}}</div></div>
  {{/each}}
   </div>
  
@@ -404,10 +404,11 @@
 <div class="col-12 text-align-center"><h3 style="color:#000080;">BATSMAN</h3></div>
 <div class="row text-align-center">
 {{#each batsmandata.data2[0]}}
-<div class="col"> 
+<div class="col 
+justify-content-left"> 
       <figure>
         <div class=" chip color-blue"><div class="chip-media"><img src="{{batplayerpic}}"/></div>
- <div class="chip-label">{{batsmanname}}</div></div>
+ <div class="chip-label flex-shrink-0">{{batsmanname}}</div></div>
 
       </figure>
     </div>
@@ -418,16 +419,17 @@
 <div class="col-12 text-align-center"><h3 style="color:#000080">ALLROUNDER</h3></div>
 <div class="row text-align-center">
   {{#each ardata.data3[0]}}
-    <div class="col">
+    <div class="col 
+align-self-flex-left">
       <figure>
-        <div class=" chip color-blue"><div class="chip-media"><img src="{{arplayerpic}}"/></div>
- <div class="chip-label">{{arname}}</div></div>
- {{/each}}
+        <div class=" chip color-blue"><div class="chip-media"><img src="{{arplayerpic}}"/> </div>
+ <div class="chip-label flex-shrink-0">{{arname}}</div></div>
   </div>
       </figure>
+       {{/each}}
+
     </div>
-{{/each}}
-</div>
+
  
  
 <div class="col-12 text-align-center"><h3 style="color:#000080">BALLER</h3></div>
@@ -436,11 +438,9 @@
     <div class="col">
       <figure>
 <div class=" chip color-blue"><div class="chip-media"><img src="{{ballerplayerpic}}"/></div>
- <div class="chip-label">{{ballername}}</div></div>
- {{/each}}
+ <div class="chip-label flex-shrink-0">{{ballername}}</div></div>
   </div>
       </figure>
-    </div>
 {{/each}}
 </div>
 </script>
@@ -617,7 +617,7 @@
               </div>
             </div>
           </div>
-          <div class="page-cover" style="background-image:url('image/grass.jpg');background-size:contain;" width='100%';>
+          <div class="page-content" style="background-image:url('image/grass.jpg');background-size:cover;" width='100%';>
  			 <div class="" id="select_team">
  			 
           </div>
