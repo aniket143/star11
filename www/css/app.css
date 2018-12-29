@@ -23,3 +23,10 @@
     margin-bottom: 16px !important;
     margin-left: 5px !important;
 }
+
+.md .item-media .material-icons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+}
