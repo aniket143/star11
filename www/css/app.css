@@ -36,4 +36,8 @@
     top: 0px;
     width: 97%;
     height: 106%;
-    }
+}
+
+.md .chip {
+    font-size: 10px;
+}
