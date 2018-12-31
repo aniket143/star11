@@ -317,7 +317,7 @@
 </div>
     
 </div>
-
+<!-- /////////////////////////////////create_team.html////////////////////////////// -->
 <script id="wktemplate" type="text/template7">
   {{#each cricketdata[0].data1}}
   		 <tr>
@@ -372,6 +372,7 @@
        {{/each}}
  </script>
  
+
  <script id="ballertemplate" type="text/template7">
   {{#each cricketdata[3].data4}}
   		 <tr>
@@ -389,10 +390,11 @@
        </tr>
        {{/each}}
  </script>
- 
+ <!-- /////////////////////////////////create_team.html////////////////////////////// -->
+
  <script id="team_preview" type="text/template7">
  
- <div class="col-12 text-align-center" ><h3 style="color:#000080;">WICKET-KEEPER</h3></div>
+ <div class="col-12 text-align-center"><h3 style="color:#000080;">WICKET-KEEPER</h3></div>
  <div class="container col-12 text-align-center">
  {{#each wkdata.data1[0]}}
  <div class=" chip color-blue"><div class="chip-media"><img src="{{wkplayerpic}}"/></div>
@@ -404,13 +406,16 @@
 <div class="col-12 text-align-center"><h3 style="color:#000080;">BATSMAN</h3></div>
 <div class="row text-align-center">
 {{#each batsmandata.data2[0]}}
-<div class="col 
+<div class="col
 justify-content-left"> 
-      <figure>
-        <div class=" chip color-blue"><div class="chip-media"><img src="{{batplayerpic}}"/></div>
- <div class="chip-label flex-shrink-0">{{batsmanname}}</div></div>
-
-      </figure>
+    
+         <div class=" chip color-blue">
+          <div class="chip-media">
+            <img src="{{batplayerpic}}"/>
+          </div>
+<div class="chip-label flex-shrink-0">{{batsmanname}}</div>
+</div>  
+      
     </div>
 {{/each}}
 </div>
@@ -421,11 +426,11 @@ justify-content-left">
   {{#each ardata.data3[0]}}
     <div class="col 
 align-self-flex-left">
-      <figure>
+      
         <div class=" chip color-blue"><div class="chip-media"><img src="{{arplayerpic}}"/> </div>
  <div class="chip-label flex-shrink-0">{{arname}}</div></div>
   </div>
-      </figure>
+      
        {{/each}}
 
     </div>
@@ -436,15 +441,15 @@ align-self-flex-left">
  <div class="row text-align-center">
    {{#each ballerdata.data4[0]}}
     <div class="col">
-      <figure>
+      
 <div class=" chip color-blue"><div class="chip-media"><img src="{{ballerplayerpic}}"/></div>
  <div class="chip-label flex-shrink-0">{{ballername}}</div></div>
   </div>
-      </figure>
+     
 {{/each}}
 </div>
 </script>
-
+<!-- /////////////////////////////////create_team.html////////////////////////////// -->
 
 <script id="select_captain" type="text/template7" >
 
@@ -483,7 +488,6 @@ align-self-flex-left">
       </div>
    </div>
 </div>
-
 
 <div class="card">
 <div class="card-header">BATSMAN</div>
@@ -538,8 +542,7 @@ align-self-flex-left">
           </div>
           <div id="image1"><img src="image/captain.png"  style="display: none;" ></div>
          <div id="image2"><img src="image/vicecaptain.png"  style="display: none;"></div>
-         
-        
+           
       <label class="item-radio item-content">
       <input type="radio" name="demo-radio1" data-ply1={{arplyid}} class='list3' value="c" id="plyc{{arplyid}}" data-arplayerid1={{arplyid}}>
       <i class="icon icon-radio"></i>
