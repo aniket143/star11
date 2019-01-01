@@ -93,15 +93,15 @@ var dynamicPopup = app.popup.create({
 });
 
 
- // Select Template
+ // Select Template index.html pages cricket template////////////
 var cricketTemplate = $$('#crickettemplate').html();
-var footballTemplate = $$('#footballtemplate').html();
-var kabaddiTemplate = $$('#kabadditemplate').html();
+var livecrickettemplate = $$('#livecrickettemplate').html();
+var resultcrickettemplate = $$('#resultcrickettemplate').html();
 
 // Compile and render
 var compiledcricketTemplate = Template7.compile(cricketTemplate);
-var compiledfootballTemplate = Template7.compile(footballTemplate);
-var compiledkabaddiTemplate=Template7.compile(kabaddiTemplate);
+var livecrickettemplate = Template7.compile(livecrickettemplate);
+var resultcrickettemplate=Template7.compile(resultcrickettemplate);
 
 
 app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
@@ -121,8 +121,8 @@ app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', funct
     //localStorage.SPORTID3 = data.maindata["2"].data3["0"].sportsid3;
    
       $$('#load_cricket_match').html(compiledcricketTemplate(data)); 
-      $$('#load_football_match').html(compiledfootballTemplate(data));
-      $$('#load_kabaddi_match').html(compiledkabaddiTemplate(data));
+      $$('#live_cricket_match').html(livecrickettemplate(data));
+      $$('#result_cricket_match').html(resultcrickettemplate(data));
               
               }
               
@@ -2075,7 +2075,141 @@ $$('#logout').on('click', function (e) {
 	  										reloadCurrent: true,
   										ignoreCache: true,
 										});      
-	});	      	      
+	});
+
+ // (live cricket match Template)//////////////////
+
+var liveincrickettemplate = $$('#liveincrickettemplate').html();
+    //var loginfootballTemplate = $$('#loginfootballtemplate').html();
+    // var loginkabaddiTemplate = $$('#loginkabadditemplate').html();
+    
+    var liveincompiledcricketTemplate = Template7.compile(liveincrickettemplate);
+    //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
+    // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
+  
+    app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
+      
+    //  console.log("hiarnvi");
+      
+    console.log(data);
+    
+     //localStorage.MATCHID = data.maindata["0"].data1["0"].matchid1;
+     //localStorage.TOURNAMENTID = data.maindata["0"].data1["0"].trnid1;
+     
+      $$('#live_cricket_match').html(liveincompiledcricketTemplate(data)); 
+      //$$('#load_football_match').html(logincompiledfootballTemplate(data));
+      // $$('#load_kabaddi_match').html(logincompiledkabaddiTemplate(data));
+              
+   });
+
+// (result cricket match Template)//////////////////
+
+var resultincrickettemplate = $$('#resultincrickettemplate').html();
+    //var loginfootballTemplate = $$('#loginfootballtemplate').html();
+    // var loginkabaddiTemplate = $$('#loginkabadditemplate').html();
+    
+    var resultincrickettemplate = Template7.compile(resultincrickettemplate);
+    //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
+    // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
+  
+    app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
+      
+    //  console.log("hiarnvi");
+      
+    console.log(data);
+    
+     //localStorage.MATCHID = data.maindata["0"].data1["0"].matchid1;
+     //localStorage.TOURNAMENTID = data.maindata["0"].data1["0"].trnid1;
+     
+      $$('#result_cricket_match').html(resultincrickettemplate(data)); 
+      //$$('#load_football_match').html(logincompiledfootballTemplate(data));
+      // $$('#load_kabaddi_match').html(logincompiledkabaddiTemplate(data));
+              
+   });
+
+
+// my contest template /////////////
+
+
+var contesttemplate = $$('#contesttemplate').html();
+    //var loginfootballTemplate = $$('#loginfootballtemplate').html();
+    // var loginkabaddiTemplate = $$('#loginkabadditemplate').html();
+    
+    var fixcontesttemplate = Template7.compile(contesttemplate);
+    //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
+    // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
+  
+    app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
+      
+    //  console.log("hiarnvi");
+      
+    console.log(data);
+    
+     //localStorage.MATCHID = data.maindata["0"].data1["0"].matchid1;
+     //localStorage.TOURNAMENTID = data.maindata["0"].data1["0"].trnid1;
+     
+      $$('#fix_cri_match').html(fixcontesttemplate(data)); 
+      //$$('#load_football_match').html(logincompiledfootballTemplate(data));
+      // $$('#load_kabaddi_match').html(logincompiledkabaddiTemplate(data));
+              
+   });
+
+
+
+
+// (live cricket match Template)
+
+var contestlivecrickettemplate = $$('#contestlivecrickettemplate').html();
+    //var loginfootballTemplate = $$('#loginfootballtemplate').html();
+    // var loginkabaddiTemplate = $$('#loginkabadditemplate').html();
+    
+    var contestlivecrickettemplate = Template7.compile(contestlivecrickettemplate);
+    //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
+    // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
+  
+    app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
+      
+    //  console.log("hiarnvi");
+      
+    console.log(data);
+    
+     //localStorage.MATCHID = data.maindata["0"].data1["0"].matchid1;
+     //localStorage.TOURNAMENTID = data.maindata["0"].data1["0"].trnid1;
+     
+      $$('#live_cri_match').html(contestlivecrickettemplate(data)); 
+      //$$('#load_football_match').html(logincompiledfootballTemplate(data));
+      // $$('#load_kabaddi_match').html(logincompiledkabaddiTemplate(data));
+              
+   });
+
+// (result cricket match Template)//////////////////
+
+var contestresultcrickettemplate = $$('#contestresultcrickettemplate').html();
+    //var loginfootballTemplate = $$('#loginfootballtemplate').html();
+    // var loginkabaddiTemplate = $$('#loginkabadditemplate').html();
+    
+    var contestresultcrickettemplate = Template7.compile(contestresultcrickettemplate);
+    //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
+    // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
+  
+    app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
+      
+    //  console.log("hiarnvi");
+      
+    console.log(data);
+    
+     //localStorage.MATCHID = data.maindata["0"].data1["0"].matchid1;
+     //localStorage.TOURNAMENTID = data.maindata["0"].data1["0"].trnid1;
+     
+      $$('#result_cri_match').html(contestresultcrickettemplate(data)); 
+      //$$('#load_football_match').html(logincompiledfootballTemplate(data));
+      // $$('#load_kabaddi_match').html(logincompiledkabaddiTemplate(data));
+              
+   });
+
+
+
+
 });
 
 
