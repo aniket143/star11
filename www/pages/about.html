@@ -1,4 +1,3 @@
-
 <div class="page" data-name="about">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
@@ -91,14 +90,18 @@
       </div>
     </div>
     <div id="liv-cr" class="page-content tab">
-      <p>Tab 2 content</p>
+      <div class="block" id="live_cricket_match">
+         <p>Error On Loading data..Please refresh</p>
+       </div>
       <div class="block" id="live-cricket">
         
        
       </div>
     </div>
     <div id="result-cr" class="page-content tab">
-       <p>Tab 3 content</p>
+       <div class="block" id="result_cricket_match">
+         <p>Error On Loading data..Please refresh</p>
+       </div>
       <div class="block" id="result-cricket">
        
         
@@ -234,7 +237,7 @@
     <div class="toolbar-inner">
 
 
-      <a href="#fix-cri" class="tab-link tab-link-active ">Fixtures</a>
+      <a href="#fix-cri" class="tab-link tab-link-active">Fixtures</a>
       <a href="#liv-cri" class="tab-link">Live</a>
       <a href="#result-cri" class="tab-link">Results</a>
 
@@ -242,27 +245,20 @@
   </div>
   <div class="tabs">
     <div id="fix-cri" class="page-content tab tab-active">
-      <p>Tab 1 content</p>
-
-      <!-- <div class="block" id="load_cricket_match">
+      <div class="block" id="fix_cri_match">
          <p>Error On Loading data..Please refresh</p>
-       </div> -->
+       </div>
 
-      <div class="block" id="fix-cricket">
-
-        
-      </div>
+      
     </div>
     <div id="liv-cri" class="page-content tab">
-      <div class="block" id="live-cricket">
-        <p>Tab 2 content</p>
-        ...
+      <div class="block" id="live_cri_match">
+        <p>Error On Loading data..Please refresh</p>
       </div>
     </div>
     <div id="result-cri" class="page-content tab">
-      <div class="block" id="result-cricket">
-        <p>Tab 3 content</p>
-        ...
+      <div class="block" id="result_cri_match">
+        <p>Error On Loading data..Please refresh</p>
       </div>
     </div>
     
@@ -616,6 +612,7 @@
         
    </div>
    
+   <!-- home cricket template -->
    
    <script id="logincrickettemplate" type="text/template7">
           {{#each maindata[0].data1}}
@@ -625,7 +622,7 @@
               <div class="row">
                 <img src="{{logo1}}" width="45px">
                 <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnname}}<br><br>
-                <img src="https://img.icons8.com/ios/12/000000/alarm-clock.png" align="center" > <span class="text-color-black" id="clocktm{{counts}}"></span></div>
+                <img src="https://img.icons8.com/ios/12/000000/alarm-clock.png" align="center" ><span class="text-color-black" id="clocktm{{counts}}"></span></div>
                 <img src="{{logo2}}" width="45px">
               </div>
       
@@ -634,7 +631,103 @@
           {{/each}}
           
        </script>
-       
+
+       <script id="liveincrickettemplate" type="text/template7">
+          {{#each maindata[0].data1}}
+          <a href="/contests/?teamA={{team1}}&teamB={{team2}}&teamidA={{teamid1}}&teamidB={{teamid2}}&matchID={{matchid1}}&trnID={{trnid1}}&dtetime={{start_time}}">
+            <div class="card margin padding" id="">
+            
+              <div class="row">
+                <img src="{{logo1}}" width="45px">
+                <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnname}}<br><br>
+                <img src="https://img.icons8.com/ios/12/000000/alarm-clock.png" align="center" ><span class="text-color-black" id="clocktm{{counts}}"></span></div>
+                <img src="{{logo2}}" width="45px">
+              </div>
+      
+            </div>
+          </a>          
+          {{/each}}
+          
+       </script>
+
+       <script id="resultincrickettemplate" type="text/template7">
+          {{#each maindata[0].data1}}
+          <a href="/contests/?teamA={{team1}}&teamB={{team2}}&teamidA={{teamid1}}&teamidB={{teamid2}}&matchID={{matchid1}}&trnID={{trnid1}}&dtetime={{start_time}}">
+            <div class="card margin padding" id="">
+            
+              <div class="row">
+                <img src="{{logo1}}" width="45px">
+                <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnname}}<br><br>
+                <img src="https://img.icons8.com/ios/12/000000/alarm-clock.png" align="center" ><span class="text-color-black" id="clocktm{{counts}}"></span></div>
+                <img src="{{logo2}}" width="45px">
+              </div>
+      
+            </div>
+          </a>          
+          {{/each}}
+          
+       </script>
+
+
+       <!-- my contest cricket template -->
+
+       <script id="contesttemplate" type="text/template7">
+          {{#each maindata[0].data1}}
+          <a href="/contests/?teamA={{team1}}&teamB={{team2}}&teamidA={{teamid1}}&teamidB={{teamid2}}&matchID={{matchid1}}&trnID={{trnid1}}&dtetime={{start_time}}">
+            <div class="card margin padding" id="">
+            
+              <div class="row">
+                <img src="{{logo1}}" width="45px">
+                <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnname}}<br><br>
+                <img src="https://img.icons8.com/ios/12/000000/alarm-clock.png" align="center" ><span class="text-color-black" id="clocktm{{counts}}"></span></div>
+                <img src="{{logo2}}" width="45px">
+              </div>
+      
+            </div>
+          </a>          
+          {{/each}}
+          
+       </script>
+
+       <script id="contestlivecrickettemplate" type="text/template7">
+          {{#each maindata[0].data1}}
+          <a href="/contests/?teamA={{team1}}&teamB={{team2}}&teamidA={{teamid1}}&teamidB={{teamid2}}&matchID={{matchid1}}&trnID={{trnid1}}&dtetime={{start_time}}">
+            <div class="card margin padding" id="">
+            
+              <div class="row">
+                <img src="{{logo1}}" width="45px">
+                <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnname}}<br><br>
+                <img src="https://img.icons8.com/ios/12/000000/alarm-clock.png" align="center" ><span class="text-color-black" id="clocktm{{counts}}"></span></div>
+                <img src="{{logo2}}" width="45px">
+              </div>
+      
+            </div>
+          </a>          
+          {{/each}}
+          
+       </script>
+
+       <script id="contestresultcrickettemplate" type="text/template7">
+          {{#each maindata[0].data1}}
+          <a href="/contests/?teamA={{team1}}&teamB={{team2}}&teamidA={{teamid1}}&teamidB={{teamid2}}&matchID={{matchid1}}&trnID={{trnid1}}&dtetime={{start_time}}">
+            <div class="card margin padding" id="">
+            
+              <div class="row">
+                <img src="{{logo1}}" width="45px">
+                <div class="text-align-center text-color-blue" style="font-size: smaller;">{{trnname}}<br><br>
+                <img src="https://img.icons8.com/ios/12/000000/alarm-clock.png" align="center" ><span class="text-color-black" id="clocktm{{counts}}"></span></div>
+                <img src="{{logo2}}" width="45px">
+              </div>
+      
+            </div>
+          </a>          
+          {{/each}}
+          
+       </script>
+
+
+
+       <!-- ////////////////////////////////////////////////////////////// -->
        
         <script id="loginfootballtemplate" type="text/template7">
           {{#each maindata[1].data2}}
