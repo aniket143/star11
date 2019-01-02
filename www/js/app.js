@@ -174,7 +174,7 @@ var livecrickettemplate = $$('#livecrickettemplate').html();
     
     var livecrickettemplate = Template7.compile(livecrickettemplate);
     
-    app.request.postJSON('http://localhost/sagar/star11/APP/live_match_data.php', function (data) {
+    app.request.postJSON('http://139.59.36.238/star11APP/live_match_data.php', function (data) {
       
     //  console.log("hiarnvi");
       
@@ -192,7 +192,7 @@ var resultcrickettemplate = $$('#resultcrickettemplate').html();
     var resultcrickettemplate = Template7.compile(resultcrickettemplate);
    
   
-app.request.postJSON('http://localhost/sagar/star11/APP/result_match_data.php',function (data) {
+app.request.postJSON('http://139.59.36.238/star11APP/result_match_data.php',function (data) {
       
    
       
