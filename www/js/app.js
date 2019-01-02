@@ -2127,7 +2127,7 @@ var liveincrickettemplate = $$('#liveincrickettemplate').html();
     //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
     // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
   
-    app.request.postJSON('http://localhost/sagar/star11/APP/live_match_data.php', function (data) {
+    app.request.postJSON('http://139.59.36.238/star11APP/live_match_data.php', function (data) {
       
    // console.log("huhuhgii");
     
@@ -2152,7 +2152,7 @@ var resultincrickettemplate = $$('#resultincrickettemplate').html();
     //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
     // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
   
-    app.request.postJSON('http://localhost/sagar/star11/APP/result_match_data.php', function (data) {
+    app.request.postJSON('http://139.59.36.238/star11APP/result_match_data.php', function (data) {
       
     //  console.log("hiarnvi");
       
