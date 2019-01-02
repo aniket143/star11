@@ -95,13 +95,13 @@ var dynamicPopup = app.popup.create({
 
  // Select Template index.html pages cricket template////////////
 var cricketTemplate = $$('#crickettemplate').html();
-var livecrickettemplate = $$('#livecrickettemplate').html();
-var resultcrickettemplate = $$('#resultcrickettemplate').html();
+// var kabbadiTemplate = $$('#kabbadiTemplate').html();
+// var footballTemplate = $$('#footballtemplate').html();
 
 // Compile and render
 var compiledcricketTemplate = Template7.compile(cricketTemplate);
-var livecrickettemplate = Template7.compile(livecrickettemplate);
-var resultcrickettemplate=Template7.compile(resultcrickettemplate);
+// var compiledkabbadiTemplate = Template7.compile(kabbadiTemplate);
+// var compiledfootballTemplate=Template7.compile(footballTemplate);
 
 
 app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
@@ -121,8 +121,8 @@ app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', funct
     //localStorage.SPORTID3 = data.maindata["2"].data3["0"].sportsid3;
    
       $$('#load_cricket_match').html(compiledcricketTemplate(data)); 
-      $$('#live_cricket_match').html(livecrickettemplate(data));
-      $$('#result_cricket_match').html(resultcrickettemplate(data));
+      // $$('#load_kabbadi_match').html(compiledkabbadiTemplate(data));
+      // $$('#load_football_match').html(compiledcricketTemplate(data));
               
               }
               
@@ -169,7 +169,48 @@ app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', funct
       countdown(cou2,matchtime2,crkdiv2);
     }
    });
+  /////////////live cricket template/////////////////////////////////////////////////////////////////
+var livecrickettemplate = $$('#livecrickettemplate').html();
+    
+    var livecrickettemplate = Template7.compile(livecrickettemplate);
+    
+    app.request.postJSON('http://localhost/sagar/star11/APP/live_match_data.php', function (data) {
       
+    //  console.log("hiarnvi");
+      
+    console.log(data);
+    
+     
+     
+      $$('#live_cricket_match').html(livecrickettemplate(data)); 
+      
+   });
+// result cricket template/////////////////////////
+
+var resultcrickettemplate = $$('#resultcrickettemplate').html();
+    
+    var resultcrickettemplate = Template7.compile(resultcrickettemplate);
+   
+  
+app.request.postJSON('http://localhost/sagar/star11/APP/result_match_data.php',function (data) {
+      
+   
+      
+    console.log(data);
+    
+   
+     
+      $$('#result_cricket_match').html(resultcrickettemplate(data)); 
+      });
+
+
+
+
+
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
   //++++++++++++++++new countdown clock
 
  function countdown(tm,match_date,loc) {
@@ -546,7 +587,7 @@ $$(document).on('page:init', '.page[data-name="createteam"]', function (e) {
 			
 		app.request.postJSON('http://139.59.36.238/star11APP/editcktteam.php', {cktcustteamid:cktcustteamid}, function (data1) {
 	
-	//console.log(data1);
+	console.log(data1);
 	
 	   var wkpid=data1.cricketdata["0"].data1["0"].wkplayerid;
 	   
@@ -556,8 +597,8 @@ $$(document).on('page:init', '.page[data-name="createteam"]', function (e) {
 	   
 	  var credit=0;
 	  
-	  var credit=parseInt(data1.cricketdata["0"].data1["0"].pvalue);
-	    
+	  var credit=parseFloat(data1.cricketdata["0"].data1["0"].pvalue);
+	    console.log('credit-'.credit);
 	  var team1counter=team2counter=0;
 	  
 	   var wkteamcode=data1.cricketdata["0"].data1["0"].wkteamcode;
@@ -579,7 +620,7 @@ $$(document).on('page:init', '.page[data-name="createteam"]', function (e) {
     	
       var batpid=data1.cricketdata["1"].data2[i].batsmanplayerid;
 
-     credit += parseInt(data1.cricketdata["1"].data2[i].pvalue1);
+     credit += parseFloat(data1.cricketdata["1"].data2[i].pvalue1);
       
       
       var batteamcode=data1.cricketdata["1"].data2[i].batteamcode;
@@ -609,7 +650,7 @@ var arlen=data1.cricketdata["2"].data3.length;
     	
       var arpid=data1.cricketdata["2"].data3[i].ARplayerid;
       
-      credit += parseInt(data1.cricketdata["2"].data3[i].pvalue2);
+      credit += parseFloat(data1.cricketdata["2"].data3[i].pvalue2);
       
       var arteamcode=data1.cricketdata["1"].data2[i].arteamcode;
       
@@ -639,7 +680,7 @@ var ballerlen=data1.cricketdata["3"].data4.length;
     	
       var ballerpid=data1.cricketdata["3"].data4[i].ballerplayerid;
       
-      credit += parseInt(data1.cricketdata["3"].data4[i].pvalue3);
+      credit += parseFloat(data1.cricketdata["3"].data4[i].pvalue3);
       
       var ballteamcode=data1.cricketdata["1"].data2[i].ballteamcode;
       
@@ -1154,10 +1195,10 @@ var credit=0;
       	var arteamcode = $$(chkbid).data("arteamcode");
       	var ballerteamcode = $$(chkbid).data("ballerteamcode");
       	
-      	var wkcredit = parseInt($$(chkbid).data("wkcredit"));
-      	var batcredit = parseInt($$(chkbid).data("batcredit"));
-      	var arcredit = parseInt($$(chkbid).data("arcredit"));
-      	var ballercredit = parseInt($$(chkbid).data("ballercredit"));
+      	var wkcredit = parseFloat($$(chkbid).data("wkcredit"));
+      	var batcredit = parseFloat($$(chkbid).data("batcredit"));
+      	var arcredit = parseFloat($$(chkbid).data("arcredit"));
+      	var ballercredit = parseFloat($$(chkbid).data("ballercredit"));
    	   var isChecked = $$(chkbid).prop('checked'); 
    	   console.log(isChecked);
    	    
@@ -1170,7 +1211,7 @@ if (chkname == "WK_chk") {
 		   var counter = parseInt($$('#countWK').html());
 		   console.log(counter);
 			totalcount = parseInt($$('#totalplayer').html());
-			credit = parseInt($$('#credit').html());
+			credit = parseFloat($$('#credit').html());
 			    
 		if (totalcount<11) {
 		  	
@@ -1240,7 +1281,7 @@ if (chkname == "WK_chk") {
 	      totalcount1 = parseInt($$('#totalplayer').html());
 	      team11counter=parseInt($$('#team1cnt').html());
 	      team22counter=parseInt($$('#team2cnt').html());
-	      credit1 = parseInt($$('#credit').html());
+	      credit1 = parseFloat($$('#credit').html());
 	      
 				counter1 = couter1-1;
 				totalcount1--;
@@ -1274,7 +1315,7 @@ else if (chkname=="batsman_chk") {
 		   	team2counter=parseInt($$('#team2cnt').html());
 				var counter = parseInt($$('#countBAT').html());
 				totalcount = parseInt($$('#totalplayer').html());
-				credit = parseInt($$('#credit').html());
+				credit = parseFloat($$('#credit').html());
 				
 				 if (totalcount<11) {
 				    
@@ -1343,7 +1384,7 @@ else if (chkname=="batsman_chk") {
 	     	totalcount1 = parseInt($$('#totalplayer').html());
 	     	team11counter=parseInt($$('#team1cnt').html());
 	      team22counter=parseInt($$('#team2cnt').html());
-	      credit1 = parseInt($$('#credit').html());
+	      credit1 = parseFloat($$('#credit').html());
 	      
 				counter1 = couter1-1;
 				totalcount1--;
@@ -1382,7 +1423,7 @@ else if (chkname=="ar_chk") {
 				var counter = parseInt($$('#countAR').html());
 				totalcount = parseInt($$('#totalplayer').html());
 				console.log(parseInt($$('#countAR').html()));
-				credit = parseInt($$('#credit').html());
+				credit = parseFloat($$('#credit').html());
 				
 		  if (totalcount<11) {
 				    
@@ -1448,7 +1489,7 @@ else if (chkname=="ar_chk") {
 	     	totalcount1 = parseInt($$('#totalplayer').html());
 	     	team11counter=parseInt($$('#team1cnt').html());
 	      team22counter=parseInt($$('#team2cnt').html());
-	      credit1 = parseInt($$('#credit').html());
+	      credit1 = parseFloat($$('#credit').html());
 	      
 				counter1 = couter1-1;
 				totalcount1--;
@@ -1485,7 +1526,7 @@ else if (chkname=="baller_chk") {
 				var counter = parseInt($$('#countBOWL').html());
 				totalcount = parseInt($$('#totalplayer').html());
 				console.log(parseInt($$('#countBOWL').html()));
-				credit = parseInt($$('#credit').html());
+				credit = parseFloat($$('#credit').html());
 				
 		if (totalcount<11) {
 				    
@@ -1555,7 +1596,7 @@ else if (chkname=="baller_chk") {
 	     	totalcount1 = parseInt($$('#totalplayer').html());
 	     	team11counter=parseInt($$('#team1cnt').html());
 	      team22counter=parseInt($$('#team2cnt').html());
-	      credit1 = parseInt($$('#credit').html());
+	      credit1 = parseFloat($$('#credit').html());
 	      
 				counter1 = couter1-1;
 				totalcount1--;
@@ -1980,7 +2021,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
 	
     app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
     	
-    //	console.log("hiarnvi");
+    	// console.log("hi");
       
     console.log(data);
     
@@ -2004,7 +2045,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    $$('#fix-cricket').html(compiledcktfixturesTemplate(data)); 
    	
    	 });
-   	 
+   
    var cktliveTemplate = $$('#cktlivetemplate').html();
    var compiledcktliveTemplate = Template7.compile(cktliveTemplate);
    
@@ -2015,7 +2056,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    	 $$('#live-cricket').html(compiledcktliveTemplate(data)); 
    	
    	 });
-   	 
+   	
    	  var cktresultTemplate = $$('#cktresulttemplate').html();
    var compiledcktresultTemplate = Template7.compile(cktresultTemplate);
    
@@ -2024,10 +2065,9 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    	 console.log(data);
    	
    	 $$('#result-cricket').html(compiledcktresultTemplate(data)); 
-   	
    	 });
    	 
-   	
+   	 
    	 
    var kbdfixturesTemplate = $$('#kbdfixturestemplate').html();
    var compiledkbdfixturesTemplate = Template7.compile(kbdfixturesTemplate);
@@ -2062,7 +2102,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    	 $$('#result-kabaddi').html(compiledkbdresultTemplate(data)); 
    	
    	 });
-
+console.log("hiii");
 
 $$('#logout').on('click', function (e) {
     //console.log(e);
@@ -2083,20 +2123,20 @@ var liveincrickettemplate = $$('#liveincrickettemplate').html();
     //var loginfootballTemplate = $$('#loginfootballtemplate').html();
     // var loginkabaddiTemplate = $$('#loginkabadditemplate').html();
     
-    var liveincompiledcricketTemplate = Template7.compile(liveincrickettemplate);
+    var livecricketTemplate = Template7.compile(liveincrickettemplate);
     //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
     // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
   
-    app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
+    app.request.postJSON('http://localhost/sagar/star11/APP/live_match_data.php', function (data) {
       
-    //  console.log("hiarnvi");
-      
+   // console.log("huhuhgii");
+    
     console.log(data);
     
      //localStorage.MATCHID = data.maindata["0"].data1["0"].matchid1;
      //localStorage.TOURNAMENTID = data.maindata["0"].data1["0"].trnid1;
      
-      $$('#live_cricket_match').html(liveincompiledcricketTemplate(data)); 
+      $$('#live_cricket_match').html(livecricketTemplate(data)); 
       //$$('#load_football_match').html(logincompiledfootballTemplate(data));
       // $$('#load_kabaddi_match').html(logincompiledkabaddiTemplate(data));
               
@@ -2108,11 +2148,11 @@ var resultincrickettemplate = $$('#resultincrickettemplate').html();
     //var loginfootballTemplate = $$('#loginfootballtemplate').html();
     // var loginkabaddiTemplate = $$('#loginkabadditemplate').html();
     
-    var resultincrickettemplate = Template7.compile(resultincrickettemplate);
+    var resulttemplate = Template7.compile(resultincrickettemplate);
     //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
     // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
   
-    app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
+    app.request.postJSON('http://localhost/sagar/star11/APP/result_match_data.php', function (data) {
       
     //  console.log("hiarnvi");
       
@@ -2121,7 +2161,7 @@ var resultincrickettemplate = $$('#resultincrickettemplate').html();
      //localStorage.MATCHID = data.maindata["0"].data1["0"].matchid1;
      //localStorage.TOURNAMENTID = data.maindata["0"].data1["0"].trnid1;
      
-      $$('#result_cricket_match').html(resultincrickettemplate(data)); 
+      $$('#result_cricket_match').html(resulttemplate(data)); 
       //$$('#load_football_match').html(logincompiledfootballTemplate(data));
       // $$('#load_kabaddi_match').html(logincompiledkabaddiTemplate(data));
               
@@ -2167,7 +2207,7 @@ var contestlivecrickettemplate = $$('#contestlivecrickettemplate').html();
     //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
     // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
   
-    app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
+    app.request.postJSON('http://localhost/sagar/star11/APP/live_match_data.php', function (data) {
       
     //  console.log("hiarnvi");
       
@@ -2192,7 +2232,7 @@ var contestresultcrickettemplate = $$('#contestresultcrickettemplate').html();
     //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
     // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
   
-    app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
+    app.request.postJSON('http://localhost/sagar/star11/APP/result_match_data.php', function (data) {
       
     //  console.log("hiarnvi");
       
