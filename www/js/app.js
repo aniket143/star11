@@ -170,6 +170,7 @@ app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', funct
     }
    });
   /////////////live cricket template/////////////////////////////////////////////////////////////////
+
 var livecrickettemplate = $$('#livecrickettemplate').html();
     
     var livecrickettemplate = Template7.compile(livecrickettemplate);
@@ -374,7 +375,7 @@ else {
 app.request.postJSON('http://139.59.36.238/star11APP/user_registration.php', {mailid:mailid,password:password,contactno:contactno,birthdate:birthdate,gender:gender,state:state,referral:referral,teamnm:teamnm}, function (data) {
 	
 	
-	//console.log(data);
+	console.log(data);
 	
 	if (data == "Success") {
 		
@@ -2033,7 +2034,17 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
       $$('#load_kabaddi_match').html(logincompiledkabaddiTemplate(data));
               
    });
-   
+
+
+
+
+
+
+
+
+
+
+   ///////////////////////////////////////////////////////////////////////////////////////////////
    var userid = localStorage.userid;
    var cktfixturesTemplate = $$('#cktfixturestemplate').html();
    var compiledcktfixturesTemplate = Template7.compile(cktfixturesTemplate);
@@ -2045,7 +2056,8 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    $$('#fix-cricket').html(compiledcktfixturesTemplate(data)); 
    	
    	 });
-   
+
+  ///////////////////////////////////////////////////////////////////////////////////////////// 
    var cktliveTemplate = $$('#cktlivetemplate').html();
    var compiledcktliveTemplate = Template7.compile(cktliveTemplate);
    
@@ -2056,7 +2068,8 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    	 $$('#live-cricket').html(compiledcktliveTemplate(data)); 
    	
    	 });
-   	
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
    	  var cktresultTemplate = $$('#cktresulttemplate').html();
    var compiledcktresultTemplate = Template7.compile(cktresultTemplate);
    
@@ -2067,7 +2080,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    	 $$('#result-cricket').html(compiledcktresultTemplate(data)); 
    	 });
    	 
-   	 
+  /////////////////////////////////////////////////////////////////////////////////////////////// 	 
    	 
    var kbdfixturesTemplate = $$('#kbdfixturestemplate').html();
    var compiledkbdfixturesTemplate = Template7.compile(kbdfixturesTemplate);
@@ -2102,7 +2115,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
    	 $$('#result-kabaddi').html(compiledkbdresultTemplate(data)); 
    	
    	 });
-console.log("hiii");
+// console.log("hiii");
 
 $$('#logout').on('click', function (e) {
     //console.log(e);
@@ -2117,7 +2130,7 @@ $$('#logout').on('click', function (e) {
 										});      
 	});
 
- // (live cricket match Template)//////////////////
+ // (live cricket match Template)///////////////////////////
 
 var liveincrickettemplate = $$('#liveincrickettemplate').html();
     //var loginfootballTemplate = $$('#loginfootballtemplate').html();
@@ -2142,7 +2155,7 @@ var liveincrickettemplate = $$('#liveincrickettemplate').html();
               
    });
 
-// (result cricket match Template)//////////////////
+// (result cricket match Template)////////////////////////////
 
 var resultincrickettemplate = $$('#resultincrickettemplate').html();
     //var loginfootballTemplate = $$('#loginfootballtemplate').html();
@@ -2168,90 +2181,49 @@ var resultincrickettemplate = $$('#resultincrickettemplate').html();
    });
 
 
-// my contest template /////////////
+// my contest template //////////////////////////////////////////////////////
 
-
-var contesttemplate = $$('#contesttemplate').html();
-    //var loginfootballTemplate = $$('#loginfootballtemplate').html();
-    // var loginkabaddiTemplate = $$('#loginkabadditemplate').html();
+var userid = localStorage.userid;
+   var cktfixturesTemplate = $$('#cktfixturestemplate').html();
+   var fixcontesttemplate = Template7.compile(cktfixturesTemplate);
+   
+   app.request.postJSON('http://139.59.36.238/star11APP/load_ckt_fixtures_data.php',{userid:userid},function (data) {
     
-    var fixcontesttemplate = Template7.compile(contesttemplate);
-    //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
-    // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
-  
-    app.request.postJSON('http://139.59.36.238/star11APP/load_match_data.php', function (data) {
-      
-    //  console.log("hiarnvi");
-      
-    console.log(data);
+   console.log(data);
     
-     //localStorage.MATCHID = data.maindata["0"].data1["0"].matchid1;
-     //localStorage.TOURNAMENTID = data.maindata["0"].data1["0"].trnid1;
-     
-      $$('#fix_cri_match').html(fixcontesttemplate(data)); 
-      //$$('#load_football_match').html(logincompiledfootballTemplate(data));
-      // $$('#load_kabaddi_match').html(logincompiledkabaddiTemplate(data));
-              
-   });
+   $$('#fix_cri_match').html(fixcontesttemplate(data)); 
+    
+     });
 
-
+///////////////////////////////////////////////////////////////////////////////
 
 
 // (live cricket match Template)
+ var cktliveTemplate = $$('#cktlivetemplate').html();
+   var contestlivecrickettemplate = Template7.compile(cktliveTemplate);
+   
+   app.request.postJSON('http://139.59.36.238/star11APP/load_ckt_live_data.php',{userid:userid}, function (data) {
+    
+     console.log(data);
+    
+     $$('#live_cri_match').html(contestlivecrickettemplate(data)); 
+    
+     });
 
-var contestlivecrickettemplate = $$('#contestlivecrickettemplate').html();
-    //var loginfootballTemplate = $$('#loginfootballtemplate').html();
-    // var loginkabaddiTemplate = $$('#loginkabadditemplate').html();
+////////////////////////////////////////////////////////
+
+
+var cktresultTemplate = $$('#cktresulttemplate').html();
+   var contestresultcrickettemplate = Template7.compile(cktresultTemplate);
+   
+   app.request.postJSON('http://139.59.36.238/star11APP/load_ckt_result_data.php',{userid:userid}, function (data) {
     
-    var contestlivecrickettemplate = Template7.compile(contestlivecrickettemplate);
-    //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
-    // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
-  
-    app.request.postJSON('http://localhost/sagar/star11/APP/live_match_data.php', function (data) {
-      
-    //  console.log("hiarnvi");
-      
-    console.log(data);
+     console.log(data);
     
-     //localStorage.MATCHID = data.maindata["0"].data1["0"].matchid1;
-     //localStorage.TOURNAMENTID = data.maindata["0"].data1["0"].trnid1;
+     $$('#result_cri_match').html(contestresultcrickettemplate(data)); 
+     });
      
-      $$('#live_cri_match').html(contestlivecrickettemplate(data)); 
-      //$$('#load_football_match').html(logincompiledfootballTemplate(data));
-      // $$('#load_kabaddi_match').html(logincompiledkabaddiTemplate(data));
-              
-   });
-
-// (result cricket match Template)//////////////////
-
-var contestresultcrickettemplate = $$('#contestresultcrickettemplate').html();
-    //var loginfootballTemplate = $$('#loginfootballtemplate').html();
-    // var loginkabaddiTemplate = $$('#loginkabadditemplate').html();
-    
-    var contestresultcrickettemplate = Template7.compile(contestresultcrickettemplate);
-    //var logincompiledfootballTemplate = Template7.compile(loginfootballTemplate);
-    // var logincompiledkabaddiTemplate=Template7.compile(loginkabaddiTemplate);
-  
-    app.request.postJSON('http://localhost/sagar/star11/APP/result_match_data.php', function (data) {
-      
-    //  console.log("hiarnvi");
-      
-    console.log(data);
-    
-     //localStorage.MATCHID = data.maindata["0"].data1["0"].matchid1;
-     //localStorage.TOURNAMENTID = data.maindata["0"].data1["0"].trnid1;
-     
-      $$('#result_cri_match').html(contestresultcrickettemplate(data)); 
-      //$$('#load_football_match').html(logincompiledfootballTemplate(data));
-      // $$('#load_kabaddi_match').html(logincompiledkabaddiTemplate(data));
-              
-   });
-
-
-
-
-});
-
+////////////////////////////////////////////////////////////////////////////////////////////
 
 $$(document).on('page:init', '.page[data-name="joinedcontests"]', function (e) {
 	
